@@ -31,6 +31,13 @@
                             @enderror
                         </div>
                         <div class="col-12">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control" id="email">
+                            @error('email')
+                            <span class="text-danger-small">Not valid</span>
+                            @enderror
+                        </div>
+                        <div class="col-12">
                             <label for="nickname">Nickname</label>
                             <input type="text" name="nickname" class="form-control" id="nickname">
                             @error('nickname')

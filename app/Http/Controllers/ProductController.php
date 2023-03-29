@@ -15,7 +15,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product.index')->with('mainCategories', Main_category::all());
+        return view('product.index')->with([
+            'products' => Product::all(),
+            'mainCategories', Main_category::all()
+        ]);
     }
 
     /**
@@ -29,7 +32,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ProductRequest $request)
+    public function store(Request $request)
     {
         $product = Product::create([
                 'user_id' => Auth::id(),
@@ -39,11 +42,11 @@ class ProductController extends Controller
                 'description' => $request->description,
         ]);
 
-        $product->categories()->attach($request->mainCategories);
+        $product->categories()->attach($request->mainCategory);
 
         $product->save();
   
-        return redirect()->route('products.create', $product)->with(['success' => 'Prodotto salvato correttamente']);
+        return redirect()->route('product.create')->with(['success' => 'Prodotto salvato correttamente']);
     }
 
     /**
@@ -65,7 +68,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ProductRequest $request, Product $product)
+    public function update(Request $request, Product $product)
     {
         $product->fill($request->all());
         $product->state = 'pending';
@@ -73,9 +76,9 @@ class ProductController extends Controller
         $product->save();
 
         $product->categories()->detach();
-        $product->categories()->attach($request->mainCategories);
+        $product->categories()->attach($request->mainCategory);
 
-        return redirect()->route('products.create')->with(['success' => 'Prodotto Modificato correttamente']);   
+        return redirect()->route('product.create')->with(['success' => 'Prodotto Modificato correttamente']);   
 
     }
 

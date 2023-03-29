@@ -1,10 +1,9 @@
 <x-layout>
-
 <div class="container mt-5">
         <div class="row">
             <div class="col-6 mx-auto">
                 <h1>Login</h1>
-                <form action="" method="">
+                <form action="/login" method="POST">
                     @csrf
                     <div class="col-12">
                         <label for="email">Email</label>
@@ -14,7 +13,7 @@
                         @enderror
                     </div>
                     <div class="col-12">
-                        <label for="surname">Password</label>
+                        <label for="Password">Password</label>
                         <input type="password" name="password" class="form-control" id="password">
                         @error('password')
                         <span class="text-danger-small">Nope</span>
@@ -27,7 +26,4 @@
             </div>
         </div> 
     </div>
-
-
-
 </x-layout>

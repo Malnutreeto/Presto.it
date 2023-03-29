@@ -27,8 +27,4 @@ Route::middleware('auth')->group(function() {
     Route::resource('product', ProductController::class);
 });
 
-Route::get('/new-annuncio', function() {
-    return view('form-annunci')->with('mainCategories', Main_category::all());
-});
-
 

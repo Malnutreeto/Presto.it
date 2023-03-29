@@ -1,21 +1,33 @@
-<h1>Accedi</h1>
-<form class="text-center" method="POST" action="/login">
-    @csrf
-    <div class="mb-3">
-        <input name="email" type="email" placeholder="email" class="form-control"
-            id="exampleInputEmail1" aria-describedby="emailHelp" value="">
+<x-layout>
+
+<div class="container mt-5">
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <h1>Login</h1>
+                <form action="" method="">
+                    @csrf
+                    <div class="col-12">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" id="email">
+                        @error('email')
+                        <span class="text-danger-small">Nope</span>
+                        @enderror
+                    </div>
+                    <div class="col-12">
+                        <label for="surname">Password</label>
+                        <input type="password" name="password" class="form-control" id="password">
+                        @error('password')
+                        <span class="text-danger-small">Nope</span>
+                        @enderror
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div> 
     </div>
-    @if($errors->has('email'))
-        {{$errors->first('email')}}
-    @endif
-    <div class="mb-3">
-        <input name="password" type="password" placeholder="password" class="form-control"
-            id="exampleInputEmail1" aria-describedby="emailHelp" value="">
-    </div>
-    @if($errors->has('password'))
-        {{$errors->first('password')}}
-    @endif
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary m-2">Submit</button>
-    </div>
-</form>    
+
+
+
+</x-layout>

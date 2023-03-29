@@ -19,6 +19,4 @@ Route::middleware('auth')->group(function() {
     Route::get('/user/2fa', [twoFactorAuthenticationController::class, 'enableOrDisable'])->name('auth.2fa');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+

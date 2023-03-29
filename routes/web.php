@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\twoFactorAuthenticationController;
 use App\Models\Sub_category;
@@ -23,6 +24,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/user/2fa', [twoFactorAuthenticationController::class, 'enableOrDisable'])->name('auth.2fa');
     Route::resource('category', CategoryController::class);
     Route::resource('sub_category', SubCategoryController::class);
+    Route::resource('product', ProductController::class);
 });
 
 Route::get('/new-annuncio', function() {

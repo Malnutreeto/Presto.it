@@ -3,6 +3,9 @@
     <ul>
         <li>
             <a href="{{route('category.edit', $maincategory)}}">{{$maincategory->name}}</a>
+            @foreach ( $maincategory->subcategories() as $subCategory)
+                
+            @endforeach
             <form action=""></form>
             <form class="text-center" method="POST" action="{{route('category.destroy', $maincategory)}}">
                 @csrf

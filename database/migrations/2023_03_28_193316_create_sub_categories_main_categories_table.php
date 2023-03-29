@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sub_categories_main_categories', function (Blueprint $table) {
+        Schema::create('main_category_sub_category', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('main_category_id');
             $table->unsignedBigInteger('sub_category_id');  

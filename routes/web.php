@@ -21,4 +21,9 @@ Route::middleware('auth')->group(function() {
     Route::resource('category', CategoryController::class);
 });
 
+//rotta pubblica per creazione homepage
+Route::get('/home', function () {
+    return view('home'); 
+});
+
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\twoFactorAuthenticationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+Route::middleware('auth')->group(function() {
+    Route::get('/user/2fa', [twoFactorAuthenticationController::class, 'enableOrDisable'])->name('auth.2fa');
+});
 
 Route::get('/', function () {
     return view('welcome');

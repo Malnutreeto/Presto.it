@@ -13,10 +13,6 @@
         </label>
       </div>
     @endforeach
-    <div class="mb-3">
-        <input name="CategoryType" type="hidden" placeholder="email" class="form-control"
-            id="exampleInputEmail1" aria-describedby="emailHelp" value="main">
-    </div>
     @if($errors->has('name'))
         {{$errors->first('name')}}
     @endif
@@ -25,15 +21,11 @@
     </div>
 </form>
 <h1>Sotto categorie</h1>
-<form class="text-center" method="POST" action="{{route('category.store')}}">
+<form class="text-center" method="POST" action="{{route('sub_category.store')}}">
     @csrf
     <div class="mb-3">
         <input name="name" type="text" placeholder="nome" class="form-control"
             id="exampleInputEmail1" aria-describedby="emailHelp" value="">
-    </div>
-    <div class="mb-3">
-        <input name="CategoryType" type="hidden" placeholder="nome" class="form-control"
-            id="exampleInputEmail1" aria-describedby="emailHelp" value="sub">
     </div>
     @if($errors->has('name'))
         {{$errors->first('name')}}

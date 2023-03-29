@@ -16,6 +16,13 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $mainCategories = Main_category::all();
+        $subCategories = Sub_category::all();
+        
+        return view('category.index')->with([
+            'mainCategories'=> $mainCategories,
+            'subCategories'=> $subCategories,
+        ]);
     }
 
     /**
@@ -26,7 +33,7 @@ class CategoryController extends Controller
          //Extract all sub:category to import in create view
         $subCategories = Sub_category::all();
 
-        return view('categories.create')->with('subCategories', $subCategories);
+        return view('category.create')->with('subCategories', $subCategories);
     }
 
     /**
@@ -36,7 +43,7 @@ class CategoryController extends Controller
     {
         //Filtering if the request is for main or sub category
         $validator = FacadesValidator::make($request->all(),[
-            'name' => 'required|unique:' . $request->CategoryType . '_categories,name|max:20'
+            'name' => 'required|unique:main_categories,name|max:50'
         ]);
 
         //Verify if validator fails and redirect if is true
@@ -44,19 +51,12 @@ class CategoryController extends Controller
             return redirect()->back()->withErrors($validator->errors());
         }
 
-        //If the request CategoryType is main create category and attach sub_categoriws
-        if ($request->CategoryType === 'main' ){
-            
-            $category = Main_category::create($request->all());
-            $category->subCategories()->attach($request->subCategories);
-            $category->save();
-        }
-        //If the request CategoryType is sub create sub_category
-        elseif($request->CategoryType === 'sub'){
-            Sub_category::create($request->all());
-        }
+        //Create a new category
+        $category = Main_category::create($request->all());
+        //Attach sub category 
+        $category->subCategories()->attach($request->subCategories);
 
-
+        $category->save();
 
         return redirect()->route('category.index')->with(['success' => 'Categoria salvata correttamente']);
     }
@@ -74,7 +74,17 @@ class CategoryController extends Controller
      */
     public function edit(Main_category $category)
     {
-        //
+        //SubCategories variable for impor all sub categories in view
+        $subCategories = Sub_category::all();
+
+        //Type variable to discriminate main_category to sub_category
+        $type = 'main';
+
+        return view('category.edit')->with([
+            'category' => $category,
+            'subCategories' => $subCategories,
+            'type' => $type,
+        ]);
     }
 
     /**
@@ -82,7 +92,26 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Main_category $category)
     {
-        //
+        //Filtering if the request is for main or sub category
+        $validator = FacadesValidator::make($request->all(),[
+            'name' => 'required|unique:main_categories,name|max:50'
+        ]);
+
+        //Verify if validator fails and redirect if is true
+        if ($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
+        $category->fill($request->all())->save();
+            
+        //Detach sub_categories to category for modify it
+        $category->subCategories()->detach();
+
+         //Attach new sub_categories to category
+        $category->subCategories()->attach($request->subCategories);
+
+        return redirect()->route('category.index')->with(['success' => 'Categoria modificata correttamente.']);
     }
 
     /**
@@ -90,6 +119,11 @@ class CategoryController extends Controller
      */
     public function destroy(Main_category $category)
     {
-        //
+        //Detach sub category to delete category
+        $category->subCategories()->detach();
+        
+        $category->delete();
+
+        return redirect()->back()->with(['success' => 'Prodotto cancellato correttamente.']);
     }
 }

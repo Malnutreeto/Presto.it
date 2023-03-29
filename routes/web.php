@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\twoFactorAuthenticationController;
+use App\Models\Sub_category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function() {
     Route::get('/user/2fa', [twoFactorAuthenticationController::class, 'enableOrDisable'])->name('auth.2fa');
     Route::resource('category', CategoryController::class);
+    Route::resource('sub_category', SubCategoryController::class);
 });
 
 Route::get('/', function () {

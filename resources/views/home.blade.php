@@ -9,16 +9,21 @@
                 <img src="https://picsum.photos/600/300" class="img-fluid" alt="Responsive image">
             </div>
         </div>
+        @foreach ($mainCategories as $mainCategory)
         <div class="row mt-5 justify-content-between">
             <div style="height: 170px; align-items: center; background-color: #1fba22c3;" class="col-lg-2 col-md-6 col-sm-12 d-flex flex-column justify-content-center text-center border border-success p-0 mx-2 m-1" >
                 <i class="bi bi-handbag fs-1"></i>
-                
-                <h5>
-                    ABBIGLIAMENTO
-                </h5>
+                <a href="{{route('category.show', $mainCategory)}}">
+                    <h5>
+                        {{$mainCategory->name}}
+                    </h5>
+                </a>
             </div>
             
-            <div style="height: 170px; align-items: center; background-color: #1fba22c3;" class="col-lg-2 col-md-6 col-sm-12 d-flex flex-column justify-content-center border border-success p-0 mx-2 m-1">
+        @endforeach
+        
+            
+            {{-- <div style="height: 170px; align-items: center; background-color: #1fba22c3;" class="col-lg-2 col-md-6 col-sm-12 d-flex flex-column justify-content-center border border-success p-0 mx-2 m-1">
                 <i class="bi bi-scooter fs-1"></i>
                 <h5>
                     MOTORI
@@ -37,7 +42,7 @@
                 <h5>
                     CASA
                 </h5>
-            </div>
+            </div> --}}
         </div>
     </div>
    

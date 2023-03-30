@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\twoFactorAuthenticationController;
@@ -27,6 +28,4 @@ Route::middleware('auth')->group(function() {
     Route::resource('product', ProductController::class);
 });
 
-Route::get('/', function () {
-    return view ('home');
-});
+Route::get('/', [PageController::class, 'home'] )->name('home');

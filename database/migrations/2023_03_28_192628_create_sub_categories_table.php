@@ -23,6 +23,13 @@ return new class extends Migration
      */
     public function down(): void
     {
+        if (Schema::hasColumn('main_category_sub_category', 'sub_category_id')) {
+            Schema::table('main_category_sub_category', function (Blueprint $table) {
+                $table->dropForeign(['sub_category_id']);
+                $table->dropColumn('sub_category_id');
+           });
+        }
+
         Schema::dropIfExists('sub_categories');
     }
 };

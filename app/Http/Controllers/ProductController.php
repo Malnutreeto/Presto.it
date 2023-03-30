@@ -32,7 +32,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $product = Product::create([
                 'user_id' => Auth::id(),
@@ -54,7 +54,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('product.show')->with('product', $product);
     }
 
     /**
@@ -68,7 +68,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
         $product->fill($request->all());
         $product->state = 'pending';

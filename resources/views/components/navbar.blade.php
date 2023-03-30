@@ -1,21 +1,21 @@
-
+@vite('resources/css/navbar.css')
 <div class="container-fluid m-0 p-0">
   <nav class="navbar navbar-expand-md bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">Presto</a>
+      <a class="navbar-brand text-light" href="/">Presto</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Link</a>
+            <a class="nav-link text-light" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link text-light dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Utente
             </a>
             <ul class="dropdown-menu">
@@ -33,16 +33,15 @@
               </li>
             </ul>
           </li>
-          <li>
+          <li class="d-flex align-items-center justify-content-center button-end">
             @auth
-            <button>
-              <a href="">Inserisci annuncio</a>
-            </button>
+              <button class="btn btn-sm btn-outline-light btn-hover">
+                <strong><a href="{{route('product.create')}}" class="text-decoration-none text-light ">Inserisci annuncio</a></strong>
+              </button>
             @endauth
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  
 </div>

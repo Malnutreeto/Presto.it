@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Main_category;
+use App\Models\Product;
 use App\Models\Sub_category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
@@ -66,7 +67,10 @@ class CategoryController extends Controller
      */
     public function show(Main_category $category)
     {
-        //
+        return view('category.show')->with([
+            'category' => $category,
+            'products'=> $category->products
+        ]);
     }
 
     /**

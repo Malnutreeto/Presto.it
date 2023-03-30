@@ -35,14 +35,15 @@ class CreateProduct extends Component
     }
 
     public function store() {
-        Product::create([
+        $product = Product::create([
             'title'=>$this->title,
             'description'=>$this->description,
             'price'=>$this->price,
-            'mainCategories'=>$this->mainCategories,
             'state'=>'pending',
             'user_id'=>Auth::user()->id
         ]);
+        $product->categories()->attach($this->mainCategories);
+        $product->save();
         session()->flash('message', 'Annuncio inserito correttamente');
         $this->cleanForm();
 

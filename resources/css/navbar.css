@@ -1,3 +1,12 @@
 .navbar {
     background-color: #053e10;
 }
+
+.navbar li
+{
+    color: white;
+}
+
+button.btn-hover a:hover,  button.btn-hover a:focus{
+    color: rgb(0, 182, 33) !important;
+};

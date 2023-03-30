@@ -1,5 +1,7 @@
 <div>
-<x-layout>
+    @if (session()->has('message')) 
+    <div class="alert alert-success">{{session('message')}}</div>
+    @endif
     <form wire:submit.prevent="store">
         @csrf
         <div>
@@ -34,5 +36,5 @@
         </div>
     </form>
     
-</x-layout>
+
 </div>

@@ -31,7 +31,7 @@ class CreateProduct extends Component
         $this->title = '';
         $this->description = '';
         $this->price = '';
-        $this->mainCategories = '';
+        
     }
 
     public function store() {

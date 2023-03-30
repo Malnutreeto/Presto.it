@@ -1,6 +1,15 @@
-<x-layout>
-@vite(['resources/css/auth.css', 'resources/js/auth.js'])
-<form action="/login" method="POST">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Presto.it - Login</title>
+    @vite(['resources/css/app.css', 'resources/css/auth.css', 'resources/js/auth.js'])
+</head>
+<body>
+   
+<form action="/login" method="POST" id="loginForm">
     @csrf
     <div class="container split-background">
         <img src="{{asset('titolo.png')}}" class="logo">
@@ -13,7 +22,7 @@
                     <span class="text-danger-small">Nope</span>
                 @enderror
             </div>
-            <div class="main-div-field">
+            <div class="main-div-field" id='passwordInput'>
                 <i class="bi bi-key"></i>
                 <input type="password" class="field" placeholder="Password" name="password">
                 @error('password')
@@ -26,4 +35,6 @@
         </div>
     </div>
 </form>
-</x-layout>
+</body>
+</html>
+

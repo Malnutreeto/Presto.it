@@ -27,3 +27,6 @@ Route::middleware('auth')->group(function() {
     Route::resource('product', ProductController::class);
 });
 
+Route::get('/', function () {
+    return view ('home');
+});

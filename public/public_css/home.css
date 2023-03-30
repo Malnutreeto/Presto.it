@@ -1,0 +1,13 @@
+html, body{
+    background-color: #dceae6c1 !important;
+    min-height: 100% !important;
+}
+
+h1{
+    font-size: 80px !important;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold !important;
+}
+/* img {
+    width: 100% !important;
+} */

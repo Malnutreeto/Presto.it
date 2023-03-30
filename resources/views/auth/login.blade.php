@@ -6,14 +6,14 @@
         <img src="{{asset('titolo.png')}}" class="logo">
         <h3 class="title">LOGIN</h3>
         <div class="login-fields">
-            <div class="stocazzo">
+            <div class="main-div-field">
                 <i class="bi bi-envelope-at"></i>
                 <input type="email" class="field" placeholder="Email" name="email">
                 @error('email')
                     <span class="text-danger-small">Nope</span>
                 @enderror
             </div>
-            <div class="stocazzo">
+            <div class="main-div-field">
                 <i class="bi bi-key"></i>
                 <input type="password" class="field" placeholder="Password" name="password">
                 @error('password')

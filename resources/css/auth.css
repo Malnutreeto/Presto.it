@@ -23,11 +23,11 @@ body {
 
 .title {
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 800;
+    font-weight: 100;
     color: white;
     margin-top: 4vh;
     margin-bottom: 1vh;
-    font-size:xx-large;
+    font-size: x-large;
 }
 
 .field {
@@ -70,8 +70,13 @@ i {
     padding: 0.5rem;
 }
 
-.stocazzo {
+.main-div-field {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+::placeholder {
+    color:white;
+    opacity: 0.7;
 }

@@ -18,4 +18,12 @@ class Main_category extends Model
     {
         return $this->belongsToMany(Sub_category::class);
     }
+
+    /**
+     * Create the relation for Category and product
+     */
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }

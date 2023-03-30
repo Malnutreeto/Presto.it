@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\twoFactorAuthenticationController;
 use App\Models\Sub_category;
 use App\Models\Main_category;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +24,6 @@ Route::middleware('auth')->group(function() {
     Route::get('/user/2fa', [twoFactorAuthenticationController::class, 'enableOrDisable'])->name('auth.2fa');
     Route::resource('category', CategoryController::class);
     Route::resource('sub_category', SubCategoryController::class);
+    Route::resource('product', ProductController::class);
 });
-
-Route::get('/new-annuncio', function() {
-    return view('form-annunci')->with('mainCategories', Main_category::all());
-});
-
-Route::get('/nuovo/annuncio', [ProductController::class, 'createProduct'])->name('createProduct');
 

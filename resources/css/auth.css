@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #1e1e1e;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 30rem;
+    margin-top: 10vh;
+    border-radius: 1em;
+    box-shadow: black;
+}
+
+.split-background {
+    background-color: #01212d;
+    background-image: -webkit-linear-gradient(-45deg, #01212d 50%, #00292d 50%);
+}
+
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    color: white;
+    margin-top: 4vh;
+    margin-bottom: 1vh;
+    font-size:xx-large;
+}
+
+.field {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: rgba(256, 256, 256, 0.4);
+    border-style: hidden;
+    height: 2em;
+    padding: 1em;
+    width: 14em;
+    border-radius: 15dvh;
+    position: relative;
+    padding-left: 2em;
+    
+}
+
+.login-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+    width: 90%;
+}
+
+.logo {
+    width: 70%;
+}
+
+button {
+    width: 14em;
+    height: 3em;
+    border-radius: 15dvh;
+    border-style: hidden;
+    margin-top: 1em;
+}
+
+i {
+    position: absolute;
+    z-index: 1;
+    padding: 0.5rem;
+}
+
+.stocazzo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

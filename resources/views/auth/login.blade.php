@@ -1,29 +1,29 @@
 <x-layout>
-<div class="container mt-5">
-        <div class="row">
-            <div class="col-6 mx-auto">
-                <h1>Login</h1>
-                <form action="/login" method="POST">
-                    @csrf
-                    <div class="col-12">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" id="email">
-                        @error('email')
-                        <span class="text-danger-small">Nope</span>
-                        @enderror
-                    </div>
-                    <div class="col-12">
-                        <label for="Password">Password</label>
-                        <input type="password" name="password" class="form-control" id="password">
-                        @error('password')
-                        <span class="text-danger-small">Nope</span>
-                        @enderror
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-success">Submit</button>
-                    </div>
-                </form>
+@vite(['resources/css/auth.css', 'resources/js/auth.js'])
+<form action="/login" method="POST">
+    @csrf
+    <div class="container split-background">
+        <img src="{{asset('titolo.png')}}" class="logo">
+        <h3 class="title">LOGIN</h3>
+        <div class="login-fields">
+            <div class="stocazzo">
+                <i class="bi bi-envelope-at"></i>
+                <input type="email" class="field" placeholder="Email" name="email">
+                @error('email')
+                    <span class="text-danger-small">Nope</span>
+                @enderror
             </div>
-        </div> 
+            <div class="stocazzo">
+                <i class="bi bi-key"></i>
+                <input type="password" class="field" placeholder="Password" name="password">
+                @error('password')
+                    <span class="text-danger-small">Nope</span>
+                @enderror               
+            </div>
+        </div>
+        <div>
+            <button class="button">ACCEDI</button>
+        </div>
     </div>
+</form>
 </x-layout>

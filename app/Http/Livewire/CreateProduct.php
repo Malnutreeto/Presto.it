@@ -6,7 +6,6 @@ use App\Models\Product;
 use Livewire\Component;
 use App\Models\Main_category;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Product;
 
 class CreateProduct extends Component
 {

@@ -53,7 +53,7 @@ class CategoryController extends Controller
 
         //Create a new category
         $category = Main_category::create($request->all());
-        //Attach sub category 
+        //Attach sub category
         $category->subCategories()->attach($request->subCategories);
 
         $category->save();

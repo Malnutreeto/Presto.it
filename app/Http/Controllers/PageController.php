@@ -10,7 +10,7 @@ class PageController extends Controller
 {
    public function home() {
 
-   $products = Product::all();
+   $products = Product::take(10)->get()->sortByDesc('created_at');
    $mainCategories = Main_category::all();
 
 

@@ -18,38 +18,38 @@
             <div class="main-div-field">
                 <i class="bi bi-person"></i>
                 <input type="text" class="field" placeholder="Nome e cognome" name="name">
-                @error('name')
-                    <span class="text-danger-small">Nope</span>
-                @enderror
             </div>
+            @error('name')
+                <div class="err-text">Nope</div>
+            @enderror
             <div class="main-div-field">
                 <i class="bi bi-person-add"></i>
                 <input type="text" class="field" placeholder="Nickname" name="nickname">
-                @error('nickname')
-                    <span class="text-danger-small">Nope</span>
-                @enderror
             </div>
+            @error('nickname')
+                <div class="err-text">Nope</div>
+            @enderror
             <div class="main-div-field">
                 <i class="bi bi-envelope-at"></i>
                 <input type="email" class="field" placeholder="Email" name="email">
-                @error('email')
-                    <span class="text-danger-small">Nope</span>
-                @enderror
             </div>
+            @error('email')
+                <div class="err-text">Nope</div>
+            @enderror
             <div class="main-div-field" id='passwordInput'>
                 <i class="bi bi-key"></i>
-                <input type="password" class="field" placeholder="Password" name="password">
-                @error('password')
-                    <span class="text-danger-small">Nope</span>
-                @enderror               
+                <input type="password" class="field" placeholder="Password" name="password">              
             </div>
+            @error('password')
+                <div class="err-text">Nope</div>
+            @enderror 
             <div class="main-div-field" id='passwordInput'>
                 <i class="bi bi-asterisk"></i>
-                <input type="password" class="field" placeholder="Conferma password" name="password_confirmation">
-                @error('password_confirmation')
-                    <span class="text-danger-small">Nope</span>
-                @enderror               
+                <input type="password" class="field" placeholder="Conferma password" name="password_confirmation">               
             </div>
+            @error('password_confirmation')
+                <div class="err-text">Nope</div>
+            @enderror
         </div>
         <div>
             <button class="button">REGISTRATI</button>

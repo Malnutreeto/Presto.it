@@ -30,6 +30,10 @@
                 @enderror               
             </div>
         </div>
+        <div class="">
+            <a href="{{route('auth.socialite.redirect', 'google')}}" class="me-2 text-decoratione-none text-light">Accedi con Google </a>
+            <a href="{{route('auth.socialite.redirect', 'facebook')}}" class="text-decoratione-none text-light">Accedi con Facebook</a>
+        </div>
         <div>
             <button class="button">ACCEDI</button>
         </div>

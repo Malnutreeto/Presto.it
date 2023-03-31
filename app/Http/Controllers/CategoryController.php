@@ -7,6 +7,7 @@ use App\Models\Main_category;
 use App\Models\Product;
 use App\Models\Sub_category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
 use Illuminate\Support\Facades\Facade;
 
@@ -18,7 +19,7 @@ class CategoryController extends Controller
         $this->middleware('auth')->except(['index', 'show']);
         $this->middleware('verified')->except(['index', 'show']);
     }
-    
+
     /**
      * Display a listing of the resource.
      */
@@ -38,6 +39,11 @@ class CategoryController extends Controller
      */
     public function create()
     {  
+
+        if(Auth::user()->role_id > 3){
+            abort(403);
+        }
+
          //Extract all sub:category to import in create view
         $subCategories = Sub_category::all();
 
@@ -49,6 +55,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        
         //Filtering if the request is for main or sub category
         $validator = FacadesValidator::make($request->all(),[
             'name' => 'required|unique:main_categories,name|max:50'
@@ -85,6 +92,11 @@ class CategoryController extends Controller
      */
     public function edit(Main_category $category)
     {
+
+        if(Auth::user()->role_id > 3){
+            abort(403);
+        }
+
         //SubCategories variable for impor all sub categories in view
         $subCategories = Sub_category::all();
 
@@ -130,6 +142,11 @@ class CategoryController extends Controller
      */
     public function destroy(Main_category $category)
     {
+
+        if(Auth::user()->role_id > 3){
+            abort(403);
+        }
+
         //Detach sub category to delete category
         $category->subCategories()->detach();
         

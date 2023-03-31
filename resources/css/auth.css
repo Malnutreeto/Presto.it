@@ -68,7 +68,7 @@ button {
     margin-top: 1em;
 }
 
-.bi-envelope-at, .bi-key, .bi-person, .bi-person-add, .bi-asterisk {
+.bi-envelope-at, .bi-key, .bi-person, .bi-person-add, .bi-asterisk, .bi-eye, .bi-eye-slash-fill {
     position: absolute;
     z-index: 1;
     padding: 0.5rem;
@@ -99,6 +99,11 @@ button {
     width: 14em;
     height: 1.5em;
     color: white;
+}
+
+.err-text {
+    color: white;
+    font-size: 0.8em;
 }
 
 

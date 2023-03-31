@@ -1,12 +1,30 @@
 .navbar {
-    background-color: #053e10;
+    background-color: #01212d;
+    margin: 0 10px 0 10px;
+    border-radius: 0 0 15px 15px;
 }
 
 .navbar li
 {
-    color: white;
+    color: #ffffff;
 }
 
-button.btn-hover a:hover,  button.btn-hover a:focus{
-    color: rgb(0, 182, 33) !important;
-};
+.dropdown-menu{
+    background-color: rgba(256, 256, 256, 0.4);
+    
+}
+
+.navbar-toggler{
+    color: #ffffff;
+    border: #ffffff solid #ffffff; 
+}
+.navbar-toggler:hover{
+    background-color: #ffffff !important;
+    color: #01212d !important;
+    
+}
+
+li, a{
+    display:inline !important;
+    text-align: end !important;
+   }

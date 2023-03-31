@@ -34,11 +34,11 @@
             </ul>
           </li>
           <li class="d-flex align-items-center justify-content-center button-end">
-            @auth
+            @if(auth()->user() && auth()->user()->email_verified_at)
               <button class="btn btn-sm btn-outline-light btn-hover">
                 <strong><a href="{{route('product.create')}}" class="text-decoration-none text-light ">Inserisci annuncio</a></strong>
               </button>
-            @endauth
+            @endif
           </li>
         </ul>
       </div>

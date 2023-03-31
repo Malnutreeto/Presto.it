@@ -1,4 +1,4 @@
-<h2>Main Categoriw</h2>
+<h2>Main Categories</h2>
 @foreach ($mainCategories as $maincategory)
     <ul>
         <li>

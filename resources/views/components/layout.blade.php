@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('public_css/navbar.css')}}">
     <link rel="stylesheet" href="{{asset('public_css/home.css')}}">
     <title>Home</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/card.css', 'resources/js/app.js'])
     @livewireScripts
 </head>
 <body>

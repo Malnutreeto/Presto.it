@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap');
+
+.btnn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00292d;
+    margin-bottom: 0px;
+    height: 3em;
+    border-bottom-left-radius: 1dvh;
+    border-bottom-right-radius: 1dvh;
+}
+
+.card-body {
+    padding-bottom: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.card-text, .card-title {
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    text-align: center;
+}
+
+.card-link {
+    text-decoration: none;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.card {
+    border-radius: 1dvh;
+    width: 18rem;
+}
+
+.porco {
+    height: 170px;
+    align-items: center;
+    background-color: #00292d;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.madonna {
+    color: white;
+    text-decoration: none;
+}

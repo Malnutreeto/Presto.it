@@ -15,6 +15,7 @@
     padding-bottom: 0px !important;
     padding-right: 0px !important;
     padding-left: 0px !important;
+    
 }
 
 .card-text, .card-title {
@@ -31,7 +32,8 @@
 
 .card {
     border-radius: 1dvh;
-    width: 18rem;
+    width: 15rem;
+
 }
 
 .porco {
@@ -46,3 +48,4 @@
     color: white;
     text-decoration: none;
 }
+

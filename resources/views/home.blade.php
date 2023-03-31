@@ -9,12 +9,12 @@
                 <img src="https://picsum.photos/600/300" class="img-fluid" alt="Responsive image">
             </div>
         </div>
+        <div class="row mt-5 justify-content-center">
         @foreach ($mainCategories as $mainCategory)
-        <div class="row mt-5 justify-content-between">
-            <div class="col-lg-2 col-md-6 col-sm-12 d-flex flex-column justify-content-center text-center border border-success p-0 mx-2 m-1 porco">
+            <div class="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center text-center p-0 mx-2 m-1 porco">
                 <i class="bi bi-handbag fs-1"></i>
                 <a href="{{route('category.show', $mainCategory)}}" class="madonna">
-                    <h5 class="madonna">
+                    <h5 class="madonna text-center">
                         {{strtoupper($mainCategory->name)}}
                     </h5>
                 </a>
@@ -22,33 +22,13 @@
             
         @endforeach
         
-            
-            {{-- <div style="height: 170px; align-items: center; background-color: #1fba22c3;" class="col-lg-2 col-md-6 col-sm-12 d-flex flex-column justify-content-center border border-success p-0 mx-2 m-1">
-                <i class="bi bi-scooter fs-1"></i>
-                <h5>
-                    MOTORI
-                </h5>
-            </div>
-            
-            <div  style="height: 170px; align-items: center; background-color: #1fba22c3;" class="col-lg-2 col-md-6 col-sm-12 d-flex flex-column justify-content-center text-center border border-success p-0 mx-2 m-1">
-                <i class="bi bi-earbuds fs-1"></i>
-                <h5>
-                    ELETTRONICA
-                </h5>
-            </div>
-            <div style="height: 170px; align-items: center; background-color: #1fba22c3;" class="col-lg-2 col-md-6 col-sm-12 d-flex flex-column justify-content-center text-center border border-success p-0 mx-3 m-1">
-                <i class="bi bi-house-door fs-1"></i>
 
-                <h5>
-                    CASA
-                </h5>
-            </div> --}}
         </div>
     </div>
    <div class="container-fluid">
-    <div class="row">
+    <div class="row justify-content-center">
         @foreach ($products as $product)
-            <div class="col-3 mt-3">
+            <div class="col-lg-2 col-md-4 col-sm-12 mt-3 mx-auto px-0 d-flex justify-content-center">
                 <div class="card shadow-lg">
                     <img src="https://picsum.photos/1920/1080" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">

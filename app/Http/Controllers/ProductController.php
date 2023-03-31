@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductRequest;
 use App\Models\Main_category;
 use App\Models\Product;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,7 +34,13 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.create')->with('mainCategories', Main_category::all());
+
+        $lastProducts = Product::where('created_at', '>', Carbon::now()->subDays(1))->where('user_id', Auth::user()->id)->get();
+
+        return view('product.create')->with([
+            'mainCategories' => Main_category::all(),
+            'lastProducts' => $lastProducts,
+        ]);
     }
 
     /**

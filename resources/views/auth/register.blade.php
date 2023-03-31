@@ -7,65 +7,54 @@
     <title>Document</title>
 </head>
 <body>
-    @vite (['resources/css/app.css', 'resources/js/app.js'])
+    @vite (['resources/css/app.css', 'resources/css/auth.css', 'resources/js/app.js'])
     
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-6 mx-auto">
-                <h1>Register</h1>
-                <form action="/register" method="POST">
-                    @csrf
-                    <div class="row g-3">
-                        <div class="col-12">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" class="form-control" id="name">
-                            @error('name')
-                            <span class="text-danger-small">Not valid</span>
-                            @enderror
-                        </div>
-                        <div class="col-12">
-                            <label for="surname">Surname</label>
-                            <input type="text" name="surname" class="form-control" id="surname">
-                            @error('surname')
-                            <span class="text-danger-small">Not valid</span>
-                            @enderror
-                        </div>
-                        <div class="col-12">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" class="form-control" id="email">
-                            @error('email')
-                            <span class="text-danger-small">Not valid</span>
-                            @enderror
-                        </div>
-                        <div class="col-12">
-                            <label for="nickname">Nickname</label>
-                            <input type="text" name="nickname" class="form-control" id="nickname">
-                            @error('nickname')
-                            <span class="text-danger-small">Not valid</span>
-                            @enderror
-                        </div>
-                        <div class="col-12">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="form-control" id="password">
-                            @error('password')
-                            <span class="text-danger-small">Not valid</span>
-                            @enderror
-                        </div>
-                        <div class="col-12">
-                            <label for="password_confirmation">Password Confirmation</label>
-                            <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">
-                            @error('password_confirmation')
-                            <span class="text-danger-small">Not valid</span>
-                            @enderror
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-success">Submit</button>
-                        </div>
-                    </form>
-                </div>
+    <form action="/register" method="POST">
+    @csrf
+    <div class="container split-background stocazzo mb-5">
+        <img src="{{asset('titolo.png')}}" class="logo">
+        <h3 class="title">REGISTRATI</h3>
+        <div class="login-fields">
+            <div class="main-div-field">
+                <i class="bi bi-person"></i>
+                <input type="text" class="field" placeholder="Nome e cognome" name="name">
+                @error('name')
+                    <span class="text-danger-small">Nope</span>
+                @enderror
             </div>
-        </div> 
+            <div class="main-div-field">
+                <i class="bi bi-person-add"></i>
+                <input type="text" class="field" placeholder="Nickname" name="nickname">
+                @error('nickname')
+                    <span class="text-danger-small">Nope</span>
+                @enderror
+            </div>
+            <div class="main-div-field">
+                <i class="bi bi-envelope-at"></i>
+                <input type="email" class="field" placeholder="Email" name="email">
+                @error('email')
+                    <span class="text-danger-small">Nope</span>
+                @enderror
+            </div>
+            <div class="main-div-field" id='passwordInput'>
+                <i class="bi bi-key"></i>
+                <input type="password" class="field" placeholder="Password" name="password">
+                @error('password')
+                    <span class="text-danger-small">Nope</span>
+                @enderror               
+            </div>
+            <div class="main-div-field" id='passwordInput'>
+                <i class="bi bi-asterisk"></i>
+                <input type="password" class="field" placeholder="Conferma password" name="password_confirmation">
+                @error('password_confirmation')
+                    <span class="text-danger-small">Nope</span>
+                @enderror               
+            </div>
+        </div>
+        <div>
+            <button class="button">REGISTRATI</button>
+        </div>
     </div>
-    
+</form>
 </body>
 </html>

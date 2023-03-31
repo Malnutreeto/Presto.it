@@ -22,7 +22,7 @@ class SocialController extends Controller
       $user = User::where([
              'provider' => $provider,
              'provider_id' => $providerUser->id,
-         ])->first();
+         ])->orWhere('email', $providerUser->email )->first();
 
       
  

@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Main_category;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class CreateProduct extends Component
@@ -55,6 +56,6 @@ class CreateProduct extends Component
 
     public function render()
     {
-        return view('livewire.create-product', ['mainCategories', Main_category::all()]);
+        return view('livewire.create-product');
     }
 }

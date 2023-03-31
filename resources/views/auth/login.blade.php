@@ -18,16 +18,13 @@
             <div class="main-div-field">
                 <i class="bi bi-envelope-at"></i>
                 <input type="email" class="field" placeholder="Email" name="email">
-                @error('email')
-                    <span class="text-danger-small">Nope</span>
-                @enderror
             </div>
+            @error('email')
+                <div class="err-text">{{$message}}</div>
+            @enderror
             <div class="main-div-field" id='passwordInput'>
                 <i class="bi bi-key"></i>
-                <input type="password" class="field" placeholder="Password" name="password">
-                @error('password')
-                    <span class="text-danger-small">Nope</span>
-                @enderror               
+                <input type="password" class="field" placeholder="Password" name="password">               
             </div>
         </div>
         <div class="div-icon-social">

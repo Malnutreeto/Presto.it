@@ -16,6 +16,16 @@
                         <input name="name" type="text" placeholder="nome" class="form-control"
                             id="exampleInputEmail1" aria-describedby="emailHelp" value="">
                     </div>
+                    <div class="row">
+                        <div class="col-1">
+                            <span class="input-group-text d-flex justify-content-center" ><i class=" fs-2" id="icon"></i></span>
+                        </div>
+                        <div class="col-11">
+                            <select class="form-select" aria-label="Default select example" id="iconSelect" name="icon">
+                                <option value="" selected disabled>Scegli un icona</option>
+                            </select>
+                        </div>
+                    </div>
                     @foreach ($subCategories as $subCategory)
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="subCategories[]" value="{{$subCategory->id}}" id="flexCheckDefault">

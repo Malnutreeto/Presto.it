@@ -11,6 +11,7 @@ use App\Models\Sub_category;
 use App\Models\Main_category;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

@@ -14,6 +14,7 @@ class CreateProduct extends Component
     public $description;
     public $price;
     public $mainCategories;
+    public $category;
 
     protected $rules = [
         'title'=>'required|min:4',
@@ -40,10 +41,13 @@ class CreateProduct extends Component
             'title'=>$this->title,
             'description'=>$this->description,
             'price'=>$this->price,
+            'category'=>$this->category,
             'state'=>'pending',
             'user_id'=>Auth::user()->id
+            
         ]);
-        $product->categories()->attach($this->mainCategories);
+              
+        $product->categories()->attach($this->category);
         $product->save();
         session()->flash('message', 'Annuncio inserito correttamente');
         $this->cleanForm();

@@ -21,6 +21,10 @@
             </div>
             
         @endforeach
+
+        @foreach($mainCategories as $category)
+            
+        @endforeach
         
 
         </div>

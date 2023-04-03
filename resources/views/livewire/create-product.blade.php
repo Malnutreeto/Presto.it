@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="col-9">
-                            <select class="form-select" aria-label="Default select example">
+                            <select wire:model.defer="category" class="form-select" aria-label="Default select example">
                                 <option selected disabled>Seleziona categoria</option>
                                 @foreach ($mainCategories as $maincategory)
                                     <option value="{{ $maincategory->id }}">{{ $maincategory->name }}</option>

@@ -11,8 +11,21 @@ class PageController extends Controller
    public function home() {
 
    $products = Product::take(10)->get()->sortByDesc('created_at');
-   $mainCategories = Main_category::all();
+   $mainCategories = [];
+   foreach (Main_category::withCount('products')->get()->sortByDesc('products_count') as $key=>$value) {
+      if($key <= 3) {
+         array_push($mainCategories, $value);
+      }
+   }
 
+// foreach(Main_category::withCount('products')->get() as $category) {
+// sortByDesc($category->products_count);
+// }
+
+
+
+
+   
 
     return view('home')->with([
          'products' => $products,

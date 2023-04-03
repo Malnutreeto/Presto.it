@@ -12,7 +12,7 @@
         <div class="row mt-5 justify-content-center">
         @foreach ($mainCategories as $mainCategory)
             <div class="col-lg-2 col-md-4 col-sm-12 d-flex flex-column justify-content-center text-center p-0 mx-2 m-1 porco">
-                <i class="bi bi-handbag fs-1"></i>
+                <i class="bi {{$mainCategory->icon}} fs-1"></i>
                 <a href="{{route('category.show', $mainCategory)}}" class="madonna">
                     <h5 class="madonna text-center">
                         {{strtoupper($mainCategory->name)}}

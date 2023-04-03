@@ -58,7 +58,8 @@ class CategoryController extends Controller
         
         //Filtering if the request is for main or sub category
         $validator = FacadesValidator::make($request->all(),[
-            'name' => 'required|unique:main_categories,name|max:50'
+            'name' => 'required|unique:main_categories,name|max:50',
+            'icon' => 'unique:main_categories,icon|max:50'
         ]);
 
         //Verify if validator fails and redirect if is true

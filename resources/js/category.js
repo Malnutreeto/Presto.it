@@ -16,3 +16,23 @@ select.addEventListener('change', (event)=>{
         subForm.classList.add('d-none');
     }
 })
+
+import icons from '/public/icons.json' assert {type: 'json'};
+let iconSelect = document.getElementById('iconSelect')
+let icon = document.getElementById('icon');
+
+for(let key in icons)
+{
+    let selectoption = document.createElement('option');
+
+    selectoption.value = `bi-${key}`;
+    selectoption.innerText = `bi-${key}`
+
+    iconSelect.appendChild(selectoption);
+}
+
+
+iconSelect.addEventListener('change', (event) => {
+    icon.setAttribute('class', '')
+    icon.setAttribute('class', `bi ${event.target.value} fs-1`)
+})

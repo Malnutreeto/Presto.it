@@ -57,7 +57,6 @@ class ProductController extends Controller
         ]);
 
         $product->categories()->attach($request->mainCategory);
-
         $product->save();
   
         return redirect()->route('product.create')->with(['success' => 'Prodotto salvato correttamente']);
@@ -85,7 +84,9 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product)
     {
         $product->fill($request->all());
-        $product->state = 'pending';
+        if($product->state == 'accepted' && auth()->user()->role_id > 3) {
+            $product->state = 'pending';
+        }
 
         $product->save();
 

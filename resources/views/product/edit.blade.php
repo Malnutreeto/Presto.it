@@ -39,7 +39,15 @@
         <label for="exampleFormControlTextarea1" class="form-label">Descrizione</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
     </div>
-    <div>
+    </div>
+        <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Stato</label>
+            <select class="form-select" aria-label="Default select example" name="state">
+                <option value="accepted">Accettato</option>
+                <option value="pending">Pending</option>
+            </select>    
+        </div>
+        <div>
         <button type="submit">Inserisci</button>
     </div>
     </form>

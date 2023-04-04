@@ -57,7 +57,6 @@ class ProductController extends Controller
         ]);
 
         $product->categories()->attach($request->mainCategory);
-
         $product->save();
   
         return redirect()->route('product.create')->with(['success' => 'Prodotto salvato correttamente']);
@@ -76,6 +75,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $this->authorize('update', $product);
+
         return view('product.edit')->with('product',$product)->with('mainCategories', Main_category::all());
     }
 
@@ -85,6 +86,11 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product)
     {
         $product->fill($request->all());
+
+        $product->state = $product->state === 'accepted' ?  'accepted' : 'pending';
+
+        $this->authorize('update', $product);
+        $this->authorize('acceptProduct', $product);
 
         $product->save();
 
@@ -100,6 +106,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        $this->authorize('delete', $product);
+
         $product->categories()->detach();
 
         $product->delete();

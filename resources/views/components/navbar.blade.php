@@ -16,31 +16,33 @@
                 <strong><a href="{{route('product.create')}}" class="text-decoration-none text-light ">Inserisci annuncio</a></strong>
               </button>
             @endif
+            </li>
+          <li class="nav-item text-end mt-1 hover-overlay">
+            <a class="nav-link text-light" href="/category">Categorie</a>
           </li>
           <li class="nav-item text-end mt-1">
-            <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
+            <a class="nav-link text-light" href="/category">Prodotti</a>
           </li>
-          <li class="nav-item text-end mt-1">
-            <a class="nav-link text-light" href="#">Link</a>
-          </li>
+          @auth
           <li class="nav-item dropdown text-end mt-1">
             <a class="nav-link text-light dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Utente
+              {{auth()->user()->nickname}}
             </a>
-            <ul class="dropdown-menu p-0">
-              @if ((auth()->user() && auth()->user()->email_verified_at))
-                @else
-                <li><a class="dropdown-item text-end display-none" href="/login">Login</a></li>
-              @endif
+            <ul class="dropdown-menu p-0 ml-">
               <li>
-                @auth
                 <form class="dropdown-item text-end p-0 ps-sm-0 logout-field" action="/logout" method="POST">
                   @csrf
-                  <button type="submit" class="submit">
+                  <button type="submit" class="submit btn btn-sm btn-outline-light btn-hover">
                     Logout
                   </button>
                 </form>
+                @else
+                <li class="nav-item text-end mt-1">
+                  <a class="nav-link text-light" href="/login">Login</a>
+                </li>
+              
                 @endauth
+
               </li>
             </ul>
           </li>

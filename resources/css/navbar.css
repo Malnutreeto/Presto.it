@@ -31,6 +31,10 @@ li, a{
     display:inline !important;
     text-align: end !important;
 }
+li, a:hover{
+    
+    color: #47585e9b !important;
+}
 
 .submit{
     background-color: #01212d;
@@ -43,3 +47,6 @@ li, a{
     color:#01212d !important;
 }
 
+form{
+    background-color: transparent !important;
+}

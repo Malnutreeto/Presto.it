@@ -85,7 +85,6 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product)
     {
         $product->fill($request->all());
-        $product->state = 'pending';
 
         $product->save();
 

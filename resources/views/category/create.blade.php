@@ -20,11 +20,23 @@
                         <div class="col-1">
                             <span class="input-group-text d-flex justify-content-center" ><i class=" fs-2" id="icon"></i></span>
                         </div>
-                        <div class="col-11">
-                            <select class="form-select" aria-label="Default select example" id="iconSelect" name="icon">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Accordion Item #1
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body" id="iconSelect">
+                                </div>
+                              </div>
+                            </div>
+                        {{-- <div class="col-11">
+                            <select class="form-select" aria-label="Default select example"  name="icon" >
                                 <option value="" selected disabled>Scegli un icona</option>
                             </select>
-                        </div>
+                        </div> --}}
                     </div>
                     @foreach ($subCategories as $subCategory)
                     <div class="form-check">

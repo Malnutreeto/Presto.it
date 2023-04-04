@@ -1,5 +1,5 @@
 'use strict'
-
+import * as bootstrap from 'bootstrap';
 console.log('[CATEGORY]Js caricato')
 
 let select = document.getElementById('select');
@@ -23,11 +23,11 @@ let icon = document.getElementById('icon');
 
 for(let key in icons)
 {
-    let selectoption = document.createElement('option');
+    let selectoption = document.createElement('i');
 
-    selectoption.value = `bi-${key}`;
-    selectoption.innerText = `bi-${key}`
-
+    // selectoption.value = `bi-${key}`;
+    // selectoption.innerText = `bi-${key}`
+    selectoption.setAttribute('class', `bi-${key} me-3 fs-4`)
     iconSelect.appendChild(selectoption);
 }
 

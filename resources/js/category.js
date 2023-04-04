@@ -18,21 +18,22 @@ select.addEventListener('change', (event)=>{
 })
 
 import icons from '/public/icons.json' assert {type: 'json'};
-let iconSelect = document.getElementById('iconSelect')
-let icon = document.getElementById('icon');
+let iconAccordion = document.getElementById('iconAccordion');
+let iconInput = document.getElementById('iconInput');
 
-for(let key in icons)
-{
-    let selectoption = document.createElement('i');
+for(let key in icons){
 
-    // selectoption.value = `bi-${key}`;
-    // selectoption.innerText = `bi-${key}`
-    selectoption.setAttribute('class', `bi-${key} me-3 fs-4`)
-    iconSelect.appendChild(selectoption);
+    let icon = document.createElement('i');
+    icon.setAttribute('class', `bi-${key} me-3 fs-4`)
+    icon.setAttribute('name', `bi-${key}`)
+    icon.setAttribute('role', `button`)
+    iconAccordion.querySelector('#collapseOne').appendChild(icon);
 }
 
-
-iconSelect.addEventListener('change', (event) => {
-    icon.setAttribute('class', '')
-    icon.setAttribute('class', `bi ${event.target.value} fs-1`)
+iconAccordion.addEventListener('click', (event) => {
+    if(event.target.tagName === 'I'){
+        iconInput.value = event.target.getAttribute('name')
+        iconAccordion.querySelector('button').innerHTML = `<strong>Icona selezionata:</strong><i class="ms-2 fs-4 bi ${iconInput.value}"></i>`
+    }
 })
+

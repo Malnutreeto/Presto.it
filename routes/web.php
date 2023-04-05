@@ -6,10 +6,12 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\twoFactorAuthenticationController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\Authenticate;
 use App\Models\Sub_category;
 use App\Models\Main_category;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TicketController;
 
 
 /*
@@ -27,6 +29,10 @@ Route::get('/user/2fa', [twoFactorAuthenticationController::class, 'enableOrDisa
 Route::resource('category', CategoryController::class);
 Route::resource('sub_category', SubCategoryController::class);
 Route::resource('product', ProductController::class);
+Route::resource('user', UserController::class);
+Route::resource('ticket', TicketController::class);
+
+
 
 Route::get('auth/{provider}/redirect', [SocialController::class, 'redirect'])->name('auth.socialite.redirect');
 Route::get('auth/{provider}/callback', [SocialController::class, 'callback'])->name('auth.socialite.callback');

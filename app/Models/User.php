@@ -60,4 +60,8 @@ class User extends Authenticatable implements AuthMustVerifyEmail
     public function getProviderTokenAttribute($value){
         return Crypt::decryptString($value);
     }
+
+    public function role() {
+        return $this->belongsTo(Role::class);
+    }
 }

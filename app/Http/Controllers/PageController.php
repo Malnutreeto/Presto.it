@@ -7,6 +7,7 @@ use App\Models\Main_category;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Ticket;
+use App\Models\User;
 use App\Policies\UserPolicy;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -31,7 +32,9 @@ class PageController extends Controller
 
    public function adminPanel (){
       $this->authorize('viewAny', auth()->user());
-      return view('adminPanel');
+      $tickets = Ticket::all();
+      $users = User::all();
+      return view('adminPanel')->with(['tickets'=> $tickets, 'users' => $users]);
    }
 
    public function workWithUs (){

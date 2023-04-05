@@ -82,7 +82,6 @@ class ProductPolicy
                 return false;
             }
             else{   
-                
                 return true;
             }
         }

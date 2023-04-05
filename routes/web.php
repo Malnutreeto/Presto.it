@@ -33,3 +33,6 @@ Route::get('auth/{provider}/callback', [SocialController::class, 'callback'])->n
 Route::get('auth/{provider}/user', [SocialController::class, 'index']);
 
 Route::get('/', [PageController::class, 'home'] )->name('home');
+Route::get('/admin', [PageController::class, 'adminPanel'] )->name('admin');
+Route::get('/work', [PageController::class, 'workWithUs'] )->name('work');
+Route::post('/work', [PageController::class, 'workRequest'] );

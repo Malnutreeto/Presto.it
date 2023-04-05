@@ -5,20 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Ticket extends Model
 {
     use HasFactory;
-    
-    protected $fillable = ['title', 'description', 'price', 'user_id', 'state'];
 
-    /**
-     * Create the relation for Product and Main_category
-     */
-    public function categories()
-    {
-        return $this->belongsToMany(Main_category::class);
-    }
-
+    protected $fillable = ['type', 'body', 'state', 'user_id'];
 
     /**
      * Create the relation for Product and User
@@ -27,5 +18,4 @@ class Product extends Model
     {
         return $this->belongsTo(User::class);
     }
-
 }

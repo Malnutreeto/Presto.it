@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -12,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-       
+        $this->authorize('viewAny', Auth::user());
     }
 
     /**
@@ -20,7 +21,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return abort(403);
     }
 
     /**
@@ -28,7 +29,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return abort(403);
     }
 
     /**
@@ -36,7 +37,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        $this->authorize('view', Auth::user());
     }
 
     /**
@@ -44,7 +45,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        $this->authorize('update', Auth::user());
     }
 
     /**
@@ -52,6 +53,8 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        $this->authorize('update', Auth::user());
+
         $user->fill($request->all())->save();
         return redirect()->back()->with('success', "Utente aggiornato correttamente");
     }
@@ -61,6 +64,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        $this->authorize('delete', Auth::user());
+
         $user->delete();
 
         return redirect()->back()->with(['success' => 'Utente cancellato correttamente.']);

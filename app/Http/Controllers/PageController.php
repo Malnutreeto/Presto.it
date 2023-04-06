@@ -38,6 +38,9 @@ class PageController extends Controller
    }
 
    public function workWithUs (){
+      if(Auth::user()->role_id < 4){
+         return abort(403, 'Sei già abilitato');
+      }
       return view('work');
    }
 

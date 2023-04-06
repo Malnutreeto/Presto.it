@@ -29,10 +29,14 @@ Route::get('/user/2fa', [twoFactorAuthenticationController::class, 'enableOrDisa
 Route::resource('category', CategoryController::class);
 Route::resource('sub_category', SubCategoryController::class);
 Route::resource('product', ProductController::class);
-Route::resource('user', UserController::class);
-Route::resource('ticket', TicketController::class);
 
 
+Route::middleware('auth', 'verified')->group(function (){
+    Route::get('/work', [PageController::class, 'workWithUs'] )->name('work');
+    Route::post('/work', [PageController::class, 'workRequest'] );
+    Route::resource('user', UserController::class);
+    Route::resource('ticket', TicketController::class);
+});
 
 Route::get('auth/{provider}/redirect', [SocialController::class, 'redirect'])->name('auth.socialite.redirect');
 Route::get('auth/{provider}/callback', [SocialController::class, 'callback'])->name('auth.socialite.callback');
@@ -40,5 +44,3 @@ Route::get('auth/{provider}/user', [SocialController::class, 'index']);
 
 Route::get('/', [PageController::class, 'home'] )->name('home');
 Route::get('/admin', [PageController::class, 'adminPanel'] )->name('admin');
-Route::get('/work', [PageController::class, 'workWithUs'] )->name('work');
-Route::post('/work', [PageController::class, 'workRequest'] );

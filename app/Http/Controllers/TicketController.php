@@ -16,7 +16,7 @@ class TicketController extends Controller
      */
     public function index()
     {
-        return ("ciao");
+        return abort(403);
     }
 
     /**
@@ -24,7 +24,7 @@ class TicketController extends Controller
      */
     public function create()
     {
-        //
+        return abort(403);
     }
 
     /**
@@ -32,7 +32,7 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return abort(403);
     }
 
     /**
@@ -40,7 +40,7 @@ class TicketController extends Controller
      */
     public function show(Ticket $ticket)
     {
-        //
+        return abort(403);
     }
 
     /**
@@ -48,7 +48,7 @@ class TicketController extends Controller
      */
     public function edit(Ticket $ticket)
     {
-        //
+        return abort(403);
     }
 
     /**
@@ -81,6 +81,6 @@ class TicketController extends Controller
      */
     public function destroy(Ticket $ticket)
     {
-        //
+        return abort(403);
     }
 }

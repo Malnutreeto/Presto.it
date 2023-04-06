@@ -32,9 +32,10 @@ class PageController extends Controller
 
    public function adminPanel (){
       $this->authorize('viewAny', auth()->user());
-      $tickets = Ticket::all();
+      $ticket = Ticket::where('state', 'open')->get();
+      $products = Product::where('state', 'pending')->get();
       $users = User::all();
-      return view('adminPanel')->with(['tickets'=> $tickets, 'users' => $users]);
+      return view('adminPanel')->with(['ticket'=> $ticket, 'users' => $users, 'products'=>$products]);
    }
 
    public function workWithUs (){

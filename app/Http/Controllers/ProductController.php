@@ -83,11 +83,18 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ProductRequest $request, Product $product)
+    public function update(Request $request, Product $product)
     {
-        $product->fill($request->all());
+       
+        if ($request->action) {
+            
+            $product->state = $request->action;
+        } else{
+            $product->fill($request->all());
 
-        $product->state = $product->state === 'accepted' ?  'accepted' : 'pending';
+            $product->state = $product->state === 'accepted' ?  'accepted' : 'pending';
+        }
+        
 
         $this->authorize('update', $product);
         $this->authorize('acceptProduct', $product);
@@ -98,6 +105,8 @@ class ProductController extends Controller
         $product->categories()->attach($request->mainCategory);
 
         return redirect()->route('product.create')->with(['success' => 'Prodotto Modificato correttamente']);   
+
+        
 
     }
 

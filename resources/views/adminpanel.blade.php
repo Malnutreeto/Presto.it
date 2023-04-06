@@ -1,4 +1,9 @@
 <x-layout>
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            {{$error}}
+        @endforeach
+    @endif
     <div class="container d-flex justify-content-center">
         <table class="table">
             <thead>
@@ -74,7 +79,7 @@
               </tr>
             </thead>
             <tbody>
-                @foreach ($tickets as $ticket)
+                @foreach ($ticket as $ticket)
                 <tr>
                     <td>{{$ticket->id}}</td>
                     <td>{{$ticket->type}}</td>
@@ -105,5 +110,55 @@
           </table>
     </div>
      
+
+
+
+    <div class="container d-flex justify-content-center">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titolo</th>
+                <th scope="col">Contenuto</th>
+                <th scope="col">Prezzo</th>
+                <th scope="col">Utente</th>
+                <th scope="col">Data creazione<th>          
+                <th scope="col">Data aggiornamento</th>
+                <th scope="col">Stato</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($products as $product)
+                <tr>
+                    <td>{{$product->id}}</td>
+                    <td>{{$product->title}}</td>
+                    <td>{{$product->description}}</td>
+                    <td>{{$product->price}}</td>
+                    <td>{{$product->user_id}}</td>
+                    <td colspan="2">{{\Carbon\Carbon::parse($product->created_at)->format('d/m/y')}}</td> 
+                    <td >{{\Carbon\Carbon::parse($product->updated_at)->format('d/m/y')}}</td> 
+                    <td>{{$product->state}}</td>
+                    <td>
+                        <div class="d-flex justify-content-end">
+                            <form action="{{ route('product.update', $product) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <input type="hidden" name="action" value="rejected">
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-x-circle"></i></button>
+                            </form>
+                            <form action="{{ route('product.update', $product) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <input type="hidden" name="action" value="accepted">
+                                <button class="btn btn-sm btn-success ms-1"><i class="bi bi-check2-circle"></i></button>
+                            </form>
+                        </div>
+                    </td>
+                    
+                </tr> 
+                @endforeach
+            </tbody>
+          </table>
+    </div>
 
 </x-layout>

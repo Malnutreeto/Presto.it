@@ -106,6 +106,10 @@ button {
     font-size: 0.8em;
 }
 
-
+a:hover {
+    background-color: #ffffff !important;
+    color: #01212d !important;
+    border-radius: 30px 30px 30px 30px;
+}
 
 

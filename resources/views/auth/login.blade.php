@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="div-icon-social">
-        <a href="{{route('auth.socialite.redirect', 'google')}}" class="me-2 text-decoratione-none text-light"><i class="bi bi-google white-icon"></i></a>
+        <a href="{{route('auth.socialite.redirect', 'google')}}" class="me-2 text-decoratione-none text-light"><i class="bi bi-google white-icon "></i></a>
         <a href="{{route('auth.socialite.redirect', 'facebook')}}" class="text-decoratione-none text-light"><i class="bi bi-facebook white-icon"></i></a>
         </div>
         <div>

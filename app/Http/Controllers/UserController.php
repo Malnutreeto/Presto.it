@@ -52,13 +52,8 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-       if ($request->type === 'edited_role') {
-            $user->role_id = $request->role;
-            $user->save();
-       } else {
         $user->fill($request->all())->save();
-       }
-       return redirect()->back()->with('success', "Utente aggiornato correttamente");
+        return redirect()->back()->with('success', "Utente aggiornato correttamente");
     }
 
     /**
@@ -66,6 +61,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect()->back()->with(['success' => 'Utente cancellato correttamente.']);
     }
 }

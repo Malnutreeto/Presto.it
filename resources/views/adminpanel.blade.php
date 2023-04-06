@@ -39,8 +39,7 @@
                             <form action="{{ route('user.update', $user) }}" method="POST">
                                 @csrf
                                 @method('PUT')
-                                <input type="hidden" name="type" value="edited_role">
-                                <input type="hidden" name="role" value="{{$user->role_id -1}}">
+                                <input type="hidden" name="role_id" value="{{$user->role_id -1}}">
                                 <button class="btn btn-sm btn-primary"><i class="bi bi-arrow-up"></i></button>
                             </form>
                             <form action="{{ route('user.destroy', $user) }}" method="POST">
@@ -86,13 +85,18 @@
                     <td >{{\Carbon\Carbon::parse($ticket->updated_at)->format('d/m/y')}}</td> 
                     <td>
                         <div class="d-flex justify-content-end">
-                            <button class="btn btn-sm btn-warning me-1"><a href="{{ route('user.edit', $user) }}" class="text-secondary"><i class="bi bi-pencil-square text-dark"></i></a></button>
-                            <form action="{{ route('user.destroy', $user) }}" method="POST">
+                            <form action="{{ route('ticket.update', $ticket) }}" method="POST">
                                 @csrf
-                                @method('DELETE')
-                                <button class="btn btn-sm btn-danger"><i class="bi bi-trash3"></i></button>
+                                @method('PUT')
+                                <input type="hidden" name="action" value="rejected">
+                                <button class="btn btn-sm btn-danger"><i class="bi bi-x-circle"></i></button>
                             </form>
-                            <button class="btn btn-sm btn-success ms-1"><a href="{{ route('user.show', $user) }}" class="text-light"><i class="bi bi-person-vcard"></i></a></button>
+                            <form action="{{ route('ticket.update', $ticket) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <input type="hidden" name="action" value="accepted">
+                                <button class="btn btn-sm btn-success ms-1"><i class="bi bi-check2-circle"></i></button>
+                            </form>
                         </div>
                     </td>
                 </tr> 

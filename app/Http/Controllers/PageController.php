@@ -24,9 +24,18 @@ class PageController extends Controller
          }
       }
 
+      $shareComponent = \Share::page(
+         'http://127.0.0.1:8000',
+         'Corri a vedere le offerte su Presto.it',
+     )
+     ->facebook()
+     ->telegram()
+     ->whatsapp();
+
       return view('home')->with([
             'products' => $products,
             'mainCategories' => $mainCategories,
+            'shareComponent' => $shareComponent,
          ]);
    }
 

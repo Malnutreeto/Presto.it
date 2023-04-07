@@ -18,11 +18,8 @@
                         {{strtoupper($mainCategory->name)}}
                     </h5>
                 </a>
-            </div>
-            
+            </div>  
         @endforeach
-
-
         </div>
     </div>
    <div class="container-fluid">
@@ -34,9 +31,17 @@
                     <div class="card-body">
                     <h5 class="card-title">{{strtoupper($product->title)}}</h5>
                     <p class="card-text">{{$product->description}}</p>
+                    <div class="container-fluid">
+                        <ul class="row">
+                            <li class="col-12 text-center"><i class="bi bi-share-fill"></i></li>
+                            @foreach ($shareComponent->getRawLinks() as $key => $component)
+                                <li class="col-4 text-center"><a href="{{$component}}"><i class="bi bi-{{$key}} fs-4 @if($key === 'whatsapp') text-success @endif"></i></a></li>
+                            @endforeach
+                        </ul>
+                    </div>
                     <div class="btnn">
-                    <a href="{{route('product.show', $product)}}" class="card-link">Vai al dettaglio</a>
-                    </div>    
+                        <a href="{{route('product.show', $product)}}" class="card-link">Vai al dettaglio</a>
+                    </div> 
                 </div>
                 </div>
             </div>

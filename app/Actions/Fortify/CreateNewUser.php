@@ -23,15 +23,16 @@ class CreateNewUser implements CreatesNewUsers
         $nameAndUsername = explode(' ',$input['name']);
         
         if (count($nameAndUsername) === 2){
-            $surname = $nameAndUsername[count($nameAndUsername) - 1];
+            $input['surname'] = $nameAndUsername[count($nameAndUsername) - 1];
         }
-        else{
-            $surname = $nameAndUsername[count($nameAndUsername) - 2] . ' ' .  $nameAndUsername[count($nameAndUsername) - 1];
-        }
+        elseif (count($nameAndUsername) > 2){
+            $input['surname'] = $nameAndUsername[count($nameAndUsername) - 2] . ' ' .  $nameAndUsername[count($nameAndUsername) - 1];
+        }   
 
 
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
             'nickname' => ['required', 'string', 'max:255', 'unique:users'],
             'email' => [
                 'required',
@@ -45,7 +46,7 @@ class CreateNewUser implements CreatesNewUsers
 
         return User::create([
             'name' => $input['name'],
-            'surname' => $surname,
+            'surname' => $input['surname'],
             'nickname' => $input['nickname'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),

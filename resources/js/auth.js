@@ -28,3 +28,22 @@ passwordIcon.addEventListener('click', (event) => {
         passwordIcon.classList.remove('bi-eye-slash-fill');
     }
 })
+
+window.addEventListener("load", function(){
+    let divErr = document.querySelector(".err-text");
+    if (divErr) {
+        divErr.parentElement.classList.add("shake-horizontal")
+    }
+})
+
+// var loginInput = document.getElementById("loginInput");
+
+// loginInput.focusout = function(event) {
+//   var input = loginInput.value;
+//   if (event.keyCode == 13 && input === "") {
+//     loginInput.classList.add("shake-horizontal");
+//     setTimeout(function() {
+//       loginInput.classList.remove("shake-horizontal");
+//     }, 1000); 
+//   }  
+// }

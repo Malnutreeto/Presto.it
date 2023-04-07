@@ -15,7 +15,7 @@
         <img src="{{asset('titolo.png')}}" class="logo">
         <h3 class="title">LOGIN</h3>
         <div class="login-fields">
-            <div class="main-div-field">
+            <div class="main-div-field" id='loginInput'>
                 <i class="bi bi-envelope-at"></i>
                 <input type="email" class="field" placeholder="Email" name="email">
             </div>
@@ -24,12 +24,15 @@
             @enderror
             <div class="main-div-field" id='passwordInput'>
                 <i class="bi bi-key"></i>
-                <input type="password" class="field" placeholder="Password" name="password">               
+                <input type="password" class="field" placeholder="Password" name="password">              
             </div>
+            @error('password')
+            <div class="err-text">{{$message}}</div>
+            @enderror 
         </div>
         <div class="div-icon-social">
-        <a href="{{route('auth.socialite.redirect', 'google')}}" class="me-2 text-decoratione-none text-light"><i class="bi bi-google white-icon "></i></a>
-        <a href="{{route('auth.socialite.redirect', 'facebook')}}" class="text-decoratione-none text-light"><i class="bi bi-facebook white-icon"></i></a>
+        <a href="{{route('auth.socialite.redirect', 'google')}}" class="me-2 text-decoratione-none text-light fs-5"><i class="bi bi-google white-icon "></i></a>
+        <a href="{{route('auth.socialite.redirect', 'facebook')}}" class="text-decoratione-none text-light fs-5"><i class="bi bi-facebook white-icon"></i></a>
         </div>
         <div>
             <button class="button">ACCEDI</button>

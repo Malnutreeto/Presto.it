@@ -56,7 +56,7 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: #bad4d4a4;
+    background-color: #d6fbfbd8;
 }
 
 .container {
@@ -119,6 +119,8 @@ button {
     border-radius: 15dvh;
     border-style: hidden;
     margin-top: 1em;
+    background-color: rgba(256, 256, 256, 0.4);
+
 }
 
 .bi-envelope-at, .bi-key, .bi-person, .bi-person-add, .bi-asterisk, .bi-eye, .bi-eye-slash-fill {
@@ -167,10 +169,11 @@ button {
     -webkit-text-fill-color: transparent;
 }
 .bi-facebook:hover{
-    color: #1f0ce9;
-    background-color: #ffffff;
-    border-radius: 100%;
-    background-size: 100%;
+  color: #3b5998;
+  background-image: linear-gradient( to bottom, transparent 20%, white 20%, white 93%, transparent 93% );
+  background-size: 55%;
+  background-position:20px;
+  background-repeat: no-repeat;
     
 }
 

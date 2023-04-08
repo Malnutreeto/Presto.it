@@ -11,21 +11,30 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialController extends Controller
 {
+
+   /**
+   * Redirect to a user specified provider.
+   */
     public function redirect($provider){
        return Socialite::driver($provider)->redirect();
     }
  
+
+   /**
+   * Stores user data returned by the user selected provider.
+   */
     public function callback($provider){
       
       $providerUser = Socialite::driver($provider)->stateless()->user();
 
+      //Verify if the user is just registered.
       $user = User::where([
              'provider' => $provider,
              'provider_id' => $providerUser->id,
          ])->orWhere('email', $providerUser->email )->first();
 
       
- 
+      //If the user arent registered store his data.
        if (!$user){
              $user = User::create(
              [

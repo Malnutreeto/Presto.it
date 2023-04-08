@@ -24,7 +24,8 @@ class ProductController extends Controller
     public function index()
     {
         return view('product.index')->with([
-            'products' => Product::all(),
+            //Show only products with state accepted
+            'products' => Product::where('state', 'accepted')->get(),
             'mainCategories', Main_category::all()
         ]);
     }
@@ -34,7 +35,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-
+        //Show all products created taht day by the logged user
         $lastProducts = Product::where('created_at', '>', Carbon::now()->subDays(1))->where('user_id', Auth::user()->id)->get();
 
         return view('product.create')->with([
@@ -85,14 +86,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-       
+        //If the request is for update only the state of product.
         if ($request->action) {
             
             $product->state = $request->action;
-        } else{
-            $product->fill($request->all());
 
-            $product->state = $product->state === 'accepted' ?  'accepted' : 'pending';
+        }//If the request is for update other parametr of the product.
+        else{
+            $product->fill($request->all());
         }
         
 
@@ -104,10 +105,13 @@ class ProductController extends Controller
         $product->categories()->detach();
         $product->categories()->attach($request->mainCategory);
 
-        return redirect()->route('product.create')->with(['success' => 'Prodotto Modificato correttamente']);   
-
-        
-
+        //If the request is for update only the state of product return in admin panel.
+        if ($request->action){
+            return redirect()->back()->with(['success' => 'Prodotto Aìaccettato correttamente']);
+        }//If the request is for update other parametr of the product return in product create page.
+        else{
+            return redirect()->route('product.create')->with(['success' => 'Prodotto Modificato correttamente']);   
+        }
     }
 
     /**

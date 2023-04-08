@@ -53,14 +53,24 @@ class User extends Authenticatable implements AuthMustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+
+    /**
+    * Set provider token
+    */
     public function setProviderTokenAttribute($value){
         $this->attributes['provider_token'] = Crypt::encryptString($value);
     }
 
+    /**
+    * Get provider token
+    */
     public function getProviderTokenAttribute($value){
         return Crypt::decryptString($value);
     }
 
+    /**
+    * Create the relation for user and role
+    */
     public function role() {
         return $this->belongsTo(Role::class);
     }

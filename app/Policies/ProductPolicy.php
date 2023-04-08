@@ -35,6 +35,7 @@ class ProductPolicy
      */
     public function update(User $user, Product $product): bool
     {
+        //Show the page if the user id is equal to user id of product or user role is minor of 4
         if ($user->id === $product->user_id || $user->role_id < 4){
             return true;
         }else{
@@ -48,6 +49,7 @@ class ProductPolicy
      */
     public function delete(User $user, Product $product): bool
     {
+        //Show the page if the user id is equal to user id of product or user role is minor of 4
         if ($user->id === $product->user_id || $user->role_id < 4){
             return true;
         }else{
@@ -71,9 +73,16 @@ class ProductPolicy
         //
     }
 
+
+    /**
+     * Determine whether the user can permanently update state of the model.
+     */
     public function acceptProduct(User $user, Product $product)
-    {
+    {   
+        //Get product status from database
         $dbProductState = Product::find($product->id);
+
+        //If the db product state is differente from the actually product state verify if the requesting user has role id minor of 3
         if ($dbProductState->state !== $product->state){
             if($user->role_id <= 3 && $product->state == 'accepted') {
                 return true;

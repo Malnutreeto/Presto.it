@@ -211,6 +211,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        //Jorenvh\Share\ package
         'Share' => Jorenvh\Share\ShareFacade::class,
     ])->toArray(),
 

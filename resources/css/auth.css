@@ -152,6 +152,7 @@ button {
     width: 14em;
     height: 1.5em;
     color: white;
+    
 }
 
 .err-text {
@@ -169,9 +170,6 @@ button {
 .bi-facebook:hover{
     color: #1f0ce9;
     background-color: #ffffff;
-    border-radius: 100%;
-    background-size: 100%;
-    
 }
 
 .button:hover {

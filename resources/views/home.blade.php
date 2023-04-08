@@ -30,7 +30,7 @@
                     <img src="https://picsum.photos/1920/1080" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">{{strtoupper($product->title)}}</h5>
-                    <p class="card-text">{{$product->description}}</p>
+                    <p class="card-text">{{substr($product->description, 0, 30)}}</p>
                     <div class="container-fluid">
                         <ul class="row">
                             <li class="col-12 text-center"><i class="bi bi-share-fill"></i></li>

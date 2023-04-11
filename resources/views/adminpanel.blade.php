@@ -1,3 +1,4 @@
+@vite(['resources/js/adminPanel.js'])
 <x-layout>
     @if ($errors->any())
         @foreach ($errors->all() as $error)
@@ -114,9 +115,25 @@
 
 
     <div class="container d-flex justify-content-center">
-        <table class="table">
+        <table class="table" id="productTable">
             <thead>
+                <tr>
+                    <th colspan="11" >
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <form action="{{ route('product.multiUpdate') }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <input class="form-check-input" type="hidden" value="" id="all" name="all">
+                            <select class="form-select" aria-label="Default select example" name="state">
+                                <option value="accepted">accepted</option>
+                                <option value="rejected">rejected</option>
+                            </select>
+                            <button class="btn btn-sm btn-danger">Submit</button>
+                        </form>
+                    </th>
+                </tr>
               <tr>
+                <th></th>
                 <th scope="col">#</th>
                 <th scope="col">Titolo</th>
                 <th scope="col">Contenuto</th>
@@ -130,6 +147,7 @@
             <tbody>
                 @foreach ($products as $product)
                 <tr>
+                    <td scope="col"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
                     <td>{{$product->id}}</td>
                     <td>{{$product->title}}</td>
                     <td>{{$product->description}}</td>
@@ -154,7 +172,6 @@
                             </form>
                         </div>
                     </td>
-                    
                 </tr> 
                 @endforeach
             </tbody>

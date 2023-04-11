@@ -29,6 +29,7 @@ Route::get('/user/2fa', [twoFactorAuthenticationController::class, 'enableOrDisa
 Route::resource('category', CategoryController::class);
 Route::resource('sub_category', SubCategoryController::class);
 Route::resource('product', ProductController::class);
+Route::put('product/multi/update', [ProductController::class, 'multiUpdate'])->name('product.multiUpdate');
 
 
 Route::middleware('auth', 'verified')->group(function (){
@@ -44,3 +45,5 @@ Route::get('auth/{provider}/user', [SocialController::class, 'index']);
 
 Route::get('/', [PageController::class, 'home'] )->name('home');
 Route::get('/admin', [PageController::class, 'adminPanel'] )->name('admin');
+
+Route::get('product', [PageController::class, 'searchProducts'])->name('products.search');

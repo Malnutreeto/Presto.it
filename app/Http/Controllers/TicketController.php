@@ -58,6 +58,7 @@ class TicketController extends Controller
     {
         $user = User::find($ticket->user_id);
 
+        //If the request is newRevisorRequest and the request state is accepted update the relative user role, accept ticket and send the relative email.
         if($request->action === 'accepted' && $ticket->type === 'newRevisorRequest'){
             $user->role_id = 3;
             $user->save();
@@ -66,7 +67,8 @@ class TicketController extends Controller
             $ticket->save();
 
             Mail::to($user->email)->send(new RevisorAccepted());
-        }elseif($request->action === 'rejected' && $ticket->type === 'newRevisorRequest'){
+        }//If the request is newRevisorRequest and the request state is rejected rejected ticket and send the relative email.
+        elseif($request->action === 'rejected' && $ticket->type === 'newRevisorRequest'){
             $ticket->state = 'rejected';
             $ticket->save();
 

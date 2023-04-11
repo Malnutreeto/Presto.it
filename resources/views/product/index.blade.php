@@ -1,6 +1,6 @@
 <x-layout>
     <ul>
-        @foreach ($products as $product)
+        @forelse ($products as $product)
             <li>
                 {{$product->title}}
                 <ul>
@@ -14,11 +14,13 @@
                     @endforeach
                 </ul>
             </li>
+            @empty
+            <p>Non ci sono prodotti</p>
             <form action="{{route('product.destroy', $product)}}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button class="btn btn-sm btn-danger" type="submit">Cancella</button>
             </form>
-        @endforeach
+        @endforelse
     </ul>
 </x-layout>

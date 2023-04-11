@@ -42,14 +42,23 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
 
+        /**
+        * Fortify built-in route to confirm password
+        */
         Fortify::confirmPasswordView(function(){
             return view('auth.confirm-password');
         });
 
+        /**
+        * Fortify built-in route to verify 2fa code
+        */
         Fortify::twoFactorChallengeView(function(){
             return view('auth.two-factor-challenge');
         });
 
+        /**
+        * Fortify built-in route to verify email
+        */
         Fortify::verifyEmailView(function () {
             return view('auth.verify-email');
         });

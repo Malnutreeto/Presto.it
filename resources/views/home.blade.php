@@ -30,7 +30,7 @@
                     <img src="https://picsum.photos/1920/1080" class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">{{strtoupper($product->title)}}</h5>
-                    <p class="card-text">{{$product->description}}</p>
+                    <p class="card-text">{{substr($product->description, 0, 30)}}</p>
                     <div class="container-fluid">
                         <ul class="row">
                             <li class="col-12 text-center"><i class="bi bi-share-fill"></i></li>
@@ -48,5 +48,14 @@
         @endforeach
     </div>
    </div>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <form action="{{route('products.search')}}" method="GET" class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
     
 </x-layout>

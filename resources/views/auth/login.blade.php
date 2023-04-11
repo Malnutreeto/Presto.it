@@ -31,8 +31,8 @@
             @enderror 
         </div>
         <div class="div-icon-social">
-        <a href="{{route('auth.socialite.redirect', 'google')}}" class="me-2 text-decoratione-none text-light fs-5"><i class="bi bi-google white-icon "></i></a>
-        <a href="{{route('auth.socialite.redirect', 'facebook')}}" class="text-decoratione-none text-light fs-5"><i class="bi bi-facebook white-icon"></i></a>
+        <a href="{{route('auth.socialite.redirect', 'google')}}" class="me-2 text-decoratione-none text-light fs-5 p-0"><i class="bi bi-google white-icon"></i></a>
+        <a href="{{route('auth.socialite.redirect', 'facebook')}}" class="text-decoratione-none text-light fs-5 p-0"><i class="bi bi-facebook white-icon"></i></a>
         </div>
         <div>
             <button class="button">ACCEDI</button>

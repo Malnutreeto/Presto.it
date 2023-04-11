@@ -29,6 +29,7 @@ Route::get('/user/2fa', [twoFactorAuthenticationController::class, 'enableOrDisa
 Route::resource('category', CategoryController::class);
 Route::resource('sub_category', SubCategoryController::class);
 Route::resource('product', ProductController::class);
+Route::put('product/multi/update', [ProductController::class, 'multiUpdate'])->name('product.multiUpdate');
 
 
 Route::middleware('auth', 'verified')->group(function (){

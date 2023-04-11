@@ -96,7 +96,6 @@ class ProductController extends Controller
             $product->fill($request->all());
         }
         
-
         $this->authorize('update', $product);
         $this->authorize('acceptProduct', $product);
 
@@ -112,6 +111,27 @@ class ProductController extends Controller
         else{
             return redirect()->route('product.create')->with(['success' => 'Prodotto Modificato correttamente']);   
         }
+    }
+
+    /**
+    * Update the state of multiple resource in storage.
+    */
+    public function multiUpdate(Request $request){
+
+        //Split the all firld in array
+        $productArray = explode(',', $request->all);
+
+        //For only single elemnte find in db, update the state and save
+        foreach($productArray as $element){
+            $product = Product::find($element);
+            
+            if($product){
+                $product->state = $request->state;
+                $product->save();
+            }
+        }
+
+        return redirect()->back()->with('success', 'Tutti i prodotti sono stati modificati');
     }
 
     /**

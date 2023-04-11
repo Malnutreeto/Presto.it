@@ -98,5 +98,10 @@ class PageController extends Controller
 
       return redirect()->back()->with('success', 'La richiesta è stata correttamente inviata');
    }
+
+   public function searchProducts(Request $request) {
+      $products = Product::search($request->searched)->where('state', 'accepted')->paginate('10');
+      return view('product.index', compact('products'));
+   }
 }
 

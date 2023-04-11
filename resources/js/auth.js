@@ -4,7 +4,7 @@ console.log('[Auth]Js caricato');
 let inputFields = document.querySelector('.login-fields');
 let passwordInput = document.getElementById('passwordInput');
 let passwordIcon = passwordInput.querySelector('.bi-key');
-let icon = loginInput.querySelector('.bi');
+
 
 passwordInput.addEventListener('input', (event) => {
 

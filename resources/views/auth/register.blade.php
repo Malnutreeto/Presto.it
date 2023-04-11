@@ -7,11 +7,11 @@
     <title>Presto.it - Registrati</title>
 </head>
 <body>
-    @vite (['resources/css/app.css', 'resources/css/auth.css', 'resources/js/app.js'])
+    @vite (['resources/css/app.css', 'resources/css/auth.css', 'resources/js/auth.js'])
     
     <form action="/register" method="POST">
     @csrf
-    <div class="container split-background stocazzo mb-5">
+    <div class="container split-background form-container mb-5">
         <img src="{{asset('titolo.png')}}" class="logo">
         <h3 class="title">REGISTRATI</h3>
         <div class="login-fields">

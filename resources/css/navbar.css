@@ -50,3 +50,29 @@ li, a:hover{
 form{
     background-color: transparent !important;
 }
+
+.ciaoh {
+    margin-right: 1em;
+    margin-left: 0.5em;
+    background-color: #01212d !important;
+}
+
+.stocazzo {
+    border: 2px solid #01212d;
+    padding: 0.5em;
+    border-radius: 15px;
+    margin-top: 2em;
+}
+
+.btn-outline-success {
+    color: #FC8505 !important;
+    border-color: #FC8505 !important;
+}
+
+.btn-outline-success:hover {
+    background-color: #ffd5a8 !important;
+}
+
+.bi-search:hover {
+    color:#FC8505 !important;
+}

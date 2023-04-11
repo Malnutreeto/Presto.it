@@ -9,6 +9,22 @@
                 <img src="https://picsum.photos/600/300" class="img-fluid" alt="Responsive image">
             </div>
         </div>
+        <div class="col-6 container-fluid stocazzo">
+        <form action="{{route('products.search')}}" method="GET" class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">
+            <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle ciaoh" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Seleziona categoria
+            </button>
+            <ul class="dropdown-menu">
+                @foreach ($mainCategories as $mainCategory)
+                    <li class="dropdown-item container-fluid">{{strtoupper($mainCategory->name)}}</li>
+                @endforeach
+            </ul>
+        </div>
+        <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+    </div>
         <div class="row mt-5 justify-content-center">
         @foreach ($mainCategories as $mainCategory)
             <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column justify-content-center text-center p-0 mx-2 m-1 porco">
@@ -48,14 +64,4 @@
         @endforeach
     </div>
    </div>
-
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <form action="{{route('products.search')}}" method="GET" class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
-    
 </x-layout>

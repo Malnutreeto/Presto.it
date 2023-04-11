@@ -1,57 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap');
 
- @-webkit-keyframes vibrate-1 {
-    0% {
-      -webkit-transform: translate(0);
-              transform: translate(0);
-    }
-    20% {
-      -webkit-transform: translate(-2px, 2px);
-              transform: translate(-2px, 2px);
-    }
-    40% {
-      -webkit-transform: translate(-2px, -2px);
-              transform: translate(-2px, -2px);
-    }
-    60% {
-      -webkit-transform: translate(2px, 2px);
-              transform: translate(2px, 2px);
-    }
-    80% {
-      -webkit-transform: translate(2px, -2px);
-              transform: translate(2px, -2px);
-    }
-    100% {
-      -webkit-transform: translate(0);
-              transform: translate(0);
-    }
+@-webkit-keyframes shadow-drop-center {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #FC8505;
+            box-shadow: 0 0 0 0 #FC8505;
   }
-  @keyframes vibrate-1 {
-    0% {
-      -webkit-transform: translate(0);
-              transform: translate(0);
-    }
-    20% {
-      -webkit-transform: translate(-2px, 2px);
-              transform: translate(-2px, 2px);
-    }
-    40% {
-      -webkit-transform: translate(-2px, -2px);
-              transform: translate(-2px, -2px);
-    }
-    60% {
-      -webkit-transform: translate(2px, 2px);
-              transform: translate(2px, 2px);
-    }
-    80% {
-      -webkit-transform: translate(2px, -2px);
-              transform: translate(2px, -2px);
-    }
-    100% {
-      -webkit-transform: translate(0);
-              transform: translate(0);
-    }
+  100% {
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
   }
+}
+@keyframes shadow-drop-center {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #FC8505;
+            box-shadow: 0 0 0 0 #FC8505;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 20px 0px #FC8505;
+            box-shadow: 0 0 20px 0px #FC8505;
+  }
+}
+
   
 body {
     display: flex;
@@ -109,6 +78,15 @@ body {
     width: 90%;
 }
 
+.field:focus{
+  -webkit-animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  background-color: #00292d;
+  
+  outline: #ff8400 solid 0.5px !important;
+  
+}
+
 .logo {
     width: 70%;
 }
@@ -120,6 +98,10 @@ button {
     border-style: hidden;
     margin-top: 1em;
     background-color: rgba(256, 256, 256, 0.4);
+    color:white;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    
 
 }
 
@@ -128,13 +110,18 @@ button {
     z-index: 1;
     padding: 0.5rem;
     font-size: 1.2em;
+    color: #00292d;
 }
 
+
+
+  
 .main-div-field {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
 
 ::placeholder {
     color:white;
@@ -178,13 +165,17 @@ button {
     
 }
 
-.button:hover {
-	-webkit-animation: vibrate-1 0.3s linear infinite both;
-	        animation: vibrate-1 0.3s linear infinite both;
-            background-color: #00292d;
-            color:#ffffff;
-            border-color:1px solid #ffffff !important;
+
+.button:hover, .button:focus {
+   -webkit-animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	  animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    background-color: #00292d;
+    color:#ffffff;
+    outline: #ff8400 solid 0.5px !important;;
+    
 }
+           
+
 
 
 
@@ -248,3 +239,5 @@ button {
               transform: translateX(-8px);
     }
   }
+
+ 

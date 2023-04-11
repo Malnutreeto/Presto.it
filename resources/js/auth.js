@@ -1,9 +1,10 @@
 'use strict'
 
 console.log('[Auth]Js caricato');
-
+let inputFields = document.querySelector('.login-fields');
 let passwordInput = document.getElementById('passwordInput');
 let passwordIcon = passwordInput.querySelector('.bi-key');
+let icon = loginInput.querySelector('.bi');
 
 passwordInput.addEventListener('input', (event) => {
 
@@ -12,6 +13,17 @@ passwordInput.addEventListener('input', (event) => {
         passwordIcon.classList.add('bi-eye');
     }
 })
+inputFields.addEventListener('focusin', (event) => {
+    if (event.target.tagName === "INPUT") {
+        console.log(event.target);
+        let element = event.target.previousElementSibling;
+        element.style.color='white';
+         element.style.opacity='0.7';
+    }
+    
+    
+});
+
 
 passwordIcon.addEventListener('click', (event) => {
     
@@ -36,14 +48,3 @@ window.addEventListener("load", function(){
     }
 })
 
-// var loginInput = document.getElementById("loginInput");
-
-// loginInput.focusout = function(event) {
-//   var input = loginInput.value;
-//   if (event.keyCode == 13 && input === "") {
-//     loginInput.classList.add("shake-horizontal");
-//     setTimeout(function() {
-//       loginInput.classList.remove("shake-horizontal");
-//     }, 1000); 
-//   }  
-// }

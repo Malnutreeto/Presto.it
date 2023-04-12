@@ -35,7 +35,7 @@
         <a href="{{route('auth.socialite.redirect', 'facebook')}}" class="text-decoratione-none text-light fs-5 p-0"><i class="bi bi-facebook white-icon"></i></a>
         </div>
         <div>
-            <button class="button">UCCIDI</button>
+            <button class="button">ACCEDI</button>
         </div>
     </div>
 </form>

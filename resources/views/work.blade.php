@@ -1,5 +1,5 @@
 <x-layout>
-    @vite('resources/css/work.css')
+    @vite(['resources/css/work.css', 'resources/js/work.js'])
     @if(session()->has('success'))
         <div class="alert alert-success">
             {{session('success')}}
@@ -30,15 +30,19 @@
   <div class="container d-flex justify-content-center flex-wrap mt-5">
     <div class="iconbox">
         <i class="bi bi-house-gear"></i>
+        <p class="d-none">Lorem ipsum dolor sit amet.</p>
     </div>
     <div class="iconbox">
         <i class="bi bi-clock"></i>
+        <p class="d-none">Lorem ipsum dolor sit amet.</p>
     </div>
     <div class="iconbox">
         <i class="bi bi-emoji-laughing"></i>
+        <p class="d-none">Lorem ipsum dolor sit amet.</p>
     </div>
     <div class="iconbox">
         <i class="bi bi-award-fill"></i>
+        <p class="d-none">Lorem ipsum dolor sit amet.</p>
     </div>
   </div>
     

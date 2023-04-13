@@ -5,18 +5,14 @@
             {{session('success')}}
         </div>
     @endif
-    <form class="" action="/work" method="POST">
+    <form class="" action="/work" method="POST" id="demo-form">
         @csrf
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
-                    <button type="submit" class="submit btn btn-sm btn-outline-light btn-hover ">
+                    <button type="submit" class="submit btn btn-sm btn-outline-light btn-hover g-recaptcha" data-sitekey="6LcapoUlAAAAAG-tA3chcxsm0JfhXGk4ioDMTkVi" data-callback="onSubmit">
                         Invia la richiesta
                     </button>
-                </div>
-                <div class="col-12 d-flex justify-content-center">
-                    {!! NoCaptcha::renderJs() !!}
-                    {!! NoCaptcha::display() !!}
                 </div>
             </div>
         </div>

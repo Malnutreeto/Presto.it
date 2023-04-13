@@ -73,6 +73,7 @@ body {
 
 .login-fields {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     margin-top: 3vh;
@@ -115,8 +116,6 @@ button {
 }
 
 
-
-  
 .main-div-field {
     display: flex;
     flex-direction: row;
@@ -243,5 +242,12 @@ button {
               transform: translateX(-8px);
     }
   }
+/* 
+  .goggle {
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+  } */
 
  

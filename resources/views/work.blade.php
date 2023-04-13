@@ -1,5 +1,5 @@
 <x-layout>
-    @vite('resources/css/work.css')
+    @vite(['resources/css/work.css', 'resources/js/work.js'])
     @if(session()->has('success'))
         <div class="alert alert-success">
             {{session('success')}}
@@ -7,11 +7,20 @@
     @endif
     <form class="" action="/work" method="POST">
         @csrf
-        <div class="container-fluid d-flex justify-content-center">
-            <button type="submit" class="submit btn btn-sm btn-outline-light btn-hover ">
-                Invia la richiesta
-            </button>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <button type="submit" class="submit btn btn-sm btn-outline-light btn-hover ">
+                        Invia la richiesta
+                    </button>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    {!! NoCaptcha::renderJs() !!}
+                    {!! NoCaptcha::display() !!}
+                </div>
+            </div>
         </div>
+        
     </form>
     {{-- <div class="bkg-img">
         <h1 class="text-center">Lavora con noi</h1>
@@ -30,18 +39,20 @@
   <div class="container d-flex justify-content-center flex-wrap mt-5">
     <div class="iconbox">
         <i class="bi bi-house-gear"></i>
+        <p class="d-none">Lorem ipsum dolor sit amet.</p>
         <p>Lorem ipsum dolor sit amet.</p>
     </div>
     <div class="iconbox">
         <i class="bi bi-clock"></i>
+        <p class="d-none">Lorem ipsum dolor sit amet.</p>
     </div>
     <div class="iconbox">
         <i class="bi bi-emoji-laughing"></i>
+        <p class="d-none">Lorem ipsum dolor sit amet.</p>
     </div>
     <div class="iconbox">
         <i class="bi bi-award-fill"></i>
+        <p class="d-none">Lorem ipsum dolor sit amet.</p>
     </div>
   </div>
-    
-  
 </x-layout>

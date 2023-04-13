@@ -184,11 +184,13 @@ return [
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
         App\Providers\FortifyServiceProvider::class,
         Jorenvh\Share\Providers\ShareServiceProvider::class,
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -215,6 +217,8 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         //Jorenvh\Share\ package
         'Share' => Jorenvh\Share\ShareFacade::class,
+        //Anhskohbo\NoCaptcha package
+        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
     ])->toArray(),
 
 ];

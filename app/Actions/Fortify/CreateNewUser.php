@@ -41,6 +41,7 @@ class CreateNewUser implements CreatesNewUsers
                 'max:255',
                 Rule::unique(User::class),
             ],
+            'g-recaptcha-response' => ['required', 'captcha'],
             'password' => $this->passwordRules(),
         ])->validate();
 
@@ -51,6 +52,7 @@ class CreateNewUser implements CreatesNewUsers
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
             'role_id' => 4,
+            'g-recaptcha-response' => $input['g-recaptcha-response']
         ]);
     }
 }

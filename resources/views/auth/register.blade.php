@@ -53,6 +53,10 @@
                 <div class="err-text">{{$message}}</div>
             @enderror
         </div>
+        <div class="main-div-field goggle" data-theme="light">
+            {!! NoCaptcha::renderJs() !!}
+            {!! NoCaptcha::display() !!}               
+        </div>
         <div>
             <button class="button">REGISTRATI</button>
         </div>

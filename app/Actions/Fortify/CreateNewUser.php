@@ -51,6 +51,7 @@ class CreateNewUser implements CreatesNewUsers
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
             'role_id' => 4,
+            'g-recaptcha-response' => 'required|captcha'
         ]);
     }
 }

@@ -82,9 +82,9 @@ class PageController extends Controller
    /**
    * Store a workWithUs request.
    */
-   public function workRequest (){
+   public function workRequest (Request $request){
       $user = Auth::user();
-      
+      $request->validate(['g-recaptcha-response' => 'required|captcha']);
       //Set the request
       Ticket::create([
          'type' => 'newRevisorRequest',

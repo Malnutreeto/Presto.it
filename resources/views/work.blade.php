@@ -30,6 +30,7 @@
   <div class="container d-flex justify-content-center flex-wrap mt-5">
     <div class="iconbox">
         <i class="bi bi-house-gear"></i>
+        <p>Lorem ipsum dolor sit amet.</p>
     </div>
     <div class="iconbox">
         <i class="bi bi-clock"></i>

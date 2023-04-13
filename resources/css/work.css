@@ -1,4 +1,5 @@
 .btn{
+    margin-top: 10px;
     border-radius: 25px;
 }
 
@@ -15,6 +16,18 @@
 .bi{
     font-size: 60px;
 }
+p{
+    display: none;
+}
+.bi:hover{
+    display: none;
+    z-index:-1;
+}
+p:hover{
+    z-index: 1;
+    display: block;
+}
+
 /* .bkg-img{
     background-image:url('/public/site_img/7566.jpg');
     height: 100vmin;

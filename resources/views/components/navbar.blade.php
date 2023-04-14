@@ -28,14 +28,16 @@
             <a class="nav-link text-light dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{auth()->user()->nickname}}
             </a>
-            <ul class="dropdown-menu p-0 ml-">
-              <li>
-                <form class="dropdown-item text-end p-0 ps-sm-0 logout-field" action="/logout" method="POST">
+            <ul class="dropdown-menu p-0 dropdown-menu-end ">
+              <li class= "dropdown-item text-end p-0 ps-sm-0 logout-field w-100">
+                
+                <form  class="" action="/logout" method="POST">
                   @csrf
                   <button type="submit" class="submit btn btn-sm btn-outline-light btn-hover">
                     Logout
                   </button>
                 </form>
+               
                 @else
                 <li class="nav-item text-end mt-1">
                   <a class="nav-link text-light" href="/login">Login</a>

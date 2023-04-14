@@ -75,8 +75,8 @@
                     <div class="alert alert-success text-center">A new email verification link has been emailed to you!</div>
                 @endif
                 <div class="text-center mb-2">
-                    <h3><strong>Abbiamo inviato una mail di verifica al tuo indirizzo</strong></h3>
-                    <p>Devi <strong>necessariamente</strong> verificare la tua mail per poter completare la registrazione. </br> Se non hai ricevuto la mail <strong>clicca sul bottone quì sotto per inviarla nuovamente</strong></p>
+                    <h3><strong>Ci sei quasi!</strong></h3>
+                    <p>Ti abbiamo inviato una mail. Devi <strong>necessariamente</strong> confermare il tuo indirizzo per poter completare la registrazione. </br> Se non hai ricevuto la mail <strong>clicca sul bottone quì sotto per inviarla nuovamente</strong></p>
                 </div>
                 <form method="POST" action="{{ route('verification.send') }}" class="text-center">
                     @csrf

@@ -9,7 +9,7 @@
                 <img src="https://picsum.photos/600/300" class="img-fluid" alt="Responsive image">
             </div>
         </div>
-        <div class="col-6 container-fluid stocazzo">
+        <div class="col-lg-6 col-md-8 col-sm-11 container-fluid searchbar">
         <form action="{{route('products.search')}}" method="GET" class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">
             <select class="form-select" aria-label="Default select example" name="category">

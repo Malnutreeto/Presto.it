@@ -21,7 +21,12 @@
   outline: #ff8400 solid 0.5px !important;
   
 }
-
+.searchbar{
+    box-shadow: 0px 0px 4px 4px #0000005a;
+    padding: 0.5em;
+    margin-top: 2em;
+    border-radius: 15px;
+}
 .navbar-toggler{
     color: #ffffff;
     border: 0 !important;
@@ -51,10 +56,27 @@ li, a:hover{
 }
 
 
-
 form{
    display: hidden !important;
 }
+.form-select {
+    margin-right: 1em;
+    margin-left: 0.5em;
+    background-color: #01212d !important;
+    color: white;
+    width: 65%;
+}
+.form-select:focus {
+    box-shadow: 0 0 0 0.25rem #fc850565;
+}
+
+.form-control {
+    border: 0px;
+  }
+
+  .form-control:focus {
+    box-shadow: 0 0 0 0.25rem #fc850565;
+  }
 
 .logout-button:hover{
     background-color: #01212d;

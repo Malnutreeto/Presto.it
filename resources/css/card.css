@@ -9,6 +9,8 @@
     height: 3em;
     border-bottom-left-radius: 1dvh;
     border-bottom-right-radius: 1dvh;
+    position: relative;
+    bottom: 0;
 }
 
 .card-body {

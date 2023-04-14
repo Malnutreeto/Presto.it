@@ -10,11 +10,7 @@
     color: #ffffff;
 }
 
-.dropdown-menu{
-    background-color: #ffffff;
-    margin-left: -5em;
-    
-}
+
 
 .navbar-toggler{
     color: #ffffff;
@@ -33,7 +29,7 @@ li, a{
 }
 li, a:hover{
     
-    color: #47585e9b !important;
+    color: #ff8400 !important;
 }
 
 .submit{
@@ -48,8 +44,9 @@ li, a:hover{
 }
 
 form{
-    background-color: transparent !important;
+   display: hidden !important;
 }
+
 
 .ciaoh {
     margin-right: 1em;
@@ -96,4 +93,8 @@ form{
       -webkit-box-shadow: 0 0 20px 0px #01212d;
               box-shadow: 0 0 20px 0px #01212d;
     }
+  }
+
+  .logout-field{
+   padding: 0;
   }

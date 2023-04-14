@@ -46,4 +46,4 @@ Route::get('auth/{provider}/user', [SocialController::class, 'index']);
 Route::get('/', [PageController::class, 'home'] )->name('home');
 Route::get('/admin', [PageController::class, 'adminPanel'] )->name('admin');
 
-Route::get('product', [PageController::class, 'searchProducts'])->name('products.search');
+Route::get('products/search', [PageController::class, 'searchProducts'])->name('products.search');

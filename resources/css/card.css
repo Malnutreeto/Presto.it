@@ -6,30 +6,49 @@
     align-items: center;
     background-color: #00292d;
     margin-bottom: 0px;
-    height: 3em;
+    height: 2em;
     border-bottom-left-radius: 1dvh;
     border-bottom-right-radius: 1dvh;
-    position: relative;
+    position: absolute;
+    z-index: 1;
     bottom: 0;
+    width: 100% !important;
 }
 
 .card-body {
-    padding-bottom: 0px !important;
-    padding-right: 0px !important;
-    padding-left: 0px !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        height: 15rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        overflow: scroll;
     
+      
 }
 
-.card-text, .card-title {
-    padding-right: 0.5em;
-    padding-left: 0.5em;
+.cat-name{
     text-align: center;
+    margin: 0 !important;
+    font-size: 1em !important;
+}
+.ul-cat{
+    padding: 0 !important;
+}
+
+
+.card-text, .card-title {
+    
+    text-align: center;
+    margin: 0;
 }
 
 .card-link {
     text-decoration: none;
     color: white;
     font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.1em;
 }
 
 .card {
@@ -38,7 +57,7 @@
 
 }
 
-.porco {
+.cat-icon {
     height: 170px;
     align-items: center;
     background-color: #00292d;
@@ -46,8 +65,11 @@
     font-family: 'Orbitron', sans-serif;
 }
 
-.madonna {
+.cat-link {
     color: white;
     text-decoration: none;
 }
 
+.btnn:hover{
+    color: #ff8400;
+}

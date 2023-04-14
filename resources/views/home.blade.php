@@ -23,9 +23,9 @@
     </div>
         <div class="row mt-5 justify-content-center">
         @foreach ($mainCategories as $mainCategory)
-            <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column justify-content-center text-center p-0 mx-2 m-1 porco">
+            <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column justify-content-center text-center p-0 mx-2 m-1 cat-icon">
                 <i class="bi {{$mainCategory->icon}} fs-1"></i>
-                <a href="{{route('category.show', $mainCategory)}}" class="madonna">
+                <a href="{{route('category.show', $mainCategory)}}" class="cat-link">
                     <h5 class="madonna text-center">
                         {{strtoupper($mainCategory->name)}}
                     </h5>

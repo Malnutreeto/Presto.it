@@ -21,7 +21,7 @@
             <a class="nav-link text-light" href="/category">Categorie</a>
           </li>
           <li class="nav-item text-end mt-1">
-            <a class="nav-link text-light" href="/category">Prodotti</a>
+            <a class="nav-link text-light" href="/product">Prodotti</a>
           </li>
           @auth
           <li class="nav-item dropdown text-end mt-1">

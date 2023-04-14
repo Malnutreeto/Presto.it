@@ -1,5 +1,6 @@
 .container-bar {
-    margin: 35px;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
     width: 25rem;
     text-align: center;
   }
@@ -22,7 +23,7 @@
   .progress-moved .progress-bar2 {
     width: 85%; 
      background-color: #ff8400;
-    animation: progressAnimation 4s infinite;
+    animation: progressAnimation 4s;
   }
   
   @keyframes progressAnimation {
@@ -30,4 +31,49 @@
     100% { width: 85%; background-color: #ff8400; }
   }
   
-  
+  .btn-new {
+    width: 25em;
+    height: 3em;
+    border-radius: 15dvh;
+    border-style: hidden;
+    margin-top: 0em;
+    background-color: #01212d;
+    letter-spacing: 1px;
+    font-size: 1em;
+    color: white;
+  }
+
+  .btn-new:hover, .btn-new:focus {
+    -webkit-animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+     animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+     background-color: #00292d;
+     color:#ffffff;
+     outline: #ff8400 solid 2px !important;
+     
+ }
+
+ 
+@-webkit-keyframes shadow-drop-center {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #FC8505;
+            box-shadow: 0 0 0 0 #FC8505;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+@keyframes shadow-drop-center {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #FC8505;
+            box-shadow: 0 0 0 0 #FC8505;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 20px 0px #FC8505;
+            box-shadow: 0 0 20px 0px #FC8505;
+  }
+}
+
+.imgg {
+  margin-bottom: -1em;
+}

@@ -58,9 +58,9 @@ form{
 }
 
 .stocazzo {
-    border: 2px solid #01212d;
+    -webkit-animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     padding: 0.5em;
-    border-radius: 15px;
     margin-top: 2em;
 }
 
@@ -76,3 +76,24 @@ form{
 .bi-search:hover {
     color:#FC8505 !important;
 }
+
+@-webkit-keyframes shadow-drop-center {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 #01212d;
+              box-shadow: 0 0 0 0 #01212d;
+    }
+    100% {
+      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+  }
+  @keyframes shadow-drop-center {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 #01212d;
+              box-shadow: 0 0 0 0 #01212d;
+    }
+    100% {
+      -webkit-box-shadow: 0 0 20px 0px #01212d;
+              box-shadow: 0 0 20px 0px #01212d;
+    }
+  }

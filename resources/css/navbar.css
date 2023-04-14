@@ -51,17 +51,23 @@ form{
     background-color: transparent !important;
 }
 
-.ciaoh {
+.form-select {
     margin-right: 1em;
     margin-left: 0.5em;
     background-color: #01212d !important;
+    color: white;
+    width: 15em;
+}
+
+.form-select:focus {
+    box-shadow: 0 0 0 0.25rem #fc850565;
 }
 
 .stocazzo {
-    -webkit-animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    box-shadow: 0px 0px 4px 4px #0000005a;
     padding: 0.5em;
     margin-top: 2em;
+    border-radius: 15px;
 }
 
 .btn-outline-success {
@@ -77,23 +83,10 @@ form{
     color:#FC8505 !important;
 }
 
-@-webkit-keyframes shadow-drop-center {
-    0% {
-      -webkit-box-shadow: 0 0 0 0 #01212d;
-              box-shadow: 0 0 0 0 #01212d;
-    }
-    100% {
-      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-              box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-    }
+  .form-control {
+    border: 0px;
   }
-  @keyframes shadow-drop-center {
-    0% {
-      -webkit-box-shadow: 0 0 0 0 #01212d;
-              box-shadow: 0 0 0 0 #01212d;
-    }
-    100% {
-      -webkit-box-shadow: 0 0 20px 0px #01212d;
-              box-shadow: 0 0 20px 0px #01212d;
-    }
+
+  .form-control:focus {
+    box-shadow: 0 0 0 0.25rem #fc850565;
   }

@@ -12,16 +12,12 @@
         <div class="col-6 container-fluid stocazzo">
         <form action="{{route('products.search')}}" method="GET" class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">
-            <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle ciaoh" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Seleziona categoria
-            </button>
-            <ul class="dropdown-menu">
+            <select class="form-select" aria-label="Default select example" name="category">
+                <option selected disabled>Seleziona categoria</option>
                 @foreach ($mainCategories as $mainCategory)
-                    <li class="dropdown-item container-fluid">{{strtoupper($mainCategory->name)}}</li>
-                @endforeach
-            </ul>
-        </div>
+                    <option value="{{$mainCategory->id}}">{{strtoupper($mainCategory->name)}}</option>
+                @endforeach    
+            </select>
         <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
         </form>
     </div>

@@ -12,12 +12,18 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 justify-content-end">
           <li class="d-flex align-items-end justify-content-end button-end">
             @if(auth()->user() && auth()->user()->email_verified_at)
-              <button class="btn btn-sm btn-outline-light btn-hover">
-                <strong><a href="{{route('product.create')}}" class="text-decoration-none text-light ">Inserisci annuncio</a></strong>
+            <a href="{{route('product.create')}}" class="text-decoration-none text-light ">
+              <button class="btn btn-sm wwu-button">
+             Inserisci annuncio
               </button>
+            </a>
+              <li class="nav-item text-end mt-1">
+                <a class="nav-link text-light" href="/work">Lavora con noi</a>
+              </li>
             @endif
             </li>
-          <li class="nav-item text-end mt-1 hover-overlay">
+            
+          <li class="nav-item text-end mt-1">
             <a class="nav-link text-light" href="/category">Categorie</a>
           </li>
           <li class="nav-item text-end mt-1">
@@ -33,7 +39,7 @@
                 
                 <form  class="" action="/logout" method="POST">
                   @csrf
-                  <button type="submit" class="submit btn btn-sm btn-outline-light btn-hover">
+                  <button type="submit" class="submit btn btn-sm logout-button">
                     Logout
                   </button>
                 </form>

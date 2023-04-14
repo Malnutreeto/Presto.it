@@ -9,11 +9,14 @@
                     <div class="card-body ">
                         <h5 class="card-title"> <strong> {{ strtoupper($product->title)}} </strong> </h5>
                         
-                        <p class="card-text text-center">  {{ $product->user->name }}</p> 
+                        <p class="card-text text-center">Venditore: <STRONG>{{ $product->user->nickname }}</STRONG>  </p> 
                         <ul class=" text-center ul-cat">
                             @foreach ($product->categories as $category)
                             <li class="cat-name">
-                                {{  strtoupper($category->name) ?? 'null'  }}
+                                <a href="{{route('category.show', $category)}}" style="color: #ff8400">
+                                    <strong>{{  strtoupper($category->name) ?? 'null'  }}</strong>
+                                </a>
+                                
                             </li>
                             @endforeach
                         </ul>       

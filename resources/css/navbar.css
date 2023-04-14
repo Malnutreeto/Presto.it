@@ -1,4 +1,6 @@
 
+
+
 .navbar {
     background-color: #01212d;
     margin: 0 10px 0 10px;
@@ -10,7 +12,15 @@
     color: #ffffff;
 }
 
-
+.wwu-button{
+    border-color: #ffffff;
+    color: #ffffff;
+}
+.wwu-button:hover{
+    
+  outline: #ff8400 solid 0.5px !important;
+  
+}
 
 .navbar-toggler{
     color: #ffffff;
@@ -39,32 +49,22 @@ li, a:hover{
     padding: 5px 55px;
     border-radius: 0 0 5px 5px;
 }
-.btn :hover{
-    color:#01212d !important;
-}
+
+
 
 form{
    display: hidden !important;
 }
 
-.form-select {
-    margin-right: 1em;
-    margin-left: 0.5em;
-    background-color: #01212d !important;
-    color: white;
-    width: 15em;
+.logout-button:hover{
+    background-color: #01212d;
+    color: #ff8400;
+    border-color: #ff8400;
 }
 
-.form-select:focus {
-    box-shadow: 0 0 0 0.25rem #fc850565;
-}
 
-.stocazzo {
-    box-shadow: 0px 0px 4px 4px #0000005a;
-    padding: 0.5em;
-    margin-top: 2em;
-    border-radius: 15px;
-}
+
+
 
 .btn-outline-success {
     color: #FC8505 !important;
@@ -79,10 +79,8 @@ form{
     color:#FC8505 !important;
 }
 
-  .form-control {
-    border: 0px;
-  }
 
-  .form-control:focus {
-    box-shadow: 0 0 0 0.25rem #fc850565;
+
+  .logout-field{
+   padding: 0;
   }

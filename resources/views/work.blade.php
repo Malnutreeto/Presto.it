@@ -35,7 +35,7 @@
   <div class="container d-flex justify-content-center flex-wrap mt-5">
     <div class="iconbox">
         <i class="bi bi-house-gear"></i>
-        <p class="d-none">Lorem ipsum dolor sit amet.</p>
+        <p class="">Lorem ipsum dolor sit amet.</p>
         <p>Lorem ipsum dolor sit amet.</p>
     </div>
     <div class="iconbox">
@@ -50,5 +50,13 @@
         <i class="bi bi-award-fill"></i>
         <p class="d-none">Lorem ipsum dolor sit amet.</p>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+        <p>Desideri lavorare in smart? Ora puoi!</p>
+    </div>
+    <div class="col-3"></div>
+    <div class="col-3"></div>
+    <div class="col-3"></div>
   </div>
 </x-layout>

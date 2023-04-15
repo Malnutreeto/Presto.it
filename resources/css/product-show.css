@@ -11,3 +11,8 @@ h2, h3, h5, h6{
 img{
     border-radius: 20px 20px 20px 20px;
 }
+.carousel-item{
+    display: flex;
+    justify-content: start;
+    
+}

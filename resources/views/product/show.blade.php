@@ -17,15 +17,29 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <span class="badge text-bg-warning position-absolute me-5"><p class="fs-4 p-0 m-1">{{strtoupper($product->state)}}</p></span>
+              <span class="
+              @if ($product->state == 'pending')
+              badge text-bg-warning position-absolute mt-1
+              @else
+              badge text-bg-success position-absolute mt-1
+              @endif
+              "><p class="fs-4 p-0 m-1">{{strtoupper($product->state)}}</p></span>
               <img src="https://picsum.photos/1920/1080" class="d-block img-fluid w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <span class="badge text-bg-warning position-absolute me-5"><p class="fs-4 p-0 m-1">{{strtoupper($product->state)}}</p></span>
+              <span class="@if ($product->state == 'pending')
+                badge text-bg-warning position-absolute mt-1
+                @else
+                badge text-bg-success position-absolute mt-1
+                @endif"><p class="fs-4 p-0 m-1">{{strtoupper($product->state)}}</p></span>
               <img src="https://picsum.photos/1920/1081" class="d-block img-fluid w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <span class="badge text-bg-warning position-absolute me-5"><p class="fs-4 p-0 m-1">{{strtoupper($product->state)}}</p></span>
+              <span class="@if ($product->state == 'pending')
+                badge text-bg-warning position-absolute mt-1
+                @else
+                badge text-bg-success position-absolute mt-1
+                @endif"><p class="fs-4 p-0 m-1">{{strtoupper($product->state)}}</p></span>
               <img src="https://picsum.photos/1920/1082" class="d-block img-fluid w-100" alt="...">
             </div>
           </div>

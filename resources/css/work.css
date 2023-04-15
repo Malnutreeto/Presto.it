@@ -1,19 +1,27 @@
+
 .iconbox{
-    border: 1px solid black;
+    border: 5px solid black;
     height: 250px;
     width: 250px;
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #01212d;
+    color:#01212d;
+}
+.send-request{
+    background-color: #01212d;
+    color: #ffffff;
+    border-radius:  50px 50px 50px;
+}
+.send-request:hover{
+    border-color: #ff8400;
+    color: #ff8400;
 }
 .bi{
     font-size: 60px;
 }
-p{
-    display: none;
-}
+
 .bi:hover{
     display: none;
     z-index:-1;
@@ -21,6 +29,11 @@ p{
 p:hover{
     z-index: 1;
     display: block;
+}
+.iconbox:hover{
+    border-color: #ff8400;
+    color: #ff8400;
+    
 }
 
 /* .bkg-img{

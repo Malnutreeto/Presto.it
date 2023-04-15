@@ -21,7 +21,7 @@ function addOrRemoveInMultiproduct (elmentId){
 
 productTable.addEventListener('change', function(event){
     
-    if (event.target.parentElement.tagName === 'TH'){
+    if (event.target.parentElement.tagName === 'FORM'){
         productTable.querySelectorAll('.form-check-input').forEach((element) => {
             if(event.target.checked === true){
                 element.checked = true

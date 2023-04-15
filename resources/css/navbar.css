@@ -21,6 +21,10 @@
   outline: #ff8400 solid 0.5px !important;
   
 }
+
+.dropdown-menu{
+    background-color: #01212d;
+}
 .searchbar{
     box-shadow: 0px 0px 4px 4px #0000005a;
     padding: 0.5em;

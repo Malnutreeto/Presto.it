@@ -35,6 +35,11 @@
               {{auth()->user()->nickname}}
             </a>
             <ul class="dropdown-menu p-0 dropdown-menu-end ">
+              @if(auth()->user()->role_id < 4)
+                <li class="">
+                  <a class="nav-link text-light p-0 ms-1" href="/admin">Pannello di controllo</a>
+                </li>
+              @endif
               <li class= "dropdown-item text-end p-0 ps-sm-0 logout-field w-100">
                 
                 <form  class="" action="/logout" method="POST">

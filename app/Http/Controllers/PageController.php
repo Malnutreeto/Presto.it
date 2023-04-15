@@ -100,15 +100,20 @@ class PageController extends Controller
    }
 
    public function searchProducts(Request $request) {
+
       $products = [];
-      $allProducts = Product::search($request->searched)->where('state', 'accepted')->get();
-      foreach($allProducts as $productz){
-         foreach($productz->categories as $category){
-            if ($request->category == $category->id)
-            array_push($products, $productz);
+      if($request->category){
+         $allProducts = Product::search($request->searched)->where('state', 'accepted')->get();
+         foreach($allProducts as $productz){
+            foreach($productz->categories as $category){
+               if ($request->category == $category->id)
+               array_push($products, $productz);
+            }
          }
+      }else{
+         $products = Product::search($request->searched)->where('state', 'accepted')->get();
       }
-       
+  
       return view('product.index', compact('products'));
    }
 }

@@ -5,11 +5,13 @@
         {{session('success')}}
     </div>
     @endif
+    <h1 class="text-center">Ti piace metterti in gioco?</h1>
+    <h4 class="text-center">Scopri la nostra offerta di lavoro!</h4>
     <form class="" action="/work" method="POST" id="demo-form">
         @csrf
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 d-flex justify-content-center mt-5 mb-3">
+                <div class="col-12 d-flex justify-content-center mt-3 mb-3">
                     <button type="submit" class="submit send-request g-recaptcha" data-sitekey="6LcapoUlAAAAAG-tA3chcxsm0JfhXGk4ioDMTkVi" data-callback="onSubmit">
                         Invia la richiesta
                     </button>

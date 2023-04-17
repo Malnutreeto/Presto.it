@@ -10,7 +10,7 @@
                 <img src="https://picsum.photos/600/300" class="img-fluid" alt="Responsive image">
             </div>
         </div>
-        <div class="col-6 container d-flex align-items-center justify-content-center psearchbar">
+        <div class="col-6 container d-flex align-items-center justify-content-center searchbar">
         <form action="{{route('products.search')}}" method="GET" class="form" role="search">
             <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search" name="searched">
             <div class="dropdown">

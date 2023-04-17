@@ -1,6 +1,6 @@
 <x-layout>
     @vite('resources/css/searchbar.css')
-    <div class="container-fluid mx-1 d-flex flex-column">
+    <div class="container-fluid d-flex flex-column">
         <div class="row mt-2 justify-content-sm-center text-center align-items-center">
             <div class="col-lg-12 col-md-12 col-sm-12 px-5 flex-column">
                 <h1>Welcome to presto.it</h1>
@@ -10,22 +10,25 @@
                 <img src="https://picsum.photos/600/300" class="img-fluid" alt="Responsive image">
             </div>
         </div>
-        <div class="col-6 container d-flex align-items-center justify-content-center searchbar">
-        <form action="{{route('products.search')}}" method="GET" class="form" role="search">
-            <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search" name="searched">
-            <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle cat-select-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Seleziona categoria
-            </button>
-            <ul class="dropdown-menu">
-                @foreach ($mainCategories as $mainCategory)
-                    <li class="dropdown-item container-fluid">{{strtoupper($mainCategory->name)}}</li>
-                @endforeach
-            </ul>
+        <div class="search-container d-flex justify-content-center">
+            <div class="searchbar">
+                <form action="{{route('products.search')}}" method="GET" class="form" role="search">
+                    <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search" name="searched">
+                    <div class="dropdown ">
+                    <button class="btn btn-secondary dropdown-toggle cat-select-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Seleziona categoria
+                    </button>
+                    <ul class="dropdown-menu">
+                        @foreach ($mainCategories as $mainCategory)
+                            <li class="dropdown-item container-fluid">{{strtoupper($mainCategory->name)}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                <button class="btn search-btn" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
         </div>
-        <button class="btn btn-outline-success search-btn" type="submit"><i class="bi bi-search"></i></button>
-        </form>
-    </div>
+        
         <div class="row mt-5 justify-content-center">
         @foreach ($mainCategories as $mainCategory)
             <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column justify-content-center text-center p-0 mx-2 m-1 porco">

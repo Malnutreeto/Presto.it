@@ -10,7 +10,7 @@
     border-bottom-left-radius: 1dvh;
     border-bottom-right-radius: 1dvh;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     bottom: 0;
     width: 100% !important;
 }

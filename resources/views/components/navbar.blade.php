@@ -1,19 +1,26 @@
-@vite('resources/css/navbar.css')
+@vite(['resources/css/navbar.css', 'resources/js/navbar.js'])
 
 
 
-<header class="header">
-  <div class="logo">
-    <img src="{{'Bianco.png'}}" alt="" width="250" height="240">
+<header id="logo" class="header">
+  <div id="header-logo" class="logo">
+    <img src="{{'conbusta.png'}}" alt="" width="150" height="140">
+    <div id="scritte-logo" class="scritte-logo" >
+        <p id="compra" class="compra" >Compra.</p>
+        <p id="vendi" class="vendi">Vendi.</p>
+        <p id="presto" class="presto">Presto.</p>
+    </div>
+    
   </div>
+ 
 </header>
 
 
-<div class="nav">
+<div id="navbar" class="nav">
   <input type="checkbox" id="nav-check">
   <div class="nav-header">
-    <div class="nav-title">
-      JoGeek
+    <div id="nav-logo" class="nav-logo">
+      <a href="/"><img src="{{ asset('solobusta.png') }}" alt="" width="50" height="40"></a>
     </div>
   </div>
   <div class="nav-btn">
@@ -28,6 +35,7 @@
     <a href="//github.io/jo_geek" target="_blank">Github</a>
     <a href="http://stackoverflow.com/users/4084003/" target="_blank">Stackoverflow</a>
     <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">LinkedIn</a>
+    
     <a href="https://codepen.io/jo_Geek/" target="_blank">Codepen</a>
     <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">JsFiddle</a>
   </div>

@@ -3,22 +3,76 @@
 #FC8505
 #01212d
 */
-* {
-    box-sizing: border-box;
+@-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   
-  body {
-    margin: 0px;
-    
-  }
+.scritte-logo{
+    font-size: 30px;
+    color: #FC8505;
+}
+.compra{
+  -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1s both;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1s both 1s both;  
+}
+.vendi{
+  -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s both;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 4s both 2s both;  
+}
+.presto{
+  -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 3s both;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 7s both 3s both;  
+}
+.header-logo{
+    margin-top: 100px;
+}
+.scritte-logo{
+    margin: 50px;
+}
+.logo{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: #01212d;
+    height: 400px;
+}
+.scritte-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
   
   .nav {
     height: 50px;
     width: 100%;
     background-color: #01212d;
     position: relative;
+    z-index: 1;
   }
   
+
   .nav > .nav-header {
     display: inline;
   }
@@ -27,7 +81,8 @@
     display: inline-block;
     font-size: 22px;
     color: #ffffff;
-    padding: 10px 10px 10px 10px;
+    
+    
   }
   
   .nav > .nav-btn {
@@ -39,7 +94,12 @@
     float: right;
     font-size: 18px;
   }
-  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
   .nav > .nav-links > a {
     display: inline-block;
     padding: 13px 10px 13px 10px;
@@ -69,13 +129,16 @@
       padding: 13px;
     }
     .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
-      background-color: #FC8505
+      background-color: #FC8505;
     }
+    .nav > .nav-btn > label > span:hover,.nav  #nav-check:checked ~ .nav-btn > label > span {
+        border-top: 2px solid #01212d;
+      }
     .nav > .nav-btn > label > span {
       display: block;
       width: 25px;
       height: 10px;
-      border-top: 2px solid #01212d;
+      border-top: 2px solid #FC8505;
     }
     .nav > .nav-links {
       position: absolute;
@@ -91,12 +154,13 @@
     .nav > .nav-links > a {
       display: block;
       width: 100%;
+      
     }
     .nav > #nav-check:not(:checked) ~ .nav-links {
       height: 0px;
     }
     .nav > #nav-check:checked ~ .nav-links {
-      height: calc(100vh - 50px);
+      height: calc(70vh - 50px);
       overflow-y: auto;
     }
   }

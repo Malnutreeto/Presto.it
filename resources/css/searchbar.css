@@ -32,15 +32,11 @@ form{
 
 .search-btn{
     flex: 1 0 40px;
-    color: #FC8505;
+    color: #FC8505 !important;
     border: 2px solid #FC8505;
     
 }
 .search-btn:hover{
     background-color: #FC8505;
-    color: #01212d;
-    font-size: x-large;
-    
-    
-
+    color: #01212d !important;
 }

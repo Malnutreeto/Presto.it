@@ -1,11 +1,12 @@
 <x-layout>
+    @vite('resources/css/searchbar.css')
     <div class="container-fluid mx-1 d-flex flex-column">
         <div class="row mt-2 justify-content-sm-center text-center align-items-center">
-            <div class="col-lg-6 col-md-12 col-sm-12 px-5">
+            <div class="col-lg-12 col-md-12 col-sm-12 px-5 flex-column">
                 <h1>Welcome to presto.it</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, possimus!</p>
             </div>
-            <div class="col-lg-6 md-6 sm-12 d-flex justify-content-center">
+            <div class="col-lg-12 md-6 sm-12 d-flex justify-content-center">
                 <img src="https://picsum.photos/600/300" class="img-fluid" alt="Responsive image">
             </div>
         </div>

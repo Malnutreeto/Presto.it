@@ -1,0 +1,26 @@
+/*
+#FC8505
+#01212d
+*/
+.searchbar{
+    
+    background-color: #01212d;
+   
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.search-input{
+    flex: 1 0 130px;
+}
+
+.cat-select-button{
+    flex: 1 0 130px;
+}
+
+.search-btn{
+    flex: 1 0 40px;
+}

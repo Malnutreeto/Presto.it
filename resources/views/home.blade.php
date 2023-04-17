@@ -19,17 +19,18 @@
             </button>
             <ul class="dropdown-menu">
                 @foreach ($mainCategories as $mainCategory)
-                    <option value="{{$mainCategory->id}}">{{strtoupper($mainCategory->name)}}</option>
-                @endforeach    
-            </select>
-        <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                    <li class="dropdown-item container-fluid">{{strtoupper($mainCategory->name)}}</li>
+                @endforeach
+            </ul>
+        </div>
+        <button class="btn btn-outline-success search-btn" type="submit"><i class="bi bi-search"></i></button>
         </form>
     </div>
         <div class="row mt-5 justify-content-center">
         @foreach ($mainCategories as $mainCategory)
-            <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column justify-content-center text-center p-0 mx-2 m-1 cat-icon">
+            <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column justify-content-center text-center p-0 mx-2 m-1 porco">
                 <i class="bi {{$mainCategory->icon}} fs-1"></i>
-                <a href="{{route('category.show', $mainCategory)}}" class="cat-link">
+                <a href="{{route('category.show', $mainCategory)}}" class="madonna">
                     <h5 class="madonna text-center">
                         {{strtoupper($mainCategory->name)}}
                     </h5>

@@ -13,5 +13,3 @@ function myFunction() {
     navlogo.classList.add("d-none"); 
   }
 }
-
-

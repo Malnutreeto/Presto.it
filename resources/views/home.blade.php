@@ -10,11 +10,14 @@
                 <img src="https://picsum.photos/600/300" class="img-fluid" alt="Responsive image">
             </div>
         </div>
-        <div class="col-lg-6 col-md-8 col-sm-11 container-fluid searchbar">
-        <form action="{{route('products.search')}}" method="GET" class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">
-            <select class="form-select" aria-label="Default select example" name="category">
-                <option selected disabled>Seleziona categoria</option>
+        <div class="col-6 container d-flex align-items-center justify-content-center searchbar">
+        <form action="{{route('products.search')}}" method="GET" class="form" role="search">
+            <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search" name="searched">
+            <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle cat-select-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Seleziona categoria
+            </button>
+            <ul class="dropdown-menu">
                 @foreach ($mainCategories as $mainCategory)
                     <option value="{{$mainCategory->id}}">{{strtoupper($mainCategory->name)}}</option>
                 @endforeach    

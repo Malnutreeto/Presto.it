@@ -47,3 +47,5 @@ Route::get('/', [PageController::class, 'home'] )->name('home');
 Route::get('/admin', [PageController::class, 'adminPanel'] )->name('admin');
 
 Route::get('products/search', [PageController::class, 'searchProducts'])->name('products.search');
+
+Route::post('/lingua/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');

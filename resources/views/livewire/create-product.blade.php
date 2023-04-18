@@ -39,6 +39,27 @@
                         <div class="col-12 m-3 border border-black">
                             <textarea wire:model="description" class="form-control" placeholder="Inserisci descrizione" id="floatingTextarea2" style="height: 100px"></textarea>
                         </div>
+                        <div class="col-12 m-3 border border-black">
+                            <input wire:model="temporary_images" class="form-control @error('temporary_images.*') is-invalid @enderror" type="file" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Inserisci il titolo" name="images" multiple placeholder="Img">
+                            @error('temporary_images.*')
+                                <p class="text-danger mt-2">{{$message}}</p>
+                            @enderror
+                        </div>
+                        @if(!empty($images))
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>Photo preview:</p>
+                                    <div class="row border border-4 border-info rounded shadow py-4">
+                                        @foreach ($images as $key => $image)
+                                            <div class="col my-3">
+                                                <img src="{{$image->temporaryUrl()}}" alt="" class="img-fluid">
+                                                <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
+                                            </div>                                            
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary m-2">Inserisci</button>
                         </div>

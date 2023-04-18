@@ -41,4 +41,10 @@ class Product extends Model
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * Create the relation for Product and images
+     */
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
 }

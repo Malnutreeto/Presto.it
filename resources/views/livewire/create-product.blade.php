@@ -8,7 +8,7 @@
     
     
     <div class="container d-flex justify-content-center border border black rounded">
-        <div class="row d-flex justify-content-start">
+        <div class="row d-flex justify-content-start">  
             <form  wire:submit.prevent="store" >
                 <div class="col-10 border border black rounded w-75 h-25 m-1">
                     inserisci immagine
@@ -45,25 +45,27 @@
                                 <p class="text-danger mt-2">{{$message}}</p>
                             @enderror
                         </div>
-                        @if(!empty($images))
-                            <div class="row">
-                                <div class="col-12">
-                                    <p>Photo preview:</p>
-                                    <div class="row border border-4 border-info rounded shadow py-4">
-                                        @foreach ($images as $key => $image)
-                                            <div class="col my-3">
-                                                <img src="{{$image->temporaryUrl()}}" alt="" class="img-fluid">
-                                                <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
-                                            </div>                                            
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-                        @endif
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary m-2">Inserisci</button>
                         </div>
-                    </form>  
+                    </form>
+                    <div class="loader d-none">
+                    </div>
+                    @if(!empty($images))
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Photo preview:</p>
+                                <div class="row border border-4 border-info rounded shadow py-4">
+                                    @foreach ($images as $key => $image)
+                                        <div class="col my-3">
+                                            <img src="{{$image->temporaryUrl()}}" alt="" class="img-fluid">
+                                            <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
+                                        </div>                                            
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
             {{-- <div class="row justify-content-around border border-secondary rounded mx-5 mt-4 ">

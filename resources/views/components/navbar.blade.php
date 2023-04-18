@@ -3,12 +3,12 @@
 
 
 <header id="logo" class="header">
-  <div id="header-logo" class="logo">
-    <img src="{{'conbusta.png'}}" alt="" width="150" height="140">
-    <div id="scritte-logo" class="scritte-logo" >
+  <div id="header-logo" class="logo py-4">
+    <img src="{{'solobusta.png'}}" alt="" width="150" height="140" class="position-fixed">
+    <div id="scritte-logo" class="scritte-logo d-flex justify-content-center" >
         <p id="compra" class="compra" >Compra.</p>
         <p id="vendi" class="vendi">Vendi.</p>
-        <p id="presto" class="presto">Presto.</p>
+        <p id="presto" class="presto ms-4 text-light">Presto.it</p>
     </div>
     
   </div>
@@ -19,7 +19,7 @@
 <div id="navbar" class="nav">
   <input type="checkbox" id="nav-check">
   <div class="nav-header">
-    <div id="nav-logo" class="nav-logo">
+    <div id="nav-logo" class="nav-logo d-none">
       <a href="/"><img src="{{ asset('solobusta.png') }}" alt="" width="50" height="40"></a>
     </div>
   </div>

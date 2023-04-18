@@ -61,6 +61,8 @@
 }
 
 .scritte-logo{
+  position: absolute;
+  top: 125px;
   font-size: 30px;
   color: #FC8505;
 }
@@ -78,15 +80,17 @@ animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 4s bot
         animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;  
 }
 .presto{
-/* -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 3s both;
-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 7s both 3s both;   */
--webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both;
-        animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both;
+-webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 3s both;
+animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 7s both 3s both;  
+/* -webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both;
+        animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both; */
 }
 .header-logo{
   margin-top: 100px;
 }
 .scritte-logo{
+  position: fixed;
+  z-index: 1;
   margin: 50px;
 }
 .logo{

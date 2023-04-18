@@ -16,33 +16,11 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <span class="
-              @if ($product->state == 'pending')
-              badge text-bg-warning position-absolute mt-1
-              @else
-              badge text-bg-success position-absolute mt-1
-              @endif
-              "><p class="fs-4 p-0 m-1">{{strtoupper($product->state)}}</p></span>
-              <img src="https://picsum.photos/1920/1080" class="d-block img-fluid w-100" alt="...">
-            </div>
+            @foreach ($product->images as $image)
             <div class="carousel-item">
-              <span class="@if ($product->state == 'pending')
-                badge text-bg-warning position-absolute mt-1
-                @else
-                badge text-bg-success position-absolute mt-1
-                @endif"><p class="fs-4 p-0 m-1">{{strtoupper($product->state)}}</p></span>
-              <img src="https://picsum.photos/1920/1081" class="d-block img-fluid w-100" alt="...">
+              <img src="{{ Storage::url($image->path) }}" class="d-block img-fluid w-100" alt="...">
             </div>
-            <div class="carousel-item">
-              <span class="@if ($product->state == 'pending')
-                badge text-bg-warning position-absolute mt-1
-                @else
-                badge text-bg-success position-absolute mt-1
-                @endif"><p class="fs-4 p-0 m-1">{{strtoupper($product->state)}}</p></span>
-              <img src="https://picsum.photos/1920/1082" class="d-block img-fluid w-100" alt="...">
-            </div>
-          </div>
+            @endforeach
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bg-warning rounded-circle" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>

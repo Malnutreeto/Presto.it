@@ -10,9 +10,10 @@
     <div class="container d-flex justify-content-center border border black rounded">
         <div class="row d-flex justify-content-start">  
             <form  wire:submit.prevent="store" >
-                <div class="col-10 border border black rounded w-75 h-25 m-1">
-                    inserisci immagine
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary m-2">Inserisci</button>
                 </div>
+               
                 <div class="col-12 border border black rounded m-1">
                     <input wire:model="title" class="form-control @error('title') is-invalid @enderror" type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Inserisci il titolo">
                     @error('title')
@@ -45,9 +46,7 @@
                                 <p class="text-danger mt-2">{{$message}}</p>
                             @enderror
                         </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary m-2">Inserisci</button>
-                        </div>
+                       
                     </form>
                     <div class="loader d-none">
                     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Livewire\ResizeImage;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Main_category;
@@ -88,6 +89,8 @@ class CreateProduct extends Component
                 $product->images()->create(['path' => $image->storeAs('public/images/' . Auth::id(),  Str::slug($product['title'], '_'). $key . '.' . $image->extension())]);
 
                 dispatch(new ResizeImage($image->path, 400, 300));
+
+                File::deleteDirectory(storage_path('app/livewire-tmp '));
             }
         }
 

@@ -36,11 +36,11 @@ class ProductController extends Controller
     public function create()
     {
         //Show all products created taht day by the logged user
-        $lastProducts = Product::where('created_at', '>', Carbon::now()->subDays(1))->where('user_id', Auth::user()->id)->get();
+        $products = Product::all();
 
         return view('product.create')->with([
             'mainCategories' => Main_category::all(),
-            'lastProducts' => $lastProducts,
+            'products' => $products,
         ]);
     }
 

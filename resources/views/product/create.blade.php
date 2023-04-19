@@ -2,7 +2,7 @@
     @vite(['resources/css/product-create.css','resources/js/product-create.js'])
     <div class="container-fluid mt-5">
           <div class="col-12">
-            <livewire:create-product :mainCategories="$mainCategories" :lastProducts="$lastProducts" />
+            <livewire:create-product :mainCategories="$mainCategories" :products="$products" />
         </div>
         {{-- <div class="row justify-content-center mt-5">
             @foreach ($lastProducts as $lastProduct)
@@ -20,4 +20,5 @@
             @endforeach
         </div>
     </div> --}}
+    </div>
 </x-layout>

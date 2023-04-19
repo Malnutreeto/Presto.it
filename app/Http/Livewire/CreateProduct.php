@@ -25,6 +25,7 @@ class CreateProduct extends Component
     public $temporary_images;
     public $images = [];
     public $image;
+    public $products; 
     public $product; 
 
     

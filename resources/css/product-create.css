@@ -1,4 +1,87 @@
-.img-preview{
+.container{
+  padding: 10px;
+  width: 600px;
+  border: 1px solid #01212d;
+}
+
+.user-image{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background-color: #FC8505;
+  color: #01212d;
+}
+
+.img-input{
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.position{
+  top: 10%;
+  left: 5%;
+}
+
+.loader {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  background: #FFF;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg) translate(30%, 40%);
+  background: #ff9371;
+  box-shadow: 32px -34px 0 5px #ff3d00;
+  animation: slide 2s infinite ease-in-out alternate;
+}
+.loader:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff3d00;
+  transform: rotate(0deg);
+  transform-origin: 35px 145px;
+  animation: rotate 2s infinite ease-in-out;
+}
+
+@keyframes slide {
+  0% , 100%{ bottom: -35px}
+  25% , 75%{ bottom: -2px}
+  20% , 80%{ bottom: 2px}
+}
+@keyframes rotate {
+  0% { transform: rotate(-15deg)}
+  25% , 75%{ transform: rotate(0deg)}
+  100% {  transform: rotate(25deg)}
+}
+
+
+.form-control, .form-select{
+  border: 2px solid #FC8505;
+}
+
+.form-control:focus, .form-select:focus {
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-color: #FC8505;
+  box-shadow: 0 0 0 0.25rem #fc85057e;
+}
+
+
+/* .img-preview{
     height: 50px;
     width: 20px;
 }
@@ -33,4 +116,4 @@
       0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
       50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
       75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
-  }
+  } */

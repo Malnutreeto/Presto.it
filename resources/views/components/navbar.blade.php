@@ -4,7 +4,7 @@
 
 <header id="logo" class="header">
   <div id="header-logo" class="logo py-4">
-    <img src="{{'solobusta.png'}}" alt="" width="150" height="140" class="position-fixed">
+    <img src="{{asset('site_img/solobusta.png')}}" alt="" width="150" height="140" class="position-fixed">
     <div id="scritte-logo" class="scritte-logo d-flex justify-content-center" >
         <p id="compra" class="compra" >Compra.</p>
         <p id="vendi" class="vendi">Vendi.</p>
@@ -20,7 +20,7 @@
   <input type="checkbox" id="nav-check">
   <div class="nav-header">
     <div id="nav-logo" class="nav-logo d-none">
-      <a href="/"><img src="{{ asset('solobusta.png') }}" alt="" width="50" height="40"></a>
+      <a href="/"><img src="{{ asset('site_img/solobusta.png') }}" alt="" width="50" height="40"></a>
     </div>
   </div>
   <div class="nav-btn">

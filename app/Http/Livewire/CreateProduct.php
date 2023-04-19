@@ -86,6 +86,8 @@ class CreateProduct extends Component
         if (count($this->images)){
             foreach($this->images as $key => $image){
                 $product->images()->create(['path' => $image->storeAs('public/images/' . Auth::id(),  Str::slug($product['title'], '_'). $key . '.' . $image->extension())]);
+
+                dispatch(new ResizeImage($image->path, 400, 300));
             }
         }
 

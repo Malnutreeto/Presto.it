@@ -16,10 +16,16 @@ function myFunction() {
     navlogo.classList.add("d-none"); 
   }
   
-  if (window.pageYOffset >= sticky - 100) {
+  if (window.pageYOffset >= sticky - 110) {
     headerLogo.children[0].classList.remove("position-fixed")
+    for(let element of scritteLogo.children){
+      element.classList.remove("position-fixed")
+    }
   } else {
     headerLogo.children[0].classList.add("position-fixed")
+    for(let element of scritteLogo.children){
+      element.classList.add("position-fixed")
+    }
   }
 }
 

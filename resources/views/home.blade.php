@@ -15,17 +15,12 @@
                 <form action="{{ route('products.search') }}" method="GET" class="form" role="search">
                     <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search"
                         name="searched">
-                    <div class="dropdown ">
-                        <button class="btn btn-secondary dropdown-toggle cat-select-button" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Seleziona categoria
-                        </button>
-                        <ul class="dropdown-menu">
-                            @foreach ($mainCategories as $mainCategory)
-                                <li class="dropdown-item container-fluid">{{ strtoupper($mainCategory->name) }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
+                    <select class="form-select cat-select-button" aria-label="Default select example">
+                        <option selected>Seleziona una categoria</option>
+                        @foreach ($mainCategories as $mainCategory)
+                            <option value="{{$mainCategory->id}}">{{ strtoupper($mainCategory->name) }}</option></li>
+                        @endforeach
+                    </select>
                     <button class="btn search-btn" type="submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>
@@ -34,11 +29,11 @@
 
 
 
-        <div class="row big-container">
+        <div class="row big-container justify-content-center">
             @foreach ($products as $product)
-                <div class="col-3 d-flex justify-content-center container">
+                <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6 p-0 m-md-2 m-lg-0 d-flex justify-content-center container">
                     <div class="card">
-                        <div class="face face1">
+                        <div class="face face1 card-border-animation">
                             <div class="content">
                                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-inner">
@@ -50,22 +45,27 @@
                                     </div>
                                 </div>
                             </div>
+                            <span class="top"></span>
+                            <span class="right"></span>
+                            <span class="bottom"></span>
+                            <span class="left"></span>
                         </div>
                         <div class="face face2">
-                            <div class="content text-center">
+                            <div class="content text-center row justify-content-center">
                                 <h5>{{ $product->title }}...</h5>
                                 <p class="card-text">{{ substr($product->description, 0, 30) }}</p>
-                                <div class="container-fluid">
-                                    <ul class="row details justify-content-center m-0">
-                                        @foreach ($shareComponent->getRawLinks() as $key => $component)
-                                            <li class="col-4 text-center"><a href="{{ $component }}"><i
-                                                        class="bi bi-{{ $key }} fs-4 @if ($key === 'whatsapp') text-success @endif"></i></a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                    <div class="btnn m-0 text-start">
-                                        <a href="{{ route('product.show', $product) }}" class="card-link">Vai al
-                                            dettaglio</a>
+                                <div class="face2-element-container g-2">
+                                    <div class="row justify-content-center">
+                                        <ul class="col-6 d-flex details justify-content-around m-0 p-0">
+                                            @foreach ($shareComponent->getRawLinks() as $key => $component)
+                                                <li class="col-4 text-center"><a href="{{ $component }}" class="border border-0 m-0">
+                                                    <i class="bi bi-{{ $key }}  fs-4 @if ($key === 'whatsapp') text-success @else text-primary @endif"></i></a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                        <div class="col-12 btnn m-0 d-flex justify-content-center">
+                                            <a href="{{ route('product.show', $product) }}" class="card-link p-1">Vai al dettaglio</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

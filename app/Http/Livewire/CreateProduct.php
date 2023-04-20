@@ -2,14 +2,21 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Livewire\ResizeImage;
+use App\Jobs\CreateImage;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Main_category;
 use Carbon\Carbon;
+use Faker\Core\File;
+use Illuminate\Http\Testing\File as TestingFile;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File as FacadesFile;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
+use Intervention\Image\File as ImageFile;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Storage;
+use Spatie\Backtrace\File as BacktraceFile;
 
 class CreateProduct extends Component
 {
@@ -87,11 +94,13 @@ class CreateProduct extends Component
         
         if (count($this->images)){
             foreach($this->images as $key => $image){
-                $product->images()->create(['path' => $image->storeAs('public/images/' . Auth::id(),  Str::slug($product['title'], '_'). $key . '.' . $image->extension())]);
+            
+                $newImage = $product->images()->create(['path' => $image->storeAs('images/' . Auth::id(),  Str::slug($product['title'], '_'). $key . '.' . $image->extension(), 'public')]);
+                
+                dispatch(new CreateImage($newImage->path, 100, 100));
 
-                dispatch(new ResizeImage($image->path, 400, 300));
-
-                File::deleteDirectory(storage_path('app/livewire-tmp '));
+              
+                Storage::deleteDirectory(storage_path('app/livewire-tmp '));
             }
         }
 

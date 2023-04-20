@@ -18,10 +18,10 @@ class CreateImage implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private $h;
-    private $w;
-    private $fileName;
-    private $path;
+    public $h;
+    public $w;
+    public $fileName;
+    public $path;
 
     public function __construct($filePath, $w, $h)
     {

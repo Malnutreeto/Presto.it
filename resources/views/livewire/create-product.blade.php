@@ -1,8 +1,8 @@
-<div class="container-fluid d-flex justify-content-center">
-    <div class="container mb-4">
+<div class="container-fluid d-flex justify-content-center mt-5">
+    <div class="container mb-4 justify-content-center">
         <div class="row w-100">
             <form  wire:submit.prevent="store" >
-                <div class="col-12 d-flex">
+                <div class="col-12 d-flex justify-content-center">
                     <div class="user-image d-flex align-items-center justify-content-center">
                         <h4 class="text-center">{{ strtoupper(substr(auth()->user()->nickname, 0, 1)) }}</h4>
                     </div>
@@ -60,8 +60,8 @@
                         @endif
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="col-4 d-flex justify-content-center align-item-center my-2">
+                <div class="col-12 d-flex flex-column align-items-center">
+                    <div class="col-8 d-flex justify-content-center align-item-center my-2">
                         <input wire:model="price" class="form-control @error('price') is-invalid @enderror" type="numeric"
                             placeholder="Inserisci il prezzo" required>
                         @error('price')
@@ -77,7 +77,7 @@
                             {{ $message }}
                         @enderror
                     </div>
-                    <div class="col-12 my-2">
+                    <div class="col-8 my-2">
                         <select wire:model.defer="category" class="form-select" aria-label="Default select example" required>
                             <option selected disabled>Seleziona categoria</option>
                             @foreach ($mainCategories as $maincategory)
@@ -85,7 +85,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-12 border border-black my-2">
+                    <div class="col-8 border border-black my-2">
                         <textarea wire:model="description" class="form-control" placeholder="Inserisci descrizione" id="floatingTextarea2"
                             style="height: 100px"></textarea>
                     </div>

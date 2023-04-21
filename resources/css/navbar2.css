@@ -1,7 +1,8 @@
-.header {
+.headerz {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .scritte-logo{
@@ -87,10 +88,6 @@
     }
   }
 
-.trafiletto {
-    width: 1400px;
-}
-
 .dropdown-menu {
     --bs-dropdown-min-width: 0;
     --bs-dropdown-padding-x: 0;
@@ -105,8 +102,21 @@
     background-color: #FC8505 !important;
 }
 
-.area-personale {
+.row {
+    padding-left: 0 !important;
+}
+
+.coluno {
+    width: 5% !important;
+}
+
+.colunouno {
+    width: 10% !important;
     display: flex;
     align-items: center;
-    width: 20em;
+    margin: auto;
+}
+
+i {
+    margin: auto ;
 }

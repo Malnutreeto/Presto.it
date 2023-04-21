@@ -100,11 +100,3 @@
     </div>
   </nav>
 </div> --}}
-<ul>
-  <li>
-    <x-_locale lang="it" nation="it" />
-  </li>
-  <li>
-    <x-_locale lang="en" nation="gb" />
-  </li>
-</ul>

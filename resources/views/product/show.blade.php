@@ -1,10 +1,10 @@
 <x-layout>
   @vite('resources/css/product-show.css')
-  <div class="container-fluid " style="height: 100vh">
+  <div class="container-fluid d-flex justify-content-center " style="height: 100vh">
     
-
-    <div class="row mt-4">
-      <div class="col-6">
+    
+    <div class="row w-50 h-50 border border-black rounded mt-4 flex-column justify-content-center align-items-center prod-show">
+      <div class="col-4 text-center">
         <h3 class="product-show-title">{{ strtoupper($product->title) }}</h3>
         <p class="product-show-description">{{ $product->description }}</p>
       </div>
@@ -40,9 +40,11 @@
         <h6>Utente dal: {{\Carbon\Carbon::parse($product->user->created_at)->format('d/m/y')}}</h6>
         <h6> Ultimo aggiornamento: {{\Carbon\Carbon::parse($product->udate_at)->format('d/m/y')}}</h6>
         </div>
-        
-        
       </div>
+      {{-- <span class="top"></span>
+     <span class="right"></span>
+     <span class="bottom"></span>
+    <span class="left"></span> --}}
     </div>
         
       

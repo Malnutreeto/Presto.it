@@ -16,7 +16,8 @@
     @livewireScripts
 </head>
 <body>
-    <x-navbar/>
+    <x-navbar2/>
+
     
     {{ $slot }}
     @livewireScripts

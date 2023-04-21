@@ -1,0 +1,88 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scritte-logo{
+    position: absolute;
+    font-size: 30px;
+    color: #FC8505;
+    background-color: transparent;
+  }
+  .compra{
+  /* -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1s both;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1s both 1s both;  */
+  
+  -webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.3s both;
+          animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.3s both;
+  }
+  .vendi{
+  /* -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s both;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 4s both 2s both; */
+  -webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;
+          animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;  
+  }
+  .presto{
+  -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 3s both;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 7s both 3s both;  
+  /* -webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both;
+          animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both; */
+  }
+
+  @-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes tracking-out-contract-bck {
+    0% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-500px);
+              transform: translateZ(-500px);
+      opacity: 0;
+    }
+  }
+  @keyframes tracking-out-contract-bck {
+    0% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-500px);
+              transform: translateZ(-500px);
+      opacity: 0;
+    }
+  }

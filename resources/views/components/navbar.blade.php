@@ -109,5 +109,3 @@
     <x-_locale lang="en" nation="gb" />
   </li>
 </ul>
-
-<p>{{__('ui.prova')}}</p>

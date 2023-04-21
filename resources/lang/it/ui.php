@@ -1,4 +1,6 @@
 <?php
 return [
-    'prova' => 'Ti cago sul petto'
+    'compra' => 'Compra',
+    'vendi' => 'Vendi',
+    
 ];

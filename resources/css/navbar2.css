@@ -86,3 +86,27 @@
       opacity: 0;
     }
   }
+
+.trafiletto {
+    width: 1400px;
+}
+
+.dropdown-menu {
+    --bs-dropdown-min-width: 0;
+    --bs-dropdown-padding-x: 0;
+    --bs-dropdown-padding-y: 0;
+}
+
+.btn-secondary {
+    --bs-btn-bg: #01212d;
+}
+
+.btn-secondary:hover {
+    background-color: #FC8505 !important;
+}
+
+.area-personale {
+    display: flex;
+    align-items: center;
+    width: 20em;
+}

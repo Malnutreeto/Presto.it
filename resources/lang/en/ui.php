@@ -1,4 +1,6 @@
 <?php
 return [
-    'prova' => 'I will poop on your chest'
+    'compra' => 'Buy',
+    'vendi' => 'Sell',
+    
 ];

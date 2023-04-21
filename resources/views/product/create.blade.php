@@ -1,6 +1,6 @@
 <x-layout>
     @vite(['resources/css/product-create.css','resources/js/product-create.js'])
-    <div class="container-fluid mt-5">
+    <div class="container-fluid">
           <div class="col-12">
             <livewire:create-product :mainCategories="$mainCategories" :products="$products" />
         </div>

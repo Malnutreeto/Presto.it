@@ -1,5 +1,5 @@
 <div class="container-fluid d-flex justify-content-center">
-    <div class="container">
+    <div class="container mb-4">
         <div class="row w-100">
             <form  wire:submit.prevent="store" >
                 <div class="col-12 d-flex">
@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="col-12 d-flex align-items-center justify-content-center">
-                    <div class="img-input d-flex align-items-center justify-content-center">
+                    <div class="img-input d-flex align-items-center justify-content-center my-2">
                         @if (empty($images))
                             <div class="row justify-content-center">
                                 <button class="loader btn"></button>
@@ -20,7 +20,7 @@
                             </div>
                             <input wire:model="temporary_images" class=" d-none @error('temporary_images.*') is-invalid @enderror"
                                 type="file" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-                                placeholder="Inserisci il titolo" name="images" multiple placeholder="Img">
+                                placeholder="Inserisci il titolo" name="images" multiple placeholder="Img" required>
                             @error('temporary_images.*')
                                 <p class="text-danger mt-2">{{ $message }}</p>
                             @enderror
@@ -61,31 +61,31 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <div class="col-4 d-flex justify-content-center align-item-center m-1">
+                    <div class="col-4 d-flex justify-content-center align-item-center my-2">
                         <input wire:model="price" class="form-control @error('price') is-invalid @enderror" type="numeric"
-                            placeholder="Inserisci il prezzo">
+                            placeholder="Inserisci il prezzo" required>
                         @error('price')
                             {{ $message }}
                         @enderror
                         <div class="d-flex align-items-center ms-2"><strong>EUR</strong></div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-8 my-2">
                         <input wire:model="title" class="form-control @error('title') is-invalid @enderror" type="text"
                             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-                            placeholder="Inserisci il titolo">
+                            placeholder="Inserisci il titolo" required>
                         @error('title')
                             {{ $message }}
                         @enderror
                     </div>
-                    <div class="col-12 m-1">
-                        <select wire:model.defer="category" class="form-select" aria-label="Default select example">
+                    <div class="col-12 my-2">
+                        <select wire:model.defer="category" class="form-select" aria-label="Default select example" required>
                             <option selected disabled>Seleziona categoria</option>
                             @foreach ($mainCategories as $maincategory)
                                 <option value="{{ $maincategory->id }}">{{ $maincategory->name }}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-12 border border-black">
+                    <div class="col-12 border border-black my-2">
                         <textarea wire:model="description" class="form-control" placeholder="Inserisci descrizione" id="floatingTextarea2"
                             style="height: 100px"></textarea>
                     </div>

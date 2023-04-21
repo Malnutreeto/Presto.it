@@ -41,11 +41,10 @@
             @endif
       </li>
     </ul> --}}
-    <a href="http://stackoverflow.com/users/4084003/" target="_blank">inserisci annuncio</a>
-    <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">categorie</a>
-    
-    <a href="https://codepen.io/jo_Geek/" target="_blank">prodotti</a>
-    <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">utente</a>
+    <a href="{{route('product.create')}}">inserisci annuncio</a>
+    <a href="{{route('category.index')}}">categorie</a>
+    <a href="{{route('product.index')}}">prodotti</a>
+    <a href="{{}}">utente</a>
   </div>
 </div>
 

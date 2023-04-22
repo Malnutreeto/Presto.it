@@ -93,7 +93,14 @@
     --bs-dropdown-padding-x: 0;
     --bs-dropdown-padding-y: 0;
 }
-
+.userbtn {
+  background-color: #01212d;
+  color: #ffffff;
+}
+.userbtn:hover {
+  color: #FC8505;
+  background-color: #01212d;
+}
 .btn-secondary {
     --bs-btn-bg: #01212d;
 }

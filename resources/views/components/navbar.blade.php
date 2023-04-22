@@ -18,7 +18,7 @@
             </div>
             <div class="">
                 @auth
-                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn userbtn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-person-circle me-1"></i>{{ auth()->user()->nickname }}</i>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark">

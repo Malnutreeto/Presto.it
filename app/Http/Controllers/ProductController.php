@@ -23,10 +23,20 @@ class ProductController extends Controller
      */
     public function index()
     {
+        //Option for share component
+        $shareComponent = \Share::page(
+        'http://127.0.0.1:8000',
+        'Corri a vedere le offerte su Presto.it',
+        )
+        ->facebook()
+        ->telegram()
+        ->whatsapp();
+
         return view('product.index')->with([
             //Show only products with state accepted
             'products' => Product::where('state', 'accepted')->get(),
-            'mainCategories', Main_category::all()
+            'mainCategories' => Main_category::all(),
+            'shareComponent' =>  $shareComponent
         ]);
     }
 
@@ -68,7 +78,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('product.show')->with('product', $product);
+        $products = Product::all();
+        return view('product.show')->with(['product' => $product, 'products' => $products]);
     }
 
     /**

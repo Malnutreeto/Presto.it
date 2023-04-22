@@ -1,3 +1,111 @@
+.headerz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.scritte-logo{
+    position: absolute;
+    font-size: 70px;
+    color: #FC8505;
+    background-color: transparent;
+  }
+  .compra{
+  /* -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1s both;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1s both 1s both;  */
+  
+  -webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.3s both;
+          animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.3s both;
+  }
+  .vendi{
+  /* -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s both;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 4s both 2s both; */
+  -webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;
+          animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;  
+  }
+  .presto{
+  -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 3s both;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 7s both 3s both;  
+  /* -webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both;
+          animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both; */
+  }
+
+  @-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes tracking-out-contract-bck {
+    0% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-500px);
+              transform: translateZ(-500px);
+      opacity: 0;
+    }
+  }
+  @keyframes tracking-out-contract-bck {
+    0% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-500px);
+              transform: translateZ(-500px);
+      opacity: 0;
+    }
+  }
+
+.dropdown-menu {
+    --bs-dropdown-min-width: 0;
+    --bs-dropdown-padding-x: 0;
+    --bs-dropdown-padding-y: 0;
+}
+
+.btn-secondary {
+    --bs-btn-bg: #01212d;
+}
+
+.btn-secondary:hover {
+    background-color: #FC8505 !important;
+}
+
+i {
+    margin: auto ;
+}
+
 
 /*navbar Manu
 #FC8505
@@ -60,31 +168,6 @@
   }
 }
 
-.scritte-logo{
-  position: absolute;
-  top: 125px;
-  font-size: 30px;
-  color: #FC8505;
-}
-.compra{
-/* -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1s both;
-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 1s both 1s both;  */
-
--webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.3s both;
-        animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.3s both;
-}
-.vendi{
-/* -webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s both;
-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 4s both 2s both; */
--webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;
-        animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2.3s both;  
-}
-.presto{
--webkit-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 3s both;
-animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 7s both 3s both;  
-/* -webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both;
-        animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both; */
-}
 .header-logo{
   margin-top: 100px;
 }
@@ -108,7 +191,6 @@ animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 7s bot
 
 .nav {
   height: 50px;
-  width: 100%;
   background-color: #01212d;
   position: relative;
   z-index: 1;
@@ -206,86 +288,3 @@ animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 7s bot
     overflow-y: auto;
   }
 }
-
-
-
-
-
-/* navbar gruppo 2
-.navbar {
-  background-color: #01212d;
-  margin: 0 10px 0 10px;
-  border-radius: 0 0 15px 15px;
-}
-
-.navbar li
-{
-  color: #ffffff;
-}
-
-.dropdown-menu{
-  background-color: #ffffff;
-  margin-left: -5em;
-  
-}
-
-.navbar-toggler{
-  color: #ffffff;
-  border: 0 !important;
-}
-
-.navbar-toggler:hover{
-  background-color: #ffffff6d !important;
-  color: #01212d !important;
-  
-}
-
-li, a{
-  display:inline !important;
-  text-align: end !important;
-}
-li, a:hover{
-  
-  color: #47585e9b !important;
-}
-
-.submit{
-  background-color: #01212d;
-  color: #ffffff;
-  font-size: 15px;
-  padding: 5px 55px;
-  border-radius: 0 0 5px 5px;
-}
-.btn :hover{
-  color:#01212d !important;
-}
-
-form{
-  background-color: transparent !important;
-}
-
-.ciaoh {
-  margin-right: 1em;
-  margin-left: 0.5em;
-  background-color: #01212d !important;
-}
-
-.stocazzo {
-  border: 2px solid #01212d;
-  padding: 0.5em;
-  border-radius: 15px;
-  margin-top: 2em;
-}
-
-.btn-outline-success {
-  color: #FC8505 !important;
-  border-color: #FC8505 !important;
-}
-
-.btn-outline-success:hover {
-  background-color: #ffd5a8 !important;
-}
-
-.bi-search:hover {
-  color:#FC8505 !important;
-} */

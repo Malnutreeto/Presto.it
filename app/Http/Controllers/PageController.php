@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\CreateImage;
 use App\Mail\RevisorRequest;
 use App\Models\Main_category;
 use Illuminate\Http\Request;
@@ -9,9 +10,12 @@ use App\Models\Product;
 use App\Models\Ticket;
 use App\Models\User;
 use App\Policies\UserPolicy;
+use Faker\Core\File;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\File as FacadesFile;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class PageController extends Controller
 {
@@ -22,7 +26,7 @@ class PageController extends Controller
    public function home() {
       
       //Show all accepted product in ascending order
-      $products = Product::where('state', 'accepted')->take(30)->get()->sortByDesc('created_at');
+      $products = Product::where('state', 'accepted')->take(10)->get()->sortByDesc('created_at');
       
       $mainCategories = [];
       

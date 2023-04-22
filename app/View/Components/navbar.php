@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Main_category;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -15,12 +16,14 @@ class navbar extends Component
     {
         //
     }
+    
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('components.navbar');
+        $mainCategories = Main_category::all();
+        return view('components.navbar')->with('mainCategories', $mainCategories);
     }
 }

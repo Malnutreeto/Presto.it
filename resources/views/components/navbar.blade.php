@@ -3,7 +3,7 @@
     <div class="row justify-content-end">
         <div class="col-12 d-flex justify-content-end align-items-center">
             <div class="btn-group dropstart m-1">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                <button type="button" class="btn btn-secondary dropdown-toggle lang-btn" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     <i class="fi fi-{{ app()->getLocale() === 'en' ? 'gb' : app()->getLocale() }}"></i>
                 </button>

@@ -97,6 +97,9 @@
   background-color: #01212d;
   color: #ffffff;
 }
+.lang-btn {
+  background-color: #01212d;
+}
 .userbtn:hover {
   color: #FC8505;
   background-color: #01212d;

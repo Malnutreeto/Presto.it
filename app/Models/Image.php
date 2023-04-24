@@ -12,6 +12,10 @@ class Image extends Model
     use HasFactory;
     
     public $fillable = ['path'];
+
+    protected $casts = [
+        'labels' => 'array'
+    ];
     
     /**
      * Create the relation for Images and Product

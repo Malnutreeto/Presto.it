@@ -18,6 +18,7 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Backtrace\File as BacktraceFile;
 use App\Jobs\GoogleVisionSafeSearch;
+use App\Jobs\GoogleVisionLabelImage;
 
 class CreateProduct extends Component
 {
@@ -99,6 +100,8 @@ class CreateProduct extends Component
                 $newImage = $product->images()->create(['path' => $image->storeAs('images/' . Auth::id(),"_300x300_".Str::slug($product['title'], '_'). $key . '.' . $image->extension(), 'public')]);
                 
                 dispatch(new CreateImage($newImage->path, 300, 300));
+                dispatch(new GoogleVisionSafeSearch($newImage->id));
+                dispatch(new GoogleVisionLabelImage($newImage->id));
 
               
                 Storage::deleteDirectory(storage_path('app/livewire-tmp '));

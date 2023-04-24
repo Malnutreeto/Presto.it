@@ -196,13 +196,22 @@
                                         <td>{{ $product->state }}</td>
                                         <td>
                                             @foreach ($product->images as $image)
-                                            <p>Adulti: <span><i class="{{$image->adult}}"></i></span></p>
-                                            <p>Satira: <span><i class="{{$image->spuff}}"></i></span></p>
-                                            <p>Medicina: <span><i class="{{$image->spuff}}"></i></span></p>
-                                            <p>Violenza: <span><i class="{{$image->violence}}"></i></span></p>
-                                            <p>Contenuto ammiccante: <span><i class="{{$image->racy}}"></i></span></p>
+                                                <p>
+                                                Tag:
+                                                    @foreach($image->labels as $label)
+                                                     {{$label}}
+                                                    @endforeach
+                                                </p>
                                             @endforeach
-                                           
+                                        </td>
+                                        <td>
+                                            @foreach ($product->images as $image)
+                                                <p>Adulti: <span><i class="{{$image->adult}} bi bi-circle-fill"></i></span></p>
+                                                <p>Satira: <span><i class="{{$image->spoof}} bi bi-circle-fill"></i></span></p>
+                                                <p>Medicina: <span><i class="{{$image->medical}} bi bi-circle-fill"></i></span></p>
+                                                <p>Violenza: <span><i class="{{$image->violence}} bi bi-circle-fill"></i></span></p>
+                                                <p>Contenuto ammiccante: <span><i class="{{$image->racy}} bi bi-circle-fill"></i></span></p>
+                                            @endforeach
                                         </td>
                                         <td>
                                             <div class="d-flex justify-content-end">

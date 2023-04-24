@@ -195,6 +195,16 @@
                                         <td>{{ \Carbon\Carbon::parse($product->updated_at)->format('d/m/y') }}</td>
                                         <td>{{ $product->state }}</td>
                                         <td>
+                                            @foreach ($product->images as $image)
+                                            <p>Adulti: <span><i class="{{$image->adult}}"></i></span></p>
+                                            <p>Satira: <span><i class="{{$image->spuff}}"></i></span></p>
+                                            <p>Medicina: <span><i class="{{$image->spuff}}"></i></span></p>
+                                            <p>Violenza: <span><i class="{{$image->violence}}"></i></span></p>
+                                            <p>Contenuto ammiccante: <span><i class="{{$image->racy}}"></i></span></p>
+                                            @endforeach
+                                           
+                                        </td>
+                                        <td>
                                             <div class="d-flex justify-content-end">
                                                 <form action="{{ route('product.update', $product) }}"
                                                     method="POST">

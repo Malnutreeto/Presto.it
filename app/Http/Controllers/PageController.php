@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Jobs\CreateImage;
 use App\Mail\RevisorRequest;
+use App\Models\Image;
 use App\Models\Main_category;
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -66,6 +67,7 @@ class PageController extends Controller
       //Get only products with state pending
       $products = Product::where('state', 'pending')->get();
       $users = User::all();
+     
       
       return view('adminPanel')->with(['ticket'=> $ticket, 'users' => $users, 'products'=>$products]);
    }

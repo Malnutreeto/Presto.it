@@ -2,6 +2,9 @@
 
 namespace App\Jobs;
 
+use App\Models\Image;
+
+
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -19,7 +22,7 @@ class GoogleVisionSafeSearch implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct()
+    public function __construct($product_image_id)
     {
         $this->product_image_id = $product_image_id;
     }
@@ -33,10 +36,10 @@ class GoogleVisionSafeSearch implements ShouldQueue
         if (!$i) {
             return;
         }
+        
+        $image = file_get_contents("./storage/$i->path");
 
-        $image = file_get_contents(storage_path('app/public', $i->path));
-
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credentials.json'));
 
         $imageAnnotator = new ImageAnnotatorClient();
         $response = $imageAnnotator->safeSearchDetection($image);

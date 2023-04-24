@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Jobs\CreateImage;
 use App\Models\Main_category;
 use App\Models\Product;
 use App\Models\Role;
@@ -13,6 +14,8 @@ use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -115,21 +118,42 @@ class DatabaseSeeder extends Seeder
     }
 
     public function productSeed(){
+
+        
         $products = Http::get('https://fakestoreapi.com/products')->json();
         
         foreach($products as $product)
         {
-            $product = Product::create([
-                'title' => substr($product['title'], 0, 50),
+            $user = rand(1, 4);
+            $title = substr($product['title'], 0, 50);
+            $imageTitle = Str::slug($title, '_');
+
+            $newProduct = Product::create([
+                'title' => $title,
                 'description' => substr($product['description'], 0, 500),
                 'price' => $product['price'],
-                'user_id' => rand(1, 4),
+                'user_id' => $user,
                 'state' => 'pending'
             ]);
 
-            $product->categories()->attach([rand(1, 4), rand(1, 4)]);
+            $newProduct->categories()->attach([rand(1, 4), rand(1, 4)]);
 
-            $product->save();
+            $newProduct->images()->create(['path' => "images/$user/crop_300x300_$imageTitle.jpg"]);
+
+            $newProduct->save();
+
+
+            Storage::put("public/images/$user/$imageTitle.jpg", file_get_contents($product['image']));
+            dispatch(new CreateImage("images/$user/$imageTitle.jpg", 300, 300));
+            if(Storage::exists("public/images/$user/$imageTitle.jpg")){
+               Storage::delete("public/images/$user/$imageTitle.jpg");
+               /*
+                   Delete Multiple files this way
+                   Storage::delete(['upload/test.png', 'upload/test2.png']);
+               */
+           }else{
+               echo('File does not exist.');
+           }
         }
     }
     

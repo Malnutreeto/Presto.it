@@ -96,10 +96,9 @@ class CreateProduct extends Component
         if (count($this->images)){
             foreach($this->images as $key => $image){
             
-                $newImage = $product->images()->create(['path' => $image->storeAs('images/' . Auth::id(),  Str::slug($product['title'], '_'). $key . '.' . $image->extension(), 'public')]);
+                $newImage = $product->images()->create(['path' => $image->storeAs('images/' . Auth::id(),"_300x300_".Str::slug($product['title'], '_'). $key . '.' . $image->extension(), 'public')]);
                 
-                dispatch(new CreateImage($newImage->path, 100, 100));
-                dispatch(new GoogleVisionSafeSearch($newImage->id));
+                dispatch(new CreateImage($newImage->path, 300, 300));
 
               
                 Storage::deleteDirectory(storage_path('app/livewire-tmp '));

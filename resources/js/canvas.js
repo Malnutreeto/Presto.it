@@ -3,8 +3,18 @@ const img = new Image();
 // User Variables - customize these to change the image being scrolled, its
 // direction, and the speed.
 img.src = "/site_img/test-3.jpg";
-const canvasXSize = 1500;
-const canvasYSize = 600;
+
+let canvas = document.getElementById("canvas1");
+let ctx = canvas.getContext("2d");
+
+let canvasXSize = 1500;
+let canvasYSize = 600;
+
+window.addEventListener('resize', (event) => {
+    canvas.width = document.documentElement.clientWidth
+})
+
+
 const speed = 2; // lower is faster
 const scale = 1.05;
 const y = -4.5; // vertical offset
@@ -16,7 +26,6 @@ let imgH;
 let x = 0;
 let clearX;
 let clearY;
-let ctx;
 
 img.onload = () => {
   imgW = img.width * scale;
@@ -31,8 +40,7 @@ img.onload = () => {
   clearX = Math.max(imgW, canvasXSize);
   clearY = Math.max(imgH, canvasYSize);
 
-  // Get canvas context
-  ctx = document.getElementById("canvas1").getContext("2d");
+
 
   // Set refresh rate
   return setInterval(draw, speed);

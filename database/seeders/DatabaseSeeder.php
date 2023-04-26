@@ -133,7 +133,7 @@ class DatabaseSeeder extends Seeder
                 'description' => substr($product['description'], 0, 500),
                 'price' => $product['price'],
                 'user_id' => $user,
-                'state' => 'pending'
+                'state' => 'accepted'
             ]);
 
             $newProduct->categories()->attach([rand(1, 4), rand(1, 4)]);

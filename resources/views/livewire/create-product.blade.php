@@ -19,7 +19,7 @@
                     <div class="img-input d-flex align-items-center justify-content-center my-2 bor">
                         @if (empty($images))
                             <div class="row justify-content-center">
-                                <button class="loader btn"></button>
+                                <button class="loader btn" disabled></button>
                                 <h5 class="text-center">Clicca qui per caricare le immagini</h5>
                             </div>
                             <input wire:model="temporary_images" class=" d-none @error('temporary_images.*') is-invalid @enderror"

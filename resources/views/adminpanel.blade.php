@@ -196,12 +196,14 @@
                                         <td>{{ $product->state }}</td>
                                         <td>
                                             @foreach ($product->images as $image)
+                                            @if ($image->labels)
                                                 <p>
                                                 Tag:
                                                     @foreach($image->labels as $label)
                                                      {{$label}}
                                                     @endforeach
                                                 </p>
+                                            @endif
                                             @endforeach
                                         </td>
                                         <td>

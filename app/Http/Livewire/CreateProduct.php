@@ -102,9 +102,9 @@ class CreateProduct extends Component
             foreach($this->images as $key => $image){
                 
                 
-                $newImage = $product->images()->create(['path' => $image->storeAs('images/' . Auth::id(),"_300x300_".Str::slug($product['title'], '_'). $key . '.' . $image->extension(), 'public')]);
+                $newImage = $product->images()->create(['path' => $image->storeAs('images/' . Auth::id(),Str::slug($product['title'], '_'). $key . '.' . $image->extension(), 'public')]);
                 
-                dispatch(new CreateImage($newImage->path, 300, 300));
+                dispatch(new CreateImage($newImage->path, 300, 200));
                 dispatch(new GoogleVisionSafeSearch($newImage->id));
                 dispatch(new GoogleVisionLabelImage($newImage->id));
                 dispatch(new RemoveFaces ($newImage->id));
@@ -116,7 +116,7 @@ class CreateProduct extends Component
 
         $product->categories()->attach($this->category);
         $product->save();
-        session()->flash('message', 'Annuncio inserito correttamente');
+        session()->flash('success', 'Annuncio inserito correttamente');
         $this->cleanForm();
 
     }

@@ -1,6 +1,10 @@
+
 <div class="container-fluid d-flex justify-content-center mt-5">
     <div class="container mb-4 justify-content-center">
         <div class="row w-100">
+            @if (session()->has('success'))
+            <div class="alert alert-success text-center">{{ session('success') }}</div>
+           @endif
             <form  wire:submit.prevent="store" >
                 <div class="col-12 d-flex justify-content-center">
                     <div class="user-image d-flex align-items-center justify-content-center">
@@ -12,7 +16,7 @@
                     </div>
                 </div>
                 <div class="col-12 d-flex align-items-center justify-content-center">
-                    <div class="img-input d-flex align-items-center justify-content-center my-2">
+                    <div class="img-input d-flex align-items-center justify-content-center my-2 bor">
                         @if (empty($images))
                             <div class="row justify-content-center">
                                 <button class="loader btn"></button>
@@ -88,11 +92,11 @@
                     <div class="col-8 border border-black my-2">
                         <textarea wire:model="description" class="form-control" placeholder="Inserisci descrizione" id="floatingTextarea2"
                             style="height: 100px"></textarea>
+                            
                     </div>
+                    <button type="submit" class="btn insert_button mt-2 ">Inserisci</button>
                 </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary m-2">Inserisci</button>
-                </div>
+              
             </form>
         </div>
     </div>

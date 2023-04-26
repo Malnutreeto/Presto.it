@@ -117,7 +117,7 @@ class ProductController extends Controller
 
         //If the request is for update only the state of product return in admin panel.
         if ($request->action){
-            return redirect()->back()->with(['success' => 'Prodotto Aìaccettato correttamente']);
+            return redirect()->back()->with(['success' => 'Prodotto Accettato correttamente']);
         }//If the request is for update other parametr of the product return in product create page.
         else{
             return redirect()->route('product.create')->with(['success' => 'Prodotto Modificato correttamente']);   

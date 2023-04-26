@@ -1,8 +1,31 @@
+@-webkit-keyframes shadow-drop-center {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #FC8505;
+            box-shadow: 0 0 0 0 #FC8505;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+@keyframes shadow-drop-center {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #FC8505;
+            box-shadow: 0 0 0 0 #FC8505;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 20px 0px #FC8505;
+            box-shadow: 0 0 20px 0px #FC8505;
+  }
+}
+
 .container{
   padding: 10px;
   width: 600px;
   border: 1px solid #01212d;
-  border-radius: 25px;
+  border-radius: 20px;
+  
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 }
 
 .user-image{
@@ -16,7 +39,7 @@
 .img-input{
   height: 300px;
   width: 300px;
-  border: 1px solid black;
+  border: 2px solid #01212d ;
   overflow: hidden;
   border-radius: 20px;
 }
@@ -25,7 +48,12 @@
   top: 10%;
   left: 5%;
 }
-
+.insert_button{
+  background-color: #FC8505;
+  border-color: #FC8505;
+color:#01212d;
+font-weight: 700;
+}
 .loader {
   width: 64px;
   height: 64px;
@@ -73,11 +101,16 @@
 
 
 .form-control, .form-select{
-  border: 2px solid #FC8505;
+  border: 1px solid #01212d;
 }
 
 .form-control:focus, .form-select:focus {
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  border-color: #FC8505;
-  box-shadow: 0 0 0 0.25rem #fc85057e;
+
+    -webkit-animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: shadow-drop-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    
+    
+    outline: #ff8400 solid 0.5px !important;
+    
+  
 }

@@ -138,13 +138,13 @@ class DatabaseSeeder extends Seeder
 
             $newProduct->categories()->attach([rand(1, 4), rand(1, 4)]);
 
-            $newProduct->images()->create(['path' => "images/$user/crop_300x300_$imageTitle.jpg"]);
+            $newProduct->images()->create(['path' => "images/$user/crop_300x200_$imageTitle.jpg"]);
 
             $newProduct->save();
 
 
             Storage::put("public/images/$user/$imageTitle.jpg", file_get_contents($product['image']));
-            dispatch(new CreateImage("images/$user/$imageTitle.jpg", 300, 300));
+            dispatch(new CreateImage("images/$user/$imageTitle.jpg", 300, 200));
             if(Storage::exists("public/images/$user/$imageTitle.jpg")){
                Storage::delete("public/images/$user/$imageTitle.jpg");
                /*

@@ -1,0 +1,28 @@
+.footer {
+    background-color: #01212d;
+    color: white;
+}
+
+.logu {
+    width: 100px;
+    margin-bottom: 1em;
+}
+
+.left {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.right {
+    margin-top: 3em;
+    height: 50vh;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FC8505;
+}

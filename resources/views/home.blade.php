@@ -1,5 +1,31 @@
 <x-layout>
-    @vite('resources/css/searchbar.css')
+    @vite(['resources/css/searchbar.css', 'resources/css/navbar.css'])
+
+    <div class="headerz">
+        <canvas id="canvas1" height="600"></canvas>
+        <div id="scritte-logo" class="scritte-logo d-flex justify-content-center">
+            <p id="compra" class="compra">{{ __('ui.compra') }}.</p>
+            <p id="vendi" class="vendi">{{ __('ui.vendi') }}.</p>
+            <p id="presto" class="presto ms-4 text-light">Presto.it</p>
+        </div>
+    </div>
+
+    <div class="container-fluid my-4">
+        <div class="row justify-content-center">
+            @foreach ($mainCategories as $mainCategory)
+                <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column justify-content-center text-center p-0 mx-2 m-1 category-card">
+                    <i class="bi {{$mainCategory->icon}} p-2 icons-card-category"></i>
+                    <a href="{{route('category.show', $mainCategory)}}" class="text-decoration-none text-light p-2">
+                        <h5 class="text-center p-2">
+                            {{strtoupper($mainCategory->name)}}
+                        </h5>
+                    </a>
+                </div>  
+            @endforeach
+        </div>
+    </div>
+    
+
     <div class="container-fluid d-flex flex-column">
         <div class="search-container d-flex justify-content-center">
             <div class="searchbar">

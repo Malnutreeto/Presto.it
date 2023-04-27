@@ -41,15 +41,6 @@
         </div>
     </div>
 </div>
-
-<div class="headerz">
-    <canvas id="canvas1" width="1920" height="600"></canvas>
-    <div id="scritte-logo" class="scritte-logo d-flex justify-content-center">
-        <p id="compra" class="compra">{{ __('ui.compra') }}.</p>
-        <p id="vendi" class="vendi">{{ __('ui.vendi') }}.</p>
-        <p id="presto" class="presto ms-4 text-light">Presto.it</p>
-    </div>
-</div>
 <div id="navbar" class="nav">
     <input type="checkbox" id="nav-check">
     <div class="nav-header">

@@ -30,7 +30,20 @@
   /* -webkit-animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both;
           animation: tracking-out-contract-bck 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both; */
   }
-
+.ins-prod-btn{
+  border: 2px solid #FC8505;
+  margin-left: 5px;
+}
+.ins-prod-btn:hover{
+  background-color: #FC8505;
+}
+.ins-prod-btn > a{
+  color:#ffffff;
+  text-transform:uppercase;
+}
+.ins-prod-btn > a:hover{
+  color:#01212d;
+}
   @-webkit-keyframes tracking-in-expand {
     0% {
       letter-spacing: -0.5em;

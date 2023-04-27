@@ -58,7 +58,9 @@
     </div>
 
     <div class="nav-links">
-        <a href="{{ route('product.create') }}">inserisci annuncio</a>
+        <button class="btn ins-prod-btn">
+            <a class="text-decoration-none" href="{{ route('product.create') }}">Inserisci annuncio</a>
+            </button>
         <a href="{{ route('category.index') }}">categorie</a>
         <a href="{{ route('product.index') }}">prodotti</a>
     </div>

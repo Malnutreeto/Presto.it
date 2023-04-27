@@ -10,7 +10,9 @@
     color: #ffffff;
 }
 
-
+.social-list{
+    list-style-type: none;
+}
 .card{
     background-color: transparent;
     border: none;

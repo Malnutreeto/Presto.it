@@ -1,6 +1,8 @@
 <x-layout>
     <div class="container-fluid mt-4">
-        <h1 class="text-center">PRESTO<sup >{{strToUpper($category->name)}}</sup></h1>
+        <div>
+        <h1 class="text-center pressto">PRESTO <sup style="font-size: 0.6em;">{{strToUpper($category->name)}}</sup></h1>
+        </div>
         <div class="row">
             <ul class="list-group">
                 @foreach ($category->subCategories as $subCategory)

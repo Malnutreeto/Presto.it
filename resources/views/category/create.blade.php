@@ -3,12 +3,12 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h1 class="text-center">Aggiungi categorie</h1>
+                <h1 class="text-center">{{ __('ui.add_category') }}</h1>
             </div>
             <div class="col-12">
                 <select class="form-select" aria-label="Default select example" id="select">
-                    <option value="main" selected>Categorie principali</option>
-                    <option value="sub">Sotto categorie</option>
+                    <option value="main" selected>{{ __('ui.main_category') }}</option>
+                    <option value="sub">{{ __('ui.sub_category') }}</option>
                 </select>
                 <form class="text-center" method="POST" action="{{ route('category.store') }}" id="main">
                     @csrf
@@ -24,7 +24,7 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Seleziona l'icona
+                                        {{ __('ui.choose_icon') }}
                                     </button>
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse"
@@ -47,7 +47,7 @@
                             {{ $errors->first('name') }}
                         @endif
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary m-2">Submit</button>
+                            <button type="submit" class="btn btn-primary m-2">{{ __('ui.submit') }}</button>
                         </div>
                 </form>
                 <form class="text-center d-none" method="POST" action="{{ route('sub_category.store') }}"
@@ -61,7 +61,7 @@
                         {{ $errors->first('name') }}
                     @endif
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary m-2">Submit</button>
+                        <button type="submit" class="btn btn-primary m-2">{{ __('ui.submit') }}</button>
                     </div>
                 </form>
             </div>

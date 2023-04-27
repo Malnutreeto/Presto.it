@@ -31,7 +31,7 @@
                         </form>
                     </li>
                     @if(auth()->user()->role_id < 4)
-                        <li><a class="dropdown-item" href="{{route('admin')}}">Pannello di controllo</a></li>
+                        <li><a class="dropdown-item" href="{{route('admin')}}">{{ __('ui.panel') }}</a></li>
                     @endif
                 </ul>
                 @else
@@ -59,9 +59,9 @@
 
     <div class="nav-links">
         <button class="btn ins-prod-btn">
-            <a class="text-decoration-none" href="{{ route('product.create') }}">Inserisci annuncio</a>
+            <a class="text-decoration-none" href="{{ route('product.create') }}">{{ __('ui.announcement') }}</a>
             </button>
-        <a href="{{ route('category.index') }}">categorie</a>
-        <a href="{{ route('product.index') }}">prodotti</a>
+        <a href="{{ route('category.index') }}">{{ __('ui.category') }}</a>
+        <a href="{{ route('product.index') }}">{{ __('ui.product') }}</a>
     </div>
 </div>

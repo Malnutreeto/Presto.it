@@ -4,12 +4,11 @@
     <div class="headerz">
         <canvas id="canvas1" height="600"></canvas>
         <div id="scritte-logo" class="scritte-logo d-flex justify-content-center">
-            <p id="compra" class="compra">{{ __('ui.compra') }}.</p>
-            <p id="vendi" class="vendi">{{ __('ui.vendi') }}.</p>
-            <p id="presto" class="presto ms-4 text-light">Presto.it</p>
+            <p id="compra" class="compra pressto">{{ __('ui.compra') }}.</p>
+            <p id="vendi" class="vendi pressto">{{ __('ui.vendi') }}.</p>
+            <p id="presto" class="presto ms-4 text-light pressto">Presto.it</p>
         </div>
     </div>
-
     <div class="container-fluid my-4">
         <div class="row justify-content-center">
             @foreach ($mainCategories as $mainCategory)

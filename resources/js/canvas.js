@@ -2,12 +2,12 @@ const img = new Image();
 
 // User Variables - customize these to change the image being scrolled, its
 // direction, and the speed.
-img.src = "/site_img/test-3.jpg";
+img.src = "/site_img/header copia2.jpg";
 
 let canvas = document.getElementById("canvas1");
 let ctx = canvas.getContext("2d");
 
-let canvasXSize = 1500;
+let canvasXSize = 1920;
 let canvasYSize = 600;
 
 window.addEventListener('resize', (event) => {

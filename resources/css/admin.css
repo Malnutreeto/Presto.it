@@ -1,0 +1,74 @@
+.container {
+    margin-top: 20px;
+}
+
+.left-section {
+    width: 20%;
+    height: 800px;
+    background-color: #01212d;
+    border-radius: 15px 0 0 15px;
+}
+
+.tables {
+    width: 80%;
+    border: solid 2px #00292d;
+    border-radius: 0 15px 15px 0;
+}
+
+.btn-section {
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 1px #ff8400;
+    width: 200px;
+    background-color: #00292d;
+    color: white;
+    height: 40px;
+}
+
+.logooo {
+    width: 80%;
+    margin: 15px 15px;
+}
+
+.buttons {
+    height: 80%;
+}
+
+.home {
+    color: white;
+    text-decoration: none;
+}
+
+i {
+    font-size: 1.2em;
+}
+
+.title {
+    margin: 10px 20px;
+}
+
+.logo-nope {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.back-home {
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 1px #ff8400;
+    width: 200px;
+    background-color: #00292d;
+    color: white;
+    height: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.container-nope {
+    height: 35em !important;
+}
+
+

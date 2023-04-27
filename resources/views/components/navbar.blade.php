@@ -43,7 +43,7 @@
 </div>
 
 <div class="headerz">
-    <canvas id="canvas1" width="1519" height="600"></canvas>
+    <canvas id="canvas1" width="1920" height="600"></canvas>
     <div id="scritte-logo" class="scritte-logo d-flex justify-content-center">
         <p id="compra" class="compra">{{ __('ui.compra') }}.</p>
         <p id="vendi" class="vendi">{{ __('ui.vendi') }}.</p>

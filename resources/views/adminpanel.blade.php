@@ -1,34 +1,38 @@
-@vite(['resources/js/adminPanel.js', 'resources/css/adminPanel.css'])
-<x-layout>
-    @if ($errors->any())
-        @foreach ($errors->all() as $error)
-            {{ $error }}
-        @endforeach
-    @endif
-    @if (session()->has('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
-    <h1 class="text-center">Benvenuto nel pannello di controllo {{ auth()->user()->nickname }}</h1>
-    @if (auth()->user()->role_id < 3)
+@vite(['resources/js/adminPanel.js', 'resources/css/admin.css'])
 
-        <div class="container d-flex flex-column align-items-center justify-content-center border border-black">
-            <ul class="nav nav-tabs justify-content-center align-items-center" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-                        type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Utenti</button>
+<x-layout>
+@if (auth()->user()->role_id < 3)
+<div class="container d-flex justify-content-center">
+        <div class="left-section d-flex align-items-center flex-column" aria-orientation="vertical">
+            <div class="d-flex justify-content-center">
+                <img src="{{asset('site_img\Senza titolo-2.png')}}" alt="" class="logooo">
+            </div>
+            <div class="buttons d-flex align-items-center flex-column">
+            <ul class="nav justify-content-center" id="myTab" role="tablist">
+                <li class="nav-item border-0" role="presentation">
+                        <button class="btn-section active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                        type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                            UTENTI
+                        </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    <button class="btn-section" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
                         type="button" role="tab" aria-controls="profile-tab-pane"
-                        aria-selected="false">Ticket</button>
+                        aria-selected="false">TICKET</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    <button class="btn-section" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
                         type="button" role="tab" aria-controls="contact-tab-pane"
-                        aria-selected="false">Prodotti</button>
+                        aria-selected="false">PRODOTTI</button>
                 </li>
             </ul>
-            <div class="tab-content container d-flex justify-content-center" id="myTabContent">
+            </div>
+            <div class="d-flex justify-content-end">
+                    <a href="" class="home"><span><i class="bi bi-arrow-left-square-fill"></i></span> TORNA ALLA HOME</a>
+            </div>
+        </div>
+        <div class="tables">
+        <div class="tab-content container d-flex justify-content-center" id="myTabContent">
                 <div class="tab-pane fade show active row justify-content-center" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
                     tabindex="0">
                     <table class="table ">
@@ -43,7 +47,6 @@
                                 <th scope="col">Ruolo</th>
                                 <th scope="col">Utente dal:</th>
                                 <th></th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -320,7 +323,6 @@
         </div>
     </div>
     @endif
-
         </div>
-            
+    </div>
 </x-layout>

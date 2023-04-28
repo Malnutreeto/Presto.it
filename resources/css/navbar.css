@@ -33,6 +33,7 @@
 .ins-prod-btn{
   border: 2px solid #FC8505;
   margin-left: 5px;
+  margin-bottom: 6px;
 }
 .ins-prod-btn:hover{
   background-color: #FC8505;
@@ -112,6 +113,9 @@
 }
 .lang-btn {
   background-color: #01212d;
+}
+.nav-logo{
+  margin-top: 3px;
 }
 .userbtn:hover {
   color: #FC8505;

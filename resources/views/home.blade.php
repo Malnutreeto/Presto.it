@@ -16,11 +16,11 @@
         <div class="row justify-content-center">
             @foreach ($mainCategories as $mainCategory)
                 <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column justify-content-center text-center p-0 mx-2 m-1 category-card">
-                    <i class="bi {{$mainCategory->icon}} p-2 icons-card-category"></i>
-                    <a href="{{route('category.show', $mainCategory)}}" class="text-decoration-none text-light p-2">
-                        <h5 class="text-center p-2">
+                    <i class="bi {{$mainCategory->icon}} p-2"></i>
+                    <a href="{{route('category.show', $mainCategory)}}" class="text-decoration-none p-2">
+                        
                             {{strtoupper($mainCategory->name)}}
-                        </h5>
+                        
                     </a>
                 </div>  
             @endforeach
@@ -102,7 +102,9 @@
                         <p>{{ __('ui.enroll')}}</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="buttone" data-bs-dismiss="modal">{{__('ui.work')}}</button>
+                        <a href="{{route('work')}}">
+                            <button type="button" class="buttone" data-bs-dismiss="modal">{{__('ui.work')}}</button>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -63,5 +63,6 @@
             </button>
         <!-- <a href="{{ route('category.index') }}">{{ __('ui.category') }}</a> -->
         <a href="{{ route('product.index') }}">{{ __('ui.product') }}</a>
+        
     </div>
 </div>

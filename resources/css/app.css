@@ -19,7 +19,7 @@
     transition: 0.5s;
 
 }
-.category-card > a:hover{
+.category-card:hover a{
     color: #FF8400 !important;
 }
 

@@ -33,6 +33,9 @@ return [
     'question' => 'Ti piace metterti in gioco?',
     'slogan' => 'Scopri come diventare revisore!',
     'send_request' => 'Invia la richiesta',
-    'text' => 'Vuoi avere un guadagno extra? Diventando revisore avrai la possibilità di guadagnare semplicemente verificando se un annuncio è conforme alle nostre linee guida. Farlo è molto semplice perchè verrai assistito dai nostri strumenti di revisione e dal nostro staff. Se sei interessato, clicca il pulsante quì in basso per inviare la richiesta. I tuoi dati verranno trasmessi automagicamente al nostro team.'
+    'text' => 'Vuoi avere un guadagno extra? Diventando revisore avrai la possibilità di guadagnare semplicemente verificando se un annuncio è conforme alle nostre linee guida. Farlo è molto semplice perchè verrai assistito dai nostri strumenti di revisione e dal nostro staff. Se sei interessato, clicca il pulsante quì in basso per inviare la richiesta. I tuoi dati verranno trasmessi automagicamente al nostro team.',
+    'enroll' => 'Stiamo cercando collaboratori, se sei interessato ad avere un guadagno extra clicca sul seguente bottone',
+    'modal-title' => 'Stiamo cercando revisori',
+    'work' => 'Lavora con noi'
 
 ];

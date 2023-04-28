@@ -1,5 +1,5 @@
 <x-layout>
-    @vite(['resources/css/searchbar.css', 'resources/css/navbar.css'])
+    @vite(['resources/css/searchbar.css', 'resources/css/navbar.css', 'resources/css/work.css'])
 
     <div class="headerz">
         <canvas id="canvas1" height="600"></canvas>
@@ -90,4 +90,22 @@
             @endforeach
         </div>
     </div>
+    @if(auth()->user() && auth()->user()->role_id > 3)
+        <div class="modal" tabindex="-1" id="workModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{__('ui.modal-title')}}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{ __('ui.enroll')}}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="buttone" data-bs-dismiss="modal">{{__('ui.work')}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
 </x-layout>

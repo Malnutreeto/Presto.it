@@ -33,7 +33,10 @@ return [
     'question' => 'Do you want to get involved?',
     'slogan' => 'Find out how you can become a revisor!',
     'send_request' => 'Send your request',
-    'text' => "Do you want to have an extra income? By becoming a reviewer you will have the opportunity to earn simply by checking if an ad complies with our guidelines. Doing so is very simple because you will be assisted by our review tools and our staff. If you are interested, click the button below to send your request. Your data will be automatically transmitted to our team."
+    'text' => "Do you want to have an extra income? By becoming a reviewer you will have the opportunity to earn simply by checking if an ad complies with our guidelines. Doing so is very simple because you will be assisted by our review tools and our staff. If you are interested, click the button below to send your request. Your data will be automatically transmitted to our team.",
+    'enroll' => 'We are looking for collaborators, if you are looking for an extra income click on the button below!',
+    'modal-title' => 'We are looking for revisors',
+    'work' => 'Work with us'
 
 
 ];

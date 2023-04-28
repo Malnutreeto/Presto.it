@@ -8,7 +8,7 @@
                         <h4 class="text-center">{{ strtoupper(substr($product->user->nickname, 0, 1)) }}</h4>
                     </div>
                     <div class="mx-4">
-                        <h4 class="text-center my-0 py-0">{{ auth()->user()->nickname }}</h4>
+                        <h4 class="text-center my-0 py-0">{{ $product->user->nickname }}</h4>
                         <h5 class="p-0 m-0">{{ count($products->where('user_id', $product->user->id)) }} Prodotti</h5>
                     </div>
                 </div>

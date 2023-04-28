@@ -25,15 +25,6 @@
                                 <p class="card-text">{{ substr($product->description, 0, 30) }}</p>
                                 <div class="face2-element-container g-2">
                                     <div class="row justify-content-center">
-                                        <ul class="col-6 d-flex details justify-content-around m-0 p-0">
-                                            @foreach ($shareComponent->getRawLinks() as $key => $component)
-                                                <li class="col-4 text-center"><a href="{{ $component }}"
-                                                        class="border border-0 m-0">
-                                                        <i
-                                                            class="bi bi-{{ $key }}  fs-4 @if ($key === 'whatsapp') text-success @else text-primary @endif"></i></a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
                                         <div class="col-12 btnn m-0 d-flex justify-content-center">
                                             <a href="{{ route('product.show', $product) }}" class="card-link p-1">Vai al
                                                 dettaglio</a>

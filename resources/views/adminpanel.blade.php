@@ -2,7 +2,7 @@
 
 <x-layout>
 @if (auth()->user()->role_id < 3)
-<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-center mb-3">
         <div class="left-section d-flex align-items-center flex-column" aria-orientation="vertical">
             <div class="d-flex justify-content-center">
                 <img src="{{asset('site_img\Senza titolo-2.png')}}" alt="" class="logooo">

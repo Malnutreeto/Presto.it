@@ -1,7 +1,7 @@
 @vite(['resources/css/navbar.css', 'resources/js/navbar.js', 'resources/js/canvas.js'])
 <div class="container-fluid">
     <div class="row justify-content-end">
-        <div class="col-12 d-flex justify-content-end align-items-center">
+        <div class="col-12 d-flex justify-content-end align-items-center me-2 mt-2">
             <div class="btn-group dropstart m-1">
                 <button type="button" class="btn btn-secondary dropdown-toggle lang-btn" data-bs-toggle="dropdown"
                     aria-expanded="false">
@@ -18,8 +18,30 @@
             </div>
             <div class="">
                 @auth
-                <button class="btn userbtn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-person-circle me-1"></i>{{ auth()->user()->nickname }}</i>
+                <button class="btn userbtn dropdown-toggle position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle me-1 p-0"></i>{{ auth()->user()->nickname }}</i>
+                    @if (auth()->user()->role_id < 3)
+                        @if (count($products) !==0 && count($tickets) !== 0 )
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            +{{count($products)}}
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                            @elseif(count($tickets) !== 0)
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            +{{count($tickets)}}
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                            @elseif(count($products) !== 0)
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            +{{count($products)}}
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                        @endif
+                    @else
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        +{{count($products)}}
+                        <span class="visually-hidden">unread messages</span>
+                    @endif
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark">
                     <li>
@@ -44,7 +66,7 @@
 <div id="navbar" class="nav">
     <input type="checkbox" id="nav-check">
     <div class="nav-header">
-        <div id="nav-logo" class="nav-logo d-none">
+        <div id="nav-logo" class="nav-logo">
             <a href="/"><img src="{{ asset('site_img/solobusta.png') }}" alt="" width="50"
                     height="40"></a>
         </div>

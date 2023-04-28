@@ -33,7 +33,7 @@
                 <form action="{{ route('products.search') }}" method="GET" class="form" role="search">
                     <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search"
                         name="searched">
-                    <select class="form-select cat-select-button" aria-label="Default select example">
+                    <select class="form-select cat-select-button" aria-label="Default select example" name="category">
                         <option selected>Seleziona una categoria</option>
                         @foreach ($mainCategories as $mainCategory)
                             <option value="{{$mainCategory->id}}">{{ strtoupper($mainCategory->name) }}</option></li>

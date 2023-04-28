@@ -1,6 +1,5 @@
 window.onscroll = function() {myFunction()};
 var scritteLogo = document.getElementById("scritte-logo")
-var navlogo = document.getElementById("nav-logo");
 var navbar = document.getElementById("navbar");
 var headerLogo = document.getElementById("header-logo")
 

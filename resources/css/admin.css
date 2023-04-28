@@ -48,8 +48,8 @@ i {
 }
 
 .logo-nope {
-    width: 30%;
     margin-bottom: 30px;
+    width: 50%;
 }
 
 .back-home {
@@ -62,13 +62,11 @@ i {
     height: 40px;
 }
 
-a {
+.aa {
     text-decoration: none;
     color: white;
 }
 
 .container-nope {
-    height: 35em !important;
+    height: 65vh !important;
 }
-
-

@@ -37,7 +37,7 @@
                             <span class="visually-hidden">unread messages</span>
                         </span>
                         @endif
-                    @else
+                    @elseif (auth()->user()->role_id === 3 && count($tickets) !== 0)
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         +{{count($products)}}
                         <span class="visually-hidden">unread messages</span>

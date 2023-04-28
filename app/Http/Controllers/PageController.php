@@ -27,7 +27,7 @@ class PageController extends Controller
    public function home() {
       
       //Show all accepted product in ascending order
-      $products = Product::where('state', 'accepted')->take(10)->get()->sortByDesc('created_at');
+      $products = Product::where('state', 'accepted')->latest()->take(10)->get()->sortByDesc('created_at');
       
       $mainCategories = [];
       

@@ -41,6 +41,7 @@ class CreateImage implements ShouldQueue
         $srcPath = storage_path() . '/app/public/' . $this->path . '/' . $this->fileName;
         $destPath = storage_path() . '/app/public/' . $this->path .'/crop_300x200_'. $this->fileName;
  
-        $croppedImage = Image::load($srcPath)->crop(Manipulations::CROP_CENTER, $w, $h)->save($destPath);
+        $croppedImage = Image::load($srcPath)->crop(Manipulations::CROP_CENTER, $w, $h);
+        $croppedImage->save($destPath);
     }
 }

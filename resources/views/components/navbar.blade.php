@@ -35,7 +35,7 @@
                     @endif
                 </ul>
                 @else
-                    <a href="/login"><i class="bi bi-person-circle"></i>{{ __('ui.area') }}</a>
+                    <a href="/login" class="text-decoration-none" style="color:black"><i class="bi bi-person-circle"></i> {{ __('ui.area') }}</a>
                 @endauth
             </div>
         </div>
@@ -61,7 +61,7 @@
         <button class="btn ins-prod-btn">
             <a class="text-decoration-none" href="{{ route('product.create') }}">{{ __('ui.announcement') }}</a>
             </button>
-        <a href="{{ route('category.index') }}">{{ __('ui.category') }}</a>
+        <!-- <a href="{{ route('category.index') }}">{{ __('ui.category') }}</a> -->
         <a href="{{ route('product.index') }}">{{ __('ui.product') }}</a>
     </div>
 </div>

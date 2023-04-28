@@ -9,6 +9,9 @@
             <p id="presto" class="presto ms-4 text-light pressto">Presto.it</p>
         </div>
     </div>
+    <div class="container-fluid d-flex justify-content-center mt-4">
+        <h1 class="pressto">Le categorie più popolari</h1>
+    </div>
     <div class="container-fluid my-4">
         <div class="row justify-content-center">
             @foreach ($mainCategories as $mainCategory)
@@ -23,7 +26,6 @@
             @endforeach
         </div>
     </div>
-    
 
     <div class="container-fluid d-flex flex-column">
         <div class="search-container d-flex justify-content-center">
@@ -41,6 +43,9 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div class="container-fluid d-flex justify-content-center mt-5">
+        <h1 class="pressto">Gli ultimi annunci</h1>
     </div>
     <div class="container-fluid d-flex flex-column">
         <div class="row big-container justify-content-center">

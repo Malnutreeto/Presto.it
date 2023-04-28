@@ -24,6 +24,15 @@ return [
     'revisor' => 'REVISIONA',
     'new_announcement' => 'Crea un nuovo annuncio',
     'this' => 'Ecco come tu e gli altri utenti vedrete il tuo annuncio',
-
+    'accedi' => 'ACCEDI',
+    'register' => 'REGISTRATI',
+    'name_surname' => 'Nome e cognome',
+    'confirm' => 'Conferma la password',
+    'not_yet' => 'Non hai ancora effettuato la registrazione?',
+    'back' => 'Torna alla homepage',
+    'question' => 'Ti piace metterti in gioco?',
+    'slogan' => 'Scopri come diventare revisore!',
+    'send_request' => 'Invia la richiesta',
+    'text' => 'Vuoi avere un guadagno extra? Diventando revisore avrai la possibilità di guadagnare semplicemente verificando se un annuncio è conforme alle nostre linee guida. Farlo è molto semplice perchè verrai assistito dai nostri strumenti di revisione e dal nostro staff. Se sei interessato, clicca il pulsante quì in basso per inviare la richiesta. I tuoi dati verranno trasmessi automagicamente al nostro team.'
 
 ];

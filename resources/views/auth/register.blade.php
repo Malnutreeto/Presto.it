@@ -18,12 +18,12 @@
     <form action="/register" method="POST" id="demo-form">
     @csrf
     <div class="container split-background form-container mb-5">
-        <img src="{{asset('titolo.png')}}" class="logo">
-        <h3 class="title">REGISTRATI</h3>
+        <img src="{{asset('site_img/solobusta.png')}}" class="logo">
+        <h3 class="title">{{ __('ui.register') }}</h3>
         <div class="login-fields">
             <div class="main-div-field">
                 <i class="bi bi-person"></i>
-                <input type="text" class="field" placeholder="Nome e cognome" name="name">
+                <input type="text" class="field" placeholder="{{ __('ui.name_surname') }}" name="name">
             </div>
             @if($errors->has('name') || $errors->has('surname'))
                 @foreach ($errors->all() as $error)
@@ -53,7 +53,7 @@
             @enderror 
             <div class="main-div-field" id='passwordInput'>
                 <i class="bi bi-asterisk"></i>
-                <input type="password" class="field" placeholder="Conferma password" name="password_confirmation">               
+                <input type="password" class="field" placeholder="{{ __('ui.confirm') }}" name="password_confirmation">               
             </div>
             @error('password_confirmation')
                 <div class="err-text">{{$message}}</div>
@@ -64,7 +64,10 @@
             </div>               
         </div> -->
         <div>
-            <button class="button g-recaptcha" data-sitekey="6LcapoUlAAAAAG-tA3chcxsm0JfhXGk4ioDMTkVi" data-callback="onSubmit">REGISTRATI</button>
+            <button class="button g-recaptcha" data-sitekey="6LcapoUlAAAAAG-tA3chcxsm0JfhXGk4ioDMTkVi" data-callback="onSubmit">{{ __('ui.register') }}</button>
+        </div>
+        <div class="my-4">
+            <a href="{{route('home')}}" class="bottom-link mb-2"><i class="bi bi-arrow-left"></i> {{ __('ui.back') }}</a>
         </div>
     </div>
 </form>

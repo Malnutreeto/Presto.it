@@ -6,10 +6,10 @@ return [
     'panel' => 'Admin Panel',
     'announcement' => 'Create New Announcement',
     'category' => 'Category',
-    'product' => 'All Announcements',
+    'product' => 'All announcements',
     'add_category' => 'Add Category',
-    'main_category' => 'Main Category',
-    'sub_category' => 'Sub Category',
+    'main_category' => 'Main category',
+    'sub_category' => 'Sub category',
     'choose_icon' => 'Choose an icon',
     'submit' => 'Submit',
     'products' => 'Products',
@@ -24,6 +24,16 @@ return [
     'revisor' => 'REVISE',
     'new_announcement' => 'Create a new announcement',
     'this' => 'This is how you and other users will see your announement',
+    'accedi' => 'LOGIN',
+    'register' => 'REGISTER',
+    'name_surname' => 'Name and surname',
+    'confirm' => 'Confirm password',
+    'not_yet' => 'Are you not registered yet?',
+    'back' => 'Back to the homepage',
+    'question' => 'Do you want to get involved?',
+    'slogan' => 'Find out how you can become a revisor!',
+    'send_request' => 'Send your request',
+    'text' => "Do you want to have an extra income? By becoming a reviewer you will have the opportunity to earn simply by checking if an ad complies with our guidelines. Doing so is very simple because you will be assisted by our review tools and our staff. If you are interested, click the button below to send your request. Your data will be automatically transmitted to our team."
 
 
 ];

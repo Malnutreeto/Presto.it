@@ -1,4 +1,5 @@
 <x-layout>
+    @vite(['resources/css/card.css'])
     <div class="container-fluid">
         <div class="row">
 
@@ -25,7 +26,7 @@
                                 <p class="card-text">{{ substr($product->description, 0, 30) }}</p>
                                 <div class="face2-element-container g-2">
                                     <div class="row justify-content-center">
-                                        <ul class="col-6 d-flex details justify-content-around m-0 p-0">
+                                        <ul class="col-6 d-flex details justify-content-around m-0 p-0 list-unstyled">
                                             @foreach ($shareComponent->getRawLinks() as $key => $component)
                                                 <li class="col-4 text-center"><a href="{{ $component }}"
                                                         class="border border-0 m-0">

@@ -6,7 +6,7 @@
     background-color: #01212d;
     border-radius: 15px;
     color: #ffffff;  
-    font-size: 4rem;
+    height: 120px;
 }
 .category-card > a{
     color: #ffffff !important;
@@ -15,12 +15,13 @@
 .category-card:hover{
     color: #FF8400;
     width: 300px;
-    
     transition: 0.5s;
 
 }
 .category-card:hover a{
     color: #FF8400 !important;
+    font-size: 1.5rem;
+    transition: 0.5s;
 }
 
 .pressto {

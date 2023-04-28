@@ -1,5 +1,5 @@
 .logo-footer {
-    width: 40%;
+    width: 50%;
     margin: auto;
 }
 
@@ -11,4 +11,12 @@
 .footer {
     background-color: #01212d;
     height: 2.5em;
+    
+    
 }
+
+@media only screen and (max-width: 860px) {
+   .logo-footer{
+    display: none;
+   }
+  }

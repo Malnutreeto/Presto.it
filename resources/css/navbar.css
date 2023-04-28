@@ -194,7 +194,8 @@ i {
   margin-top: 100px;
 }
 .scritte-logo{
-  z-index: 1;
+  position: absolute;
+  z-index: 0;
   margin: 50px;
 }
 .logo{
@@ -239,7 +240,12 @@ i {
   display: inline;
   float: right;
   font-size: 18px;
+  overflow: hidden !important;
+  /* border-bottom: 1px solid #FC8505;
+  border-right: 1px solid #FC8505;
+  border-left: 1px solid #FC8505; */
 }
+
 .sticky {
   position: fixed;
   top: 0;
@@ -251,7 +257,9 @@ i {
   padding: 13px 10px 13px 10px;
   text-decoration: none;
   color: #ffffff;
+  justify-content: space-around;
 }
+
 
 .nav > .nav-links > a:hover {
   color: #FC8505;
@@ -260,6 +268,7 @@ i {
 .nav > #nav-check {
   display: none;
 }
+
 
 @media (max-width:600px) {
   .nav > .nav-btn {
@@ -288,19 +297,30 @@ i {
   }
   .nav > .nav-links {
     position: absolute;
-    display: block;
+    display: flex;
     width: 100%;
     background-color: #01212d;
     height: 0px;
-    transition: all 0.3s ease-in;
+    transition: 0.3s ease-in;
     overflow-y: hidden;
     top: 50px;
     left: 0px;
   }
+
+
   .nav > .nav-links > a {
     display: block;
+    position: absolute;
     width: 100%;
-    
+    left: 42%;
+    top: 40%
+  }
+  .nav > .nav-links > button{
+    display: block;
+    position: absolute;
+    width: 50%;
+    left: 30%;
+    top: 30%
   }
   .nav > #nav-check:not(:checked) ~ .nav-links {
     height: 0px;

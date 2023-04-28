@@ -1,4 +1,5 @@
 <x-layout>
+    @vite(['resources/css/card.css'])
     <div class="container-fluid">
         <div class="row">
 

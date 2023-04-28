@@ -12,23 +12,24 @@
     <div class="container-fluid d-flex justify-content-center mt-4">
         <h1 class="pressto">Le categorie più popolari</h1>
     </div>
-    <div class="container-fluid my-4">
+    <div class="container-fluid my-4 ">
         <div class="row justify-content-center">
             @foreach ($mainCategories as $mainCategory)
+            
                 <div class="col-lg-2 col-md-4 col-sm-4 d-flex flex-column justify-content-center text-center p-0 mx-2 m-1 category-card">
-                    <i class="bi {{$mainCategory->icon}} p-2"></i>
-                    <a href="{{route('category.show', $mainCategory)}}" class="text-decoration-none p-2">
-                        
-                            {{strtoupper($mainCategory->name)}}
-                        
-                    </a>
+                    <a href="{{route('category.show', $mainCategory)}}" class="text-decoration-none p-2"> 
+                    <i class="bi {{$mainCategory->icon}} p-2"></i>                     
+                            <p>{{strtoupper($mainCategory->name)}}</p>
+                        </a>
                 </div>  
+                
+                
             @endforeach
         </div>
     </div>
 
-    <div class="container-fluid d-flex flex-column">
-        <div class="search-container d-flex justify-content-center">
+    <div class="container-fluid d-flex flex-column ">
+        <div class="search-container d-flex justify-content-center mt-3">
             <div class="searchbar">
                 <form action="{{ route('products.search') }}" method="GET" class="form" role="search">
                     <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search"

@@ -27,8 +27,8 @@
         </div>
     </div>
 
-    <div class="container-fluid d-flex flex-column">
-        <div class="search-container d-flex justify-content-center">
+    <div class="container-fluid d-flex flex-column ">
+        <div class="search-container d-flex justify-content-center mt-3">
             <div class="searchbar">
                 <form action="{{ route('products.search') }}" method="GET" class="form" role="search">
                     <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search"

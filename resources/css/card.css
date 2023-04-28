@@ -67,9 +67,10 @@
     border-radius: 25px 25px 0 0;
     transition: 0.5s;
 }
-.carousel:hover{
+.container .card:hover .carousel{
     border-radius: 25px 25px 0 0 !important;
 }
+
 .container .card:hover .face.face1 .content{
     padding: 0;
     image-rendering: fill;

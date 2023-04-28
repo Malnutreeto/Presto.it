@@ -15,7 +15,7 @@
 .category-card:hover{
     color: #FF8400;
     width: 300px;
-    height: 200px;
+    
     transition: 0.5s;
 
 }

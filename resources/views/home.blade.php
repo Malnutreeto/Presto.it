@@ -58,7 +58,7 @@
                                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-inner">
                                       @foreach ($product->images as $key => $image)
-                                        <div class="carousel-item active">
+                                        <div class="carousel-item @if ($key === 0) active @endif">
                                             <img src="{{ Storage::url($image->path) }}" class="d-block img-fluid" style="height: 100%;" alt="...">
                                         </div>
                                       @endforeach

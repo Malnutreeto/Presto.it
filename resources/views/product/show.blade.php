@@ -1,7 +1,7 @@
 <x-layout>
     @vite('resources/css/product-show.css')
-    <div class="container-fluid d-flex justify-content-center mt-5">
-        <div class="container mb-4 justify-content-center">
+    <div class="container-fluid d-flex justify-content-center mt-5 body-container">
+        <div class="container mb-4 justify-content-center h-75">
             <div class="row w-100">
                 <div class="col-12 d-flex justify-content-center">
                     <div class="user-image d-flex align-items-center justify-content-center">

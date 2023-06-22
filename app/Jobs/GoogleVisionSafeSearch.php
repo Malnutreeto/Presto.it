@@ -39,7 +39,7 @@ class GoogleVisionSafeSearch implements ShouldQueue
         
         $image = file_get_contents("./storage/$i->path");
 
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credentials.json'));
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=$path' . base_path('google_credentials.json'));
 
         $imageAnnotator = new ImageAnnotatorClient();
         $response = $imageAnnotator->safeSearchDetection($image);
